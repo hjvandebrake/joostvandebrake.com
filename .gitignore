@@ -1,0 +1,23 @@
+# macOS / Windows OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor and IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# Node (in case we add a serve script later)
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Local environment
+.env
+.env.local

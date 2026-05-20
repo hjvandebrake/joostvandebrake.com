@@ -1,0 +1,15 @@
+{
+  "name": "Joost van de Brake",
+  "short_name": "JvB",
+  "description": "Personal website of Joost van de Brake. Research, teaching, and applied work on teams, multiple team membership, hybrid work, and modern team collaboration.",
+  "icons": [
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "favicon-32.png", "sizes": "32x32", "type": "image/png" },
+    { "src": "android-chrome-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "android-chrome-512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "theme_color": "#7b3a14",
+  "background_color": "#f0eee9",
+  "display": "browser",
+  "start_url": "/"
+}
