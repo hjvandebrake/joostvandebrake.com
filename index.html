@@ -950,13 +950,6 @@ const pages = {
         </div>
 
         <div class="block">
-          <h2 class="block-h">${T('Awards and recognition', 'Onderscheidingen en erkenning')}</h2>
-          <div class="card-grid">
-            ${AWARDS.map(a=>`<div class="card alt"><span class="card-tag teal">${L(a,'year')}</span><h3>${L(a,'name')}</h3><p>${L(a,'body')}</p></div>`).join('')}
-          </div>
-        </div>
-
-        <div class="block">
           <h2 class="block-h">${T('Editorial and service', 'Redactie en bestuurlijke rollen')}</h2>
           <ul>
             <li><p class="li-h">${T('Associate Editor, Group and Organization Management', 'Associate Editor, Group and Organization Management')}</p><p class="li-body">${T('I review and shepherd submissions on teams, multiple team membership, and modern work arrangements.', 'Ik beoordeel en begeleid manuscripten over teams, multiple team membership en moderne werkarrangementen.')}</p></li>
@@ -966,6 +959,13 @@ const pages = {
             <li><p class="li-h">${T('FEB Research Institute (FEBRI)', 'FEB Research Institute (FEBRI)')}</p><p class="li-body">${T('FEBRI Fellow, reviewer and discussant at the annual FEBRI conference, lecturer at the FEBRI publishing workshop for PhD students.', 'FEBRI Fellow, reviewer en discussant op de jaarlijkse FEBRI-conferentie, en docent in de FEBRI-publicatieworkshop voor promovendi.')}</p></li>
             <li><p class="li-h">${T('Ad-hoc reviewing', 'Ad-hoc reviews')}</p><p class="li-body">${T('Academy of Management Journal, Organization Science, Management Science, and others.', 'Academy of Management Journal, Organization Science, Management Science en andere tijdschriften.')}</p></li>
           </ul>
+        </div>
+
+        <div class="block">
+          <h2 class="block-h">${T('Awards and recognition', 'Onderscheidingen en erkenning')}</h2>
+          <div class="card-grid">
+            ${AWARDS.map(a=>`<div class="card alt"><span class="card-tag teal">${L(a,'year')}</span><h3>${L(a,'name')}</h3><p>${L(a,'body')}</p></div>`).join('')}
+          </div>
         </div>
       </div>
     </section>`;
