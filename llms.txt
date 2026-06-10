@@ -16,6 +16,10 @@ Joost van de Brake helps organisations make sense of modern teamwork. His core e
 
 Past and current partners cover several sectors: applied research institutes (including an 8+ year partnership), hospitals, energy and infrastructure companies, national healthcare bodies, municipalities, public-sector agencies, banks, and ministries. He runs employee surveys, designs experiments and pilots, trains leaders, and advises on hybrid work and multiple team membership.
 
+## Resources
+
+The site includes a resources page at <https://joostvandebrake.com/#resources>. Public downloads include the PowerPoint deck "Zorgvisie 2026: Duurzame Inzetbaarheid" at <https://joostvandebrake.com/assets/downloads/zorgvisie-2026-duurzame-inzetbaarheid.pptx>.
+
 ## Key publications
 
 - Van de Brake, H. J., Van der Vegt, G. S., and Essens, P. (2024). More than just a number: Different conceptualizations of multiple team membership and their relationships with emotional exhaustion and turnover. *Journal of Applied Psychology*, 109(5), 714 to 729. <https://doi.org/10.1037/apl0001168>

@@ -7,7 +7,7 @@ This file orients automated agents and coding assistants working with the site o
 A single-file static site for Joost van de Brake, Associate Professor and Research Director of the Organizational Behaviour programme at the University of Groningen. It introduces him to academic peers, prospective collaborators, organisations interested in applied work on teams, journalists, and students looking for PhD supervision.
 
 - Live URL: https://joostvandebrake.com/
-- Source: `index.html` plus `portrait-staff.png`, `llms.txt`, `llms-full.txt`, `robots.txt`, `sitemap.xml`.
+- Source: `index.html` plus `portrait-staff.png`, `assets/downloads/`, `llms.txt`, `llms-full.txt`, `robots.txt`, `sitemap.xml`.
 - No build step. The HTML is the source.
 - Routing is hash-based and rendered client-side. A pre-rendered home page sits in the initial HTML for crawlers that do not execute JavaScript.
 
@@ -48,6 +48,7 @@ Hash-based routes:
 - `#research`
 - `#teaching`
 - `#practice`
+- `#resources`
 - `#contact`
 
 The home page is the canonical landing surface. For an AI summary of the site, prefer `llms.txt` over scraping the rendered HTML.

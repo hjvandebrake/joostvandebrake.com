@@ -19,6 +19,7 @@ Then open <http://127.0.0.1:8000/> in a browser.
 ## Structure
 
 - `index.html`, the whole site (HTML, CSS, JS, data, and a pre-rendered home page).
+- `assets/downloads/`, downloadable slide decks and public materials linked from the resources page.
 - `portrait-staff.png`, hero portrait. `portrait.jpg` and `portrait-alt.jpg` are alternates kept for future use.
 - `favicon.svg`, `favicon-32.png`, `apple-touch-icon.png`, `android-chrome-192.png`, `android-chrome-512.png`, `site.webmanifest`, the favicon set.
 - `robots.txt`, `sitemap.xml`, `llms.txt`, `llms-full.txt`, `AGENTS.md`, the discovery and agent-orientation files.
