@@ -1,5 +1,6 @@
 "use strict";
 
+(() => {
 const MC_BLOCKS = [
   {
     heading: "Lecture 1: Teamwork theories",
@@ -310,3 +311,4 @@ const OPEN_QUESTIONS = [
 ];
 
 window.EXAM_DATA = { MC_BLOCKS, OPEN_QUESTIONS, OPEN_ANSWER_LIMIT: 1500 };
+})();
