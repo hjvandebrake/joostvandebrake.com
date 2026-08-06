@@ -684,6 +684,30 @@ textarea::placeholder {
   color: var(--ink-700);
 }
 
+.submitted-answer,
+.submitted-open-answers {
+  margin-top: 13px;
+  border-left: 3px solid var(--teal);
+  background: var(--teal-light);
+  padding: 11px 14px;
+}
+
+.submitted-answer > span {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--teal);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.submitted-answer > p {
+  color: var(--ink-900);
+  font-size: 0.84rem;
+  font-weight: 600;
+}
+
 .rationale {
   margin-top: 4px;
   color: var(--ink-500);
@@ -701,6 +725,30 @@ textarea::placeholder {
   grid-template-columns: repeat(3, 1fr);
   gap: 8px;
   margin-bottom: 20px;
+}
+
+.submitted-open-answers {
+  margin: 0 0 20px;
+}
+
+.submitted-part + .submitted-part {
+  margin-top: 13px;
+  border-top: 1px solid rgb(0 109 119 / 18%);
+  padding-top: 13px;
+}
+
+.submitted-part-label {
+  margin-bottom: 5px;
+  color: var(--ink-700);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.submitted-part-text {
+  color: var(--ink-900);
+  font-size: 0.86rem;
+  line-height: 1.65;
+  white-space: pre-wrap;
 }
 
 .criterion {

@@ -295,11 +295,20 @@ function renderResults(result) {
 function renderMcReview(question) {
   const chosen = mcAnswers[question.number];
   const correct = chosen === question.answer;
+  const chosenOption =
+    question.options.find((option) => option.startsWith(`${chosen}.`)) || chosen;
+  const correctOption =
+    question.options.find((option) => option.startsWith(`${question.answer}.`)) ||
+    question.answer;
   return `
     <article class="mc-review ${correct ? "correct" : "incorrect"}">
       <div class="review-title"><span>${correct ? "Correct" : "Incorrect"}</span><strong>Question ${question.number}</strong></div>
       <p>${escapeHtml(question.stem)}</p>
-      <p class="answer-line">Your answer: <strong>${escapeHtml(chosen)}</strong> · Correct answer: <strong>${question.answer}</strong></p>
+      <div class="submitted-answer">
+        <span>Your answer</span>
+        <p>${escapeHtml(chosenOption)}</p>
+      </div>
+      <p class="answer-line">Correct answer: <strong>${escapeHtml(correctOption)}</strong></p>
       <p class="rationale">Why ${question.answer} is correct: ${escapeHtml(question.rationale)}</p>
     </article>`;
 }
@@ -312,12 +321,27 @@ function renderOpenFeedback(feedback) {
   const improvementPanel = fullCredit
     ? `<div class="full-credit-note"><h4>Full credit</h4><p>This answer met all rubric requirements. No improvement is required for full marks.</p></div>`
     : `<div><h4>What to improve</h4><ul>${feedback.improvements.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul></div>`;
+  const submittedAnswers = question.parts
+    .map((part, index) => {
+      const letter = String.fromCharCode(65 + index);
+      const answer = openAnswers[`${question.number}-${index}`] || "";
+      return `
+        <div class="submitted-part">
+          <p class="submitted-part-label"><strong>Part ${letter}</strong> ${escapeHtml(part.replace(/^[A-C]\.\s*/, ""))}</p>
+          <p class="submitted-part-text">${escapeHtml(answer)}</p>
+        </div>`;
+    })
+    .join("");
 
   return `
     <article class="open-feedback">
       <div class="feedback-title">
         <div><p class="question-kicker">Open question ${feedback.questionNumber}</p><h3>${escapeHtml(question.heading)}</h3></div>
         <strong>${formatScore(feedback.totalScore)} / 15</strong>
+      </div>
+      <div class="submitted-open-answers">
+        <h4>Your submitted answer</h4>
+        ${submittedAnswers}
       </div>
       <div class="criteria-grid">
         ${feedback.criterionScores.map((criterion) => `<div class="criterion"><span>${escapeHtml(criterion.label)}</span><strong>${formatScore(criterion.score)} / ${criterion.maxScore}</strong></div>`).join("")}
