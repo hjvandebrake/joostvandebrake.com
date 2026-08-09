@@ -4,10 +4,14 @@
   const copy = window.MTM_RESOURCE_COPY || { en: {}, nl: {} };
   const buttons = Array.from(document.querySelectorAll("[data-lang]"));
   const copyNodes = Array.from(document.querySelectorAll("[data-copy]"));
-  const navigatorLink = document.querySelector(".navigator-link");
+  const ariaNodes = Array.from(document.querySelectorAll("[data-aria-copy]"));
+  const navigatorLinks = Array.from(document.querySelectorAll(".navigator-link"));
 
   copyNodes.forEach((node) => {
     node.dataset.en = node.textContent;
+  });
+  ariaNodes.forEach((node) => {
+    node.dataset.enAria = node.getAttribute("aria-label") || "";
   });
 
   function languageFromUrl() {
@@ -28,15 +32,28 @@
       }
     });
 
+    ariaNodes.forEach((node) => {
+      const key = node.dataset.ariaCopy;
+      if (lang === "en") {
+        node.setAttribute("aria-label", node.dataset.enAria);
+      } else if (Object.prototype.hasOwnProperty.call(strings, key)) {
+        node.setAttribute("aria-label", strings[key]);
+      }
+    });
+
     buttons.forEach((button) => {
       const isActive = button.dataset.lang === lang;
       button.classList.toggle("is-active", isActive);
       button.setAttribute("aria-pressed", String(isActive));
     });
 
-    if (navigatorLink) {
-      navigatorLink.href = lang === "nl" ? "../mtm-portfolio-navigator/?lang=nl" : "../mtm-portfolio-navigator/";
-    }
+    navigatorLinks.forEach((link) => {
+      const url = new URL(link.dataset.baseHref || link.getAttribute("href"), window.location.href);
+      link.dataset.baseHref = link.dataset.baseHref || link.getAttribute("href");
+      if (lang === "nl") url.searchParams.set("lang", "nl");
+      else url.searchParams.delete("lang");
+      link.href = url.pathname + url.search + url.hash;
+    });
 
     if (updateUrl) {
       const url = new URL(window.location.href);

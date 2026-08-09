@@ -355,6 +355,22 @@ p:last-child {
   gap: 12px;
 }
 
+.hero-text-link {
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 4px;
+  color: var(--red);
+  font-size: 0.86rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.hero-text-link:hover {
+  color: var(--red-dark);
+  text-decoration: underline;
+}
+
 .hero-meta {
   margin-top: 15px;
   color: var(--ink-500);
@@ -558,7 +574,7 @@ p:last-child {
 
 .trust-inner {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .trust-item {
@@ -683,20 +699,6 @@ p:last-child {
   color: var(--ink-600);
   font-size: 0.85rem;
   line-height: 1.55;
-}
-
-.privacy-note {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin: 13px 0 0;
-  color: var(--ink-500);
-  font-size: 0.76rem;
-}
-
-.privacy-note span {
-  color: var(--green);
-  font-size: 0.52rem;
 }
 
 .example-panel {
@@ -2006,7 +2008,7 @@ p:last-child {
   line-height: 1.65;
 }
 
-.method-version {
+.method-note {
   padding-top: 12px;
   border-top: 1px solid var(--ink-200);
   color: var(--ink-500);

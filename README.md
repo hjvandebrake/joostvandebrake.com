@@ -19,7 +19,7 @@ Then open <http://127.0.0.1:8000/> in a browser.
 ## Structure
 
 - `index.html`, the main site (HTML, CSS, JS, data, and a pre-rendered home page).
-- `mtm-resources/`, the bilingual hub for the practitioner tool and public teaching cases.
+- `mtm-resources/`, the bilingual Navigator landing page, research overview, and public teaching-case hub.
 - `mtm-portfolio-navigator/`, the bilingual More Than a Number practitioner tool, with separate HTML, CSS, content, and application files.
 - `assets/downloads/`, downloadable slide decks and public materials linked from the resources page.
 - `portrait-staff.png`, hero portrait. `portrait.jpg` and `portrait-alt.jpg` are alternates kept for future use.

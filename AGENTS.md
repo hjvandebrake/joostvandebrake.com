@@ -53,8 +53,8 @@ Hash-based routes:
 
 Standalone routes:
 
-- `/mtm-resources/`, the bilingual hub for practitioners and educators. It links to the MTM Portfolio Navigator and two public teaching cases, each with a separate instructor guide.
-- `/mtm-portfolio-navigator/`, a bilingual, browser-only practitioner reflection tool developed as part of NWO Veni grant VI.Veni.211E.027. Its source files are `index.html`, `styles.css`, `content.js`, and `app.js` within that directory.
+- `/mtm-resources/`, the bilingual landing page for the MTM Portfolio Navigator. It also presents the research basis and two public teaching cases, each with a separate instructor guide.
+- `/mtm-portfolio-navigator/`, a bilingual practitioner reflection tool supported by NWO. Its source files are `index.html`, `styles.css`, `content.js`, and `app.js` within that directory.
 
 The home page is the canonical landing surface. For an AI summary of the site, prefer `llms.txt` over scraping the rendered HTML.
 

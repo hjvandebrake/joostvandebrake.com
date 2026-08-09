@@ -5,6 +5,7 @@
   const params = new URLSearchParams(window.location.search);
   const initialLang = params.get('lang') === 'nl' ? 'nl' : 'en';
   const initialMode = params.get('mode');
+  const initialExample = ['fragmented', 'anchored'].includes(params.get('example')) ? params.get('example') : null;
 
   const state = {
     lang: initialLang,
@@ -67,6 +68,9 @@
     document.querySelectorAll('[data-copy="back"], [data-copy="resources"]').forEach((node) => {
       node.setAttribute('href', state.lang === 'nl' ? '../mtm-resources/?lang=nl' : '../mtm-resources/');
     });
+    document.querySelectorAll('[data-copy="teachingCasesButton"]').forEach((node) => {
+      node.setAttribute('href', state.lang === 'nl' ? '../mtm-resources/?lang=nl#educators' : '../mtm-resources/#educators');
+    });
     document.querySelectorAll('[data-aria-copy]').forEach((node) => {
       const value = t(node.dataset.ariaCopy);
       if (value) node.setAttribute('aria-label', value);
@@ -103,7 +107,7 @@
       <p>${escapeHtml(t('methodBody2'))}</p>
       <p>${escapeHtml(t('methodBody3'))}</p>
       <p>${escapeHtml(t('methodBody4'))}</p>
-      <p class="method-version">${escapeHtml(t('methodVersion'))}</p>
+      <p class="method-note">${escapeHtml(t('methodVersion'))}</p>
     `;
   }
 
@@ -125,7 +129,8 @@
             ${[
               ['01', t('introPoint1Title'), t('introPoint1Body')],
               ['02', t('introPoint2Title'), t('introPoint2Body')],
-              ['03', t('introPoint3Title'), t('introPoint3Body')]
+              ['03', t('introPoint3Title'), t('introPoint3Body')],
+              ['04', t('introPoint4Title'), t('introPoint4Body')]
             ].map((point) => `
               <div class="intro-point">
                 <span>${point[0]}</span>
@@ -134,7 +139,6 @@
             `).join('')}
           </div>
           <button type="button" class="button button-primary button-large" id="begin-assessment">${escapeHtml(t('begin'))}</button>
-          <p class="privacy-note"><span aria-hidden="true">●</span>${escapeHtml(t('privacyShort'))}</p>
         </div>
         <aside class="example-panel">
           <p class="small-label">${escapeHtml(t('tryExample'))}</p>
@@ -146,11 +150,6 @@
           <button type="button" class="example-button" data-preset="anchored">
             <span class="example-icon example-anchored" aria-hidden="true"></span>
             <span><strong>${escapeHtml(t('exampleAnchored'))}</strong><small>${escapeHtml(l(data.cases.anchored.meta))}</small></span>
-            <span aria-hidden="true">→</span>
-          </button>
-          <button type="button" class="example-button example-status" data-case="status">
-            <span class="example-icon example-return" aria-hidden="true"></span>
-            <span><strong>${escapeHtml(l(data.cases.status.title))}</strong><small>${escapeHtml(l(data.cases.status.meta))}</small></span>
             <span aria-hidden="true">→</span>
           </button>
         </aside>
@@ -321,7 +320,7 @@
     const activated = candidates
       .sort((a, b) => b.level - a.level || a.order - b.order)
       .map((item) => item.key);
-    const priorities = activated.slice(0, 3);
+    const priorities = activated.slice(0, 4);
 
     return {
       levels,
@@ -351,18 +350,18 @@
     const a = state.answers;
     const explanations = {
       en: {
-        fragmentation: `Switching: ${selectedLabel('switching')}; protected focus: ${selectedLabel('protectedTime')}.`,
-        roleFriction: `Role differences: ${selectedLabel('roleSeparation')}; cross-team conflict: ${selectedLabel('roleConflict')}.`,
-        attentionConfiguration: `Unique-relationship pull: ${selectedLabel('relationalExclusivity')}; expertise-distance barrier: ${selectedLabel('expertiseDistance')}.`,
-        leverage: `Cross-team synergy: ${selectedLabel('roleSynergy')}; priority influence: ${selectedLabel('priorityControl')}.`,
-        transition: `Re-entry/status difference: ${selectedLabel('statusShift')}; membership stability: ${selectedLabel('fluidity')}.`
+        fragmentation: `Moves between teams: ${selectedLabel('switching')}; longer focus blocks: ${selectedLabel('protectedTime')}.`,
+        roleFriction: `Differences between team roles: ${selectedLabel('roleSeparation')}; competing demands: ${selectedLabel('roleConflict')}.`,
+        attentionConfiguration: `Colleagues who appear in one team: ${selectedLabel('relationalExclusivity')}; different fields and working methods: ${selectedLabel('expertiseDistance')}.`,
+        leverage: `Work in one team helps another: ${selectedLabel('roleSynergy')}; say over priorities: ${selectedLabel('priorityControl')}.`,
+        transition: `Your influence after returning: ${selectedLabel('statusShift')}; teams changing over time: ${selectedLabel('fluidity')}.`
       },
       nl: {
-        fragmentation: `Wisselen: ${selectedLabel('switching')}; beschermde focus: ${selectedLabel('protectedTime')}.`,
-        roleFriction: `Rolverschillen: ${selectedLabel('roleSeparation')}; conflict tussen teams: ${selectedLabel('roleConflict')}.`,
-        attentionConfiguration: `Aantrekkingskracht van unieke relaties: ${selectedLabel('relationalExclusivity')}; barrière door expertiseafstand: ${selectedLabel('expertiseDistance')}.`,
-        leverage: `Synergie tussen teams: ${selectedLabel('roleSynergy')}; invloed op prioriteiten: ${selectedLabel('priorityControl')}.`,
-        transition: `Terugkeer/statusverschil: ${selectedLabel('statusShift')}; stabiliteit van lidmaatschap: ${selectedLabel('fluidity')}.`
+        fragmentation: `Wisselingen tussen teams: ${selectedLabel('switching')}; langere focusblokken: ${selectedLabel('protectedTime')}.`,
+        roleFriction: `Verschillen tussen teamrollen: ${selectedLabel('roleSeparation')}; botsende eisen: ${selectedLabel('roleConflict')}.`,
+        attentionConfiguration: `Collega's die in één team voorkomen: ${selectedLabel('relationalExclusivity')}; verschillende vakgebieden en werkwijzen: ${selectedLabel('expertiseDistance')}.`,
+        leverage: `Werk in het ene team helpt het andere: ${selectedLabel('roleSynergy')}; zeggenschap over prioriteiten: ${selectedLabel('priorityControl')}.`,
+        transition: `Uw invloed na terugkeer: ${selectedLabel('statusShift')}; teams die in de tijd veranderen: ${selectedLabel('fluidity')}.`
       }
     };
     return explanations[state.lang][key] || String(a[key] || '');
@@ -764,6 +763,13 @@
   document.querySelectorAll('.hero [data-case]').forEach((button) => {
     button.addEventListener('click', () => openCase(button.dataset.case, 'intro'));
   });
+
+  if (initialExample && state.view !== 'case') {
+    state.answers = Object.assign({}, data.presets[initialExample]);
+    state.example = initialExample;
+    state.results = calculateResults(state.answers);
+    state.view = 'results';
+  }
 
   renderStaticCopy();
   renderEvidence();
