@@ -13,6 +13,10 @@ desktop.ini
 # Logs
 *.log
 
+# Generated local verification artifacts
+output/
+tmp/
+
 # Node (in case we add a serve script later)
 node_modules/
 npm-debug.log*

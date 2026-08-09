@@ -4,7 +4,7 @@ Personal website of Joost van de Brake. Research, teaching, and applied work on 
 
 ## What this is
 
-A single-file static site with hash-based client-side routing and a pre-rendered home page for crawlers. English and Dutch toggle in the nav. No build step.
+A static site with a single-file, hash-routed main site and standalone tools in subdirectories. The main site has a pre-rendered home page for crawlers and an English and Dutch toggle in the nav. No build step.
 
 ## Running locally
 
@@ -18,7 +18,8 @@ Then open <http://127.0.0.1:8000/> in a browser.
 
 ## Structure
 
-- `index.html`, the whole site (HTML, CSS, JS, data, and a pre-rendered home page).
+- `index.html`, the main site (HTML, CSS, JS, data, and a pre-rendered home page).
+- `mtm-portfolio-navigator/`, the bilingual More Than a Number practitioner tool, with separate HTML, CSS, content, and application files.
 - `assets/downloads/`, downloadable slide decks and public materials linked from the resources page.
 - `portrait-staff.png`, hero portrait. `portrait.jpg` and `portrait-alt.jpg` are alternates kept for future use.
 - `favicon.svg`, `favicon-32.png`, `apple-touch-icon.png`, `android-chrome-192.png`, `android-chrome-512.png`, `site.webmanifest`, the favicon set.

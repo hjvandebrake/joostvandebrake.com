@@ -364,6 +364,8 @@ a { color: inherit; text-decoration: none; }
 .aud-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 44px; }
 .aud-card { background: var(--white); border: 1px solid var(--ink-200); padding: 22px 22px 20px; display: flex; flex-direction: column; gap: 8px; cursor: pointer; transition: border-color .14s, transform .14s; }
 .aud-card:hover { border-color: var(--red); transform: translateY(-2px); }
+.aud-card.featured { border-top: 3px solid var(--teal); }
+.aud-card.featured span { color: var(--teal); }
 .aud-card h3 { font-family: var(--serif); font-size: 1.05rem; font-weight: 700; }
 .aud-card p { font-size: 0.86rem; color: var(--ink-500); line-height: 1.6; flex: 1; }
 .aud-card span { font-size: 0.78rem; font-weight: 600; color: var(--red); margin-top: 4px; }
@@ -416,6 +418,7 @@ a { color: inherit; text-decoration: none; }
 .card .meta { font-size: 0.78rem; color: var(--ink-400); border-top: 1px solid var(--ink-200); padding-top: 10px; margin-top: 4px; display: flex; gap: 14px; flex-wrap: wrap; }
 .resource-list { display: grid; gap: 14px; max-width: 680px; }
 .resource-card { max-width: 680px; }
+.resource-card.featured { border-top: 4px solid var(--teal); padding-top: 19px; }
 .resource-card p { flex: 0; }
 .resource-card .btn { align-self: start; margin-top: 6px; }
 
@@ -561,7 +564,7 @@ footer { background: oklch(18% 0.012 258); padding: 22px var(--pad); font-size: 
 
   <section class="sec">
     <div class="wrap">
-      <div class="sec-head"><div><p class="eye">Explore</p><h2 class="h2">Four ways in</h2></div></div>
+      <div class="sec-head"><div><p class="eye">Explore</p><h2 class="h2">Five ways in</h2></div></div>
       <div class="aud-grid">
         <a class="aud-card" onclick="go('research')">
           <h3>Research</h3>
@@ -577,6 +580,11 @@ footer { background: oklch(18% 0.012 258); padding: 22px var(--pad); font-size: 
           <h3>Working with organisations</h3>
           <p>How I work with HR teams, leadership, and project controllers on team and collaboration challenges. Partnerships with research institutes, hospitals, infrastructure companies, ministries, and others.</p>
           <span>How I work with companies →</span>
+        </a>
+        <a class="aud-card featured" href="mtm-portfolio-navigator/">
+          <h3>More than a number</h3>
+          <p>Map your multiple-team membership configuration and get transparent, evidence-linked suggestions. Answers stay in your browser.</p>
+          <span>Open the MTM Portfolio Navigator →</span>
         </a>
         <a class="aud-card" onclick="go('resources')">
           <h3>Resources</h3>
@@ -874,7 +882,7 @@ const pages = {
 
     <section class="sec">
       <div class="wrap">
-        <div class="sec-head"><div><p class="eye">${T('Explore', 'Verken de site')}</p><h2 class="h2">${T('Four ways in', 'Vier ingangen')}</h2></div></div>
+        <div class="sec-head"><div><p class="eye">${T('Explore', 'Verken de site')}</p><h2 class="h2">${T('Five ways in', 'Vijf ingangen')}</h2></div></div>
         <div class="aud-grid">
           <a class="aud-card" onclick="go('research')">
             <h3>${T('Research', 'Onderzoek')}</h3>
@@ -899,6 +907,14 @@ const pages = {
               'Hoe ik samenwerk met HR-teams, leidinggevenden en projectcontrollers aan team- en samenwerkingsvraagstukken. Samenwerkingen met onderzoeksinstituten, ziekenhuizen, infrastructuurbedrijven, ministeries en anderen.'
             )}</p>
             <span>${T('How I work with companies →', 'Hoe ik met organisaties werk →')}</span>
+          </a>
+          <a class="aud-card featured" href="${lang === 'nl' ? 'mtm-portfolio-navigator/?lang=nl' : 'mtm-portfolio-navigator/'}">
+            <h3>${T('More than a number', 'Meer dan een getal')}</h3>
+            <p>${T(
+              'Map your multiple-team membership configuration and get transparent, evidence-linked suggestions. Answers stay in your browser.',
+              'Breng uw multiple-team-membershipconfiguratie in kaart en ontvang transparante suggesties met links naar het onderliggende onderzoek. Antwoorden blijven in uw browser.'
+            )}</p>
+            <span>${T('Open the MTM Portfolio Navigator →', 'Open de MTM Portfolio Navigator →')}</span>
           </a>
           <a class="aud-card" onclick="go('resources')">
             <h3>${T('Resources', 'Materiaal')}</h3>
@@ -1068,6 +1084,24 @@ const pages = {
     <section class="sec">
       <div class="wrap">
         <div class="block">
+          <h2 class="block-h">${T('Try the research tool', 'Probeer de onderzoekstool')}</h2>
+          <div class="card resource-card featured">
+            <span class="card-tag teal">${T('Interactive tool', 'Interactieve tool')}</span>
+            <h3>${T('More Than a Number: MTM Portfolio Navigator', 'Meer Dan Een Getal: MTM Portfolio Navigator')}</h3>
+            <p>${T(
+              'Map how your simultaneous team memberships are configured, see which patterns deserve attention, and create a practical two-week action plan. The tool uses transparent rules grounded in published and ongoing research, and your answers stay in your browser.',
+              'Breng in kaart hoe uw gelijktijdige teamlidmaatschappen zijn ingericht, zie welke patronen aandacht verdienen en maak een praktisch actieplan voor twee weken. De tool gebruikt transparante regels op basis van gepubliceerd en lopend onderzoek, en uw antwoorden blijven in uw browser.'
+            )}</p>
+            <p>${T(
+              'Developed within the NWO-funded Veni research programme "The consequences of working in multiple teams at the same time" (VI.Veni.211E.027). NWO did not evaluate or endorse the tool.',
+              'Ontwikkeld binnen het door NWO gefinancierde Veni-onderzoeksprogramma "The consequences of working in multiple teams at the same time" (VI.Veni.211E.027). NWO heeft de tool niet geëvalueerd of onderschreven.'
+            )}</p>
+            <p class="meta"><span>${T('NO ACCOUNT', 'GEEN ACCOUNT')}</span><span>NWO VENI VI.Veni.211E.027</span></p>
+            <a class="btn btn-red" href="${lang === 'nl' ? 'mtm-portfolio-navigator/?lang=nl' : 'mtm-portfolio-navigator/'}">${T('Open the MTM Navigator', 'Open de MTM Navigator')}</a>
+          </div>
+        </div>
+
+        <div class="block">
           <h2 class="block-h">${T('How I add value', 'Wat ik te bieden heb')}</h2>
           <div class="off-grid">
             ${OFFERINGS.map(o=>`<div class="off"><h3>${L(o,'h')}</h3><p>${L(o,'body')}</p></div>`).join('')}
@@ -1129,16 +1163,36 @@ const pages = {
 
   resources(){
     document.getElementById('pg-resources').innerHTML = `
-    <div class="pg-hd"><div class="wrap"><p class="eye">${T('Resources', 'Materiaal')}</p><h1>${T('Slides and materials', 'Slides en materiaal')}</h1><p>${T(
-      'Download selected presentation decks and materials from teaching sessions, talks, and applied work.',
-      'Download geselecteerde presentaties en materialen van onderwijs, lezingen en toegepast werk.'
+    <div class="pg-hd"><div class="wrap"><p class="eye">${T('Resources', 'Materiaal')}</p><h1>${T('Tools and materials', 'Tools en materiaal')}</h1><p>${T(
+      'Use an interactive research tool, or download selected materials from teaching sessions, talks, and applied work.',
+      'Gebruik een interactieve onderzoekstool of download geselecteerd materiaal van onderwijs, lezingen en toegepast werk.'
     )}</p></div></div>
 
     <section class="sec">
       <div class="wrap">
         <div class="block">
-          <h2 class="block-h">${T('Available downloads', 'Beschikbare downloads')}</h2>
+          <h2 class="block-h">${T('Available resources', 'Beschikbaar materiaal')}</h2>
           <div class="resource-list">
+            <div class="card resource-card featured">
+              <span class="card-tag teal">${T('Interactive tool', 'Interactieve tool')}</span>
+              <h3>${T('More Than a Number: MTM Portfolio Navigator', 'Meer Dan Een Getal: MTM Portfolio Navigator')}</h3>
+              <p>${T(
+                'Answer a short set of questions about switching, role differences, team fluidity, local know-how, and status transitions. The tool returns transparent, evidence-linked suggestions and a two-week action plan. Answers stay in your browser.',
+                'Beantwoord een korte reeks vragen over wisselen tussen teams, rolverschillen, wisselende teams, lokale kennis en statusovergangen. De tool geeft transparante suggesties met links naar het onderliggende onderzoek en een actieplan voor twee weken. Antwoorden blijven in uw browser.'
+              )}</p>
+              <p class="meta"><span>${T('ONLINE TOOL', 'ONLINE TOOL')}</span><span>NWO VENI VI.Veni.211E.027</span></p>
+              <a class="btn btn-red" href="${lang === 'nl' ? 'mtm-portfolio-navigator/?lang=nl' : 'mtm-portfolio-navigator/'}">${T('Open the MTM Navigator', 'Open de MTM Navigator')}</a>
+            </div>
+            <div class="card resource-card">
+              <span class="card-tag">${T('Mini-case · PDF', 'Minicasus · PDF')}</span>
+              <h3>${T('The Returning Specialist', 'De terugkerende specialist')}</h3>
+              <p>${T(
+                'A 12-to-15-minute teaching case on status inconsistency and re-entry after work in another team. Includes a decision prompt, discussion worksheet, and a transparent note on the under-review evidence.',
+                'Een onderwijscasus van 12 tot 15 minuten over statusinconsistentie en terugkeer na werk in een ander team. Met beslisvraag, discussiewerkblad en een transparante toelichting op de evidence uit een manuscript onder review.'
+              )}</p>
+              <p class="meta"><span>${T('STUDENT HANDOUT', 'STUDENTENHAND-OUT')}</span><span>NWO VENI VI.Veni.211E.027</span></p>
+              <a class="btn" href="assets/downloads/mtm-status-reentry-mini-case.pdf" download>${T('Download the mini-case', 'Download de minicasus')}</a>
+            </div>
             <div class="card resource-card">
               <span class="card-tag">PowerPoint</span>
               <h3>Zorgvisie 2026: Duurzame Inzetbaarheid</h3>

@@ -60,7 +60,7 @@ Publications in management and applied psychology:
 
 ## Grants and awards
 
-- NWO Veni grant, 2022, €280,000, individual grant. Title: How to best combine multiple simultaneous team memberships. Funded by the Dutch Research Council under the NWO Talent Programme.
+- NWO Veni grant, 2022, €280,000, individual grant. Title: The consequences of working in multiple teams at the same time. Grant VI.Veni.211E.027, funded by the Dutch Research Council under the NWO Talent Programme.
 - ZonMw COVID-19 grant, 2020, €200,000, principal investigator with Maxim Laurijssen, Peter Essens, and Gerben van der Vegt. Tracked the well-being of hospital staff during the pandemic and informed leadership training at a large Dutch general hospital.
 - Fulbright Scholarship, 2016, supporting collaborative research with Jonathon Cummings at Duke University.
 - FEB Early Career Research Award, 2021, awarded by the Board of the Faculty of Economics and Business, University of Groningen.
@@ -95,6 +95,8 @@ Publications in management and applied psychology:
 ## Public resources
 
 - Resources page: https://joostvandebrake.com/#resources
+- More Than a Number: MTM Portfolio Navigator: https://joostvandebrake.com/mtm-portfolio-navigator/. An interactive, browser-only reflection tool that maps switching, role differences, fluidity, local know-how, and status transitions across simultaneous team memberships, then returns transparent, evidence-linked suggestions and a two-week action plan. Developed within the NWO-funded Veni research programme "The consequences of working in multiple teams at the same time" (VI.Veni.211E.027). NWO did not evaluate or endorse the tool.
+- Student handout: The Returning Specialist, an MTM status re-entry mini-case. Direct download: https://joostvandebrake.com/assets/downloads/mtm-status-reentry-mini-case.pdf. The case is a teaching adaptation of evidence from a manuscript under review, not an additional study.
 - Teamwork online practice exam for 2026–2027: https://joostvandebrake.com/teamwork-practice-exam/
 - PowerPoint deck: Zorgvisie 2026: Duurzame Inzetbaarheid. Direct download: https://joostvandebrake.com/assets/downloads/zorgvisie-2026-duurzame-inzetbaarheid.pptx
 - Practice memo: Praktijkmemo Duurzame Inzetbaarheid - Zorgvisie 2026. Direct download: https://joostvandebrake.com/assets/downloads/praktijkmemo-duurzame-inzetbaarheid-zorgvisie-2026.pdf
