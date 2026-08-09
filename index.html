@@ -164,7 +164,7 @@
           "name": "What is multiple team membership?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Multiple team membership is the arrangement in which employees contribute to several project teams at the same time. It is the modern norm in knowledge-intensive work. Joost van de Brake's research, published in the Journal of Applied Psychology, Personnel Psychology, and the Journal of Management Studies, shows that the effects depend on switching frequency, role differences across teams, organisational tenure, and the social network surrounding the employee."
+            "text": "Multiple team membership is the arrangement in which employees contribute to several teams during the same period. It is common in project work, healthcare, education, public services, logistics, and many other settings. Joost van de Brake's research, published in the Journal of Applied Psychology, Personnel Psychology, and the Journal of Management Studies, shows that the effects depend on switching frequency, role differences across teams, organisational tenure, and the social network surrounding the employee."
           }
         },
         {
@@ -581,10 +581,10 @@ footer { background: oklch(18% 0.012 258); padding: 22px var(--pad); font-size: 
           <p>How I work with HR teams, leadership, and project controllers on team and collaboration challenges. Partnerships with research institutes, hospitals, infrastructure companies, ministries, and others.</p>
           <span>How I work with companies →</span>
         </a>
-        <a class="aud-card featured" href="mtm-portfolio-navigator/">
-          <h3>More than a number</h3>
-          <p>Map your multiple-team membership configuration and get transparent, evidence-linked suggestions. Answers stay in your browser.</p>
-          <span>Open the MTM Portfolio Navigator →</span>
+        <a class="aud-card featured" href="mtm-resources/">
+          <h3>Multiple team membership resources</h3>
+          <p>Use the MTM Portfolio Navigator, or download two classroom cases with separate solution guides.</p>
+          <span>Open the MTM resources →</span>
         </a>
         <a class="aud-card" onclick="go('resources')">
           <h3>Resources</h3>
@@ -908,13 +908,13 @@ const pages = {
             )}</p>
             <span>${T('How I work with companies →', 'Hoe ik met organisaties werk →')}</span>
           </a>
-          <a class="aud-card featured" href="${lang === 'nl' ? 'mtm-portfolio-navigator/?lang=nl' : 'mtm-portfolio-navigator/'}">
-            <h3>${T('More than a number', 'Meer dan een getal')}</h3>
+          <a class="aud-card featured" href="${lang === 'nl' ? 'mtm-resources/?lang=nl' : 'mtm-resources/'}">
+            <h3>${T('Multiple team membership resources', 'Materiaal over werken in meerdere teams')}</h3>
             <p>${T(
-              'Map your multiple-team membership configuration and get transparent, evidence-linked suggestions. Answers stay in your browser.',
-              'Breng uw multiple-team-membershipconfiguratie in kaart en ontvang transparante suggesties met links naar het onderliggende onderzoek. Antwoorden blijven in uw browser.'
+              'Use the MTM Portfolio Navigator, or download two classroom cases with separate solution guides.',
+              'Gebruik de MTM Portfolio Navigator of download twee onderwijscases met aparte uitwerkingen.'
             )}</p>
-            <span>${T('Open the MTM Portfolio Navigator →', 'Open de MTM Portfolio Navigator →')}</span>
+            <span>${T('Open the MTM resources →', 'Open het MTM-materiaal →')}</span>
           </a>
           <a class="aud-card" onclick="go('resources')">
             <h3>${T('Resources', 'Materiaal')}</h3>
@@ -1084,20 +1084,20 @@ const pages = {
     <section class="sec">
       <div class="wrap">
         <div class="block">
-          <h2 class="block-h">${T('Try the research tool', 'Probeer de onderzoekstool')}</h2>
+          <h2 class="block-h">${T('Use the MTM resources', 'Gebruik het MTM-materiaal')}</h2>
           <div class="card resource-card featured">
-            <span class="card-tag teal">${T('Interactive tool', 'Interactieve tool')}</span>
-            <h3>${T('More Than a Number: MTM Portfolio Navigator', 'Meer Dan Een Getal: MTM Portfolio Navigator')}</h3>
+            <span class="card-tag teal">${T('Tool and cases', 'Tool en cases')}</span>
+            <h3>${T('Multiple Team Membership Resources', 'Materiaal over werken in meerdere teams')}</h3>
             <p>${T(
-              'Map how your simultaneous team memberships are configured, see which patterns deserve attention, and create a practical two-week action plan. The tool uses transparent rules grounded in published and ongoing research, and your answers stay in your browser.',
-              'Breng in kaart hoe uw gelijktijdige teamlidmaatschappen zijn ingericht, zie welke patronen aandacht verdienen en maak een praktisch actieplan voor twee weken. De tool gebruikt transparante regels op basis van gepubliceerd en lopend onderzoek, en uw antwoorden blijven in uw browser.'
+              'Use the private MTM Portfolio Navigator to examine a real work arrangement, or download two classroom cases with separate solution guides. The materials explain the research in plain language.',
+              'Gebruik de private MTM Portfolio Navigator om een echte werksituatie te bekijken of download twee onderwijscases met aparte uitwerkingen. Het materiaal legt het onderzoek in duidelijke taal uit.'
             )}</p>
             <p>${T(
-              'Developed within the NWO-funded Veni research programme "The consequences of working in multiple teams at the same time" (VI.Veni.211E.027). NWO did not evaluate or endorse the tool.',
-              'Ontwikkeld binnen het door NWO gefinancierde Veni-onderzoeksprogramma "The consequences of working in multiple teams at the same time" (VI.Veni.211E.027). NWO heeft de tool niet geëvalueerd of onderschreven.'
+              'Supported by the Dutch Research Council (NWO).',
+              'Ondersteund door de Nederlandse Organisatie voor Wetenschappelijk Onderzoek (NWO).'
             )}</p>
-            <p class="meta"><span>${T('NO ACCOUNT', 'GEEN ACCOUNT')}</span><span>NWO VENI VI.Veni.211E.027</span></p>
-            <a class="btn btn-red" href="${lang === 'nl' ? 'mtm-portfolio-navigator/?lang=nl' : 'mtm-portfolio-navigator/'}">${T('Open the MTM Navigator', 'Open de MTM Navigator')}</a>
+            <p class="meta"><span>${T('ONE TOOL', 'ÉÉN TOOL')}</span><span>${T('TWO PUBLIC CASES', 'TWEE OPENBARE CASES')}</span><span>${T('SUPPORTED BY NWO', 'ONDERSTEUND DOOR NWO')}</span></p>
+            <a class="btn btn-red" href="${lang === 'nl' ? 'mtm-resources/?lang=nl' : 'mtm-resources/'}">${T('Open the MTM resources', 'Open het MTM-materiaal')}</a>
           </div>
         </div>
 
@@ -1174,24 +1174,14 @@ const pages = {
           <h2 class="block-h">${T('Available resources', 'Beschikbaar materiaal')}</h2>
           <div class="resource-list">
             <div class="card resource-card featured">
-              <span class="card-tag teal">${T('Interactive tool', 'Interactieve tool')}</span>
-              <h3>${T('More Than a Number: MTM Portfolio Navigator', 'Meer Dan Een Getal: MTM Portfolio Navigator')}</h3>
+              <span class="card-tag teal">${T('Practitioner and educator hub', 'Voor praktijk en onderwijs')}</span>
+              <h3>${T('Multiple Team Membership Resources', 'Materiaal over werken in meerdere teams')}</h3>
               <p>${T(
-                'Answer a short set of questions about switching, role differences, team fluidity, local know-how, and status transitions. The tool returns transparent, evidence-linked suggestions and a two-week action plan. Answers stay in your browser.',
-                'Beantwoord een korte reeks vragen over wisselen tussen teams, rolverschillen, wisselende teams, lokale kennis en statusovergangen. De tool geeft transparante suggesties met links naar het onderliggende onderzoek en een actieplan voor twee weken. Antwoorden blijven in uw browser.'
+                'Use the MTM Portfolio Navigator, or download two longer classroom cases. Each case has a separate solution guide and a clear link to the research behind it.',
+                'Gebruik de MTM Portfolio Navigator of download twee langere onderwijscases. Elke case heeft een aparte uitwerking en een duidelijke koppeling met het onderzoek.'
               )}</p>
-              <p class="meta"><span>${T('ONLINE TOOL', 'ONLINE TOOL')}</span><span>NWO VENI VI.Veni.211E.027</span></p>
-              <a class="btn btn-red" href="${lang === 'nl' ? 'mtm-portfolio-navigator/?lang=nl' : 'mtm-portfolio-navigator/'}">${T('Open the MTM Navigator', 'Open de MTM Navigator')}</a>
-            </div>
-            <div class="card resource-card">
-              <span class="card-tag">${T('Mini-case · PDF', 'Minicasus · PDF')}</span>
-              <h3>${T('The Returning Specialist', 'De terugkerende specialist')}</h3>
-              <p>${T(
-                'A 12-to-15-minute teaching case on status inconsistency and re-entry after work in another team. Includes a decision prompt, discussion worksheet, and a transparent note on the under-review evidence.',
-                'Een onderwijscasus van 12 tot 15 minuten over statusinconsistentie en terugkeer na werk in een ander team. Met beslisvraag, discussiewerkblad en een transparante toelichting op de evidence uit een manuscript onder review.'
-              )}</p>
-              <p class="meta"><span>${T('STUDENT HANDOUT', 'STUDENTENHAND-OUT')}</span><span>NWO VENI VI.Veni.211E.027</span></p>
-              <a class="btn" href="assets/downloads/mtm-status-reentry-mini-case.pdf" download>${T('Download the mini-case', 'Download de minicasus')}</a>
+              <p class="meta"><span>${T('ONE TOOL', 'ÉÉN TOOL')}</span><span>${T('TWO PUBLIC CASES', 'TWEE OPENBARE CASES')}</span><span>${T('SUPPORTED BY NWO', 'ONDERSTEUND DOOR NWO')}</span></p>
+              <a class="btn btn-red" href="${lang === 'nl' ? 'mtm-resources/?lang=nl' : 'mtm-resources/'}">${T('Open the MTM resource page', 'Open de MTM-pagina')}</a>
             </div>
             <div class="card resource-card">
               <span class="card-tag">PowerPoint</span>

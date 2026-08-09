@@ -7,7 +7,7 @@ This file orients automated agents and coding assistants working with the site o
 A static site for Joost van de Brake, Associate Professor and Research Director of the Organizational Behaviour programme at the University of Groningen. The main site is a single HTML file, with standalone tools in subdirectories. It introduces him to academic peers, prospective collaborators, organisations interested in applied work on teams, journalists, and students looking for PhD supervision.
 
 - Live URL: https://joostvandebrake.com/
-- Source: `index.html` plus `mtm-portfolio-navigator/`, `portrait-staff.png`, `assets/downloads/`, `llms.txt`, `llms-full.txt`, `robots.txt`, and `sitemap.xml`.
+- Source: `index.html` plus `mtm-resources/`, `mtm-portfolio-navigator/`, `portrait-staff.png`, `assets/downloads/`, `llms.txt`, `llms-full.txt`, `robots.txt`, and `sitemap.xml`.
 - No build step. The HTML is the source.
 - The main-site routing is hash-based and rendered client-side. A pre-rendered home page sits in the initial HTML for crawlers that do not execute JavaScript. Standalone tools use normal directory routes.
 
@@ -53,6 +53,7 @@ Hash-based routes:
 
 Standalone routes:
 
+- `/mtm-resources/`, the bilingual hub for practitioners and educators. It links to the MTM Portfolio Navigator and two public teaching cases, each with a separate instructor guide.
 - `/mtm-portfolio-navigator/`, a bilingual, browser-only practitioner reflection tool developed as part of NWO Veni grant VI.Veni.211E.027. Its source files are `index.html`, `styles.css`, `content.js`, and `app.js` within that directory.
 
 The home page is the canonical landing surface. For an AI summary of the site, prefer `llms.txt` over scraping the rendered HTML.

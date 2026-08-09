@@ -64,6 +64,9 @@
       const value = t(node.dataset.copy);
       if (value) node.textContent = value;
     });
+    document.querySelectorAll('[data-copy="back"], [data-copy="resources"]').forEach((node) => {
+      node.setAttribute('href', state.lang === 'nl' ? '../mtm-resources/?lang=nl' : '../mtm-resources/');
+    });
     document.querySelectorAll('[data-aria-copy]').forEach((node) => {
       const value = t(node.dataset.ariaCopy);
       if (value) node.setAttribute('aria-label', value);
@@ -614,7 +617,7 @@
     const rec = data.recommendations[plan.priority];
     return `
       <section class="generated-plan" aria-label="${escapeHtml(t('planTitle'))}">
-        <div class="plan-head"><div><p>${escapeHtml(t('planCreated'))}</p><h3>${escapeHtml(t('planTitle'))}</h3></div><span>NWO Veni · VI.Veni.211E.027</span></div>
+        <div class="plan-head"><div><p>${escapeHtml(t('planCreated'))}</p><h3>${escapeHtml(t('planTitle'))}</h3></div><span>${escapeHtml(t('fundingKicker'))}</span></div>
         <dl>
           <div><dt>${escapeHtml(t('planPriority'))}</dt><dd>${escapeHtml(l(rec.title))}</dd></div>
           <div><dt>${escapeHtml(t('planPeople'))}</dt><dd>${escapeHtml(plan.owner)}</dd></div>

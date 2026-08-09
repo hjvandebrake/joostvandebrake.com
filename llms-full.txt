@@ -95,8 +95,11 @@ Publications in management and applied psychology:
 ## Public resources
 
 - Resources page: https://joostvandebrake.com/#resources
-- More Than a Number: MTM Portfolio Navigator: https://joostvandebrake.com/mtm-portfolio-navigator/. An interactive, browser-only reflection tool that maps switching, role differences, fluidity, local know-how, and status transitions across simultaneous team memberships, then returns transparent, evidence-linked suggestions and a two-week action plan. Developed within the NWO-funded Veni research programme "The consequences of working in multiple teams at the same time" (VI.Veni.211E.027). NWO did not evaluate or endorse the tool.
-- Student handout: The Returning Specialist, an MTM status re-entry mini-case. Direct download: https://joostvandebrake.com/assets/downloads/mtm-status-reentry-mini-case.pdf. The case is a teaching adaptation of evidence from a manuscript under review, not an additional study.
+- Multiple Team Membership Resources hub: https://joostvandebrake.com/mtm-resources/. A bilingual page for practitioners and educators, supported by the Dutch Research Council (NWO).
+- More Than a Number: MTM Portfolio Navigator: https://joostvandebrake.com/mtm-portfolio-navigator/. An interactive, browser-only reflection tool that maps switching, role differences, fluidity, local know-how, and status transitions across simultaneous team memberships, then returns transparent, evidence-linked suggestions and a two-week action plan.
+- Learner case: Back from the Task Force. Direct download: https://joostvandebrake.com/assets/downloads/mtm-status-reentry-mini-case.pdf. Separate instructor guide: https://joostvandebrake.com/assets/downloads/mtm-status-reentry-instructor-guide.pdf. The case examines status differences and team re-entry using a fictional distribution-centre setting. It is a teaching adaptation of evidence from a manuscript under review, not an additional study.
+- Learner case: Four Teams, Two Very Different Weeks. Direct download: https://joostvandebrake.com/assets/downloads/mtm-four-teams-two-weeks-case.pdf. Separate instructor guide: https://joostvandebrake.com/assets/downloads/mtm-four-teams-two-weeks-instructor-guide.pdf. The case examines switching, time allocation, coreness, and familiarity using a fictional distribution-centre setting. It is based on the published Journal of Applied Psychology article "More Than Just a Number."
+- These two public cases complement a longer multiple team membership case used in Joost's Teamwork course.
 - Teamwork online practice exam for 2026–2027: https://joostvandebrake.com/teamwork-practice-exam/
 - PowerPoint deck: Zorgvisie 2026: Duurzame Inzetbaarheid. Direct download: https://joostvandebrake.com/assets/downloads/zorgvisie-2026-duurzame-inzetbaarheid.pptx
 - Practice memo: Praktijkmemo Duurzame Inzetbaarheid - Zorgvisie 2026. Direct download: https://joostvandebrake.com/assets/downloads/praktijkmemo-duurzame-inzetbaarheid-zorgvisie-2026.pdf
@@ -126,7 +129,7 @@ He is an Associate Professor and Research Director at the University of Groninge
 
 ### What is multiple team membership?
 
-Multiple team membership is the arrangement in which employees contribute to several project teams at the same time. It is the modern norm in knowledge-intensive work. Joost van de Brake's research shows that the effects depend on switching frequency, role differences, organisational tenure, and the social network surrounding the employee.
+Multiple team membership is the arrangement in which employees contribute to several teams during the same period. It is common in project work, healthcare, education, public services, logistics, and many other settings. Joost van de Brake's research shows that the effects depend on switching frequency, role differences, organisational tenure, and the social network surrounding the employee.
 
 ### Does Joost van de Brake work with companies?
 

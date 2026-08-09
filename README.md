@@ -19,10 +19,12 @@ Then open <http://127.0.0.1:8000/> in a browser.
 ## Structure
 
 - `index.html`, the main site (HTML, CSS, JS, data, and a pre-rendered home page).
+- `mtm-resources/`, the bilingual hub for the practitioner tool and public teaching cases.
 - `mtm-portfolio-navigator/`, the bilingual More Than a Number practitioner tool, with separate HTML, CSS, content, and application files.
 - `assets/downloads/`, downloadable slide decks and public materials linked from the resources page.
 - `portrait-staff.png`, hero portrait. `portrait.jpg` and `portrait-alt.jpg` are alternates kept for future use.
 - `favicon.svg`, `favicon-32.png`, `apple-touch-icon.png`, `android-chrome-192.png`, `android-chrome-512.png`, `site.webmanifest`, the favicon set.
+- `tools/build_mtm_resource_pdfs.py`, the source for the two learner cases and their separate instructor guides.
 - `robots.txt`, `sitemap.xml`, `llms.txt`, `llms-full.txt`, `AGENTS.md`, the discovery and agent-orientation files.
 
 ## Editorial conventions
