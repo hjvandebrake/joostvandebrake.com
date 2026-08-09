@@ -495,33 +495,33 @@ def status_case_story():
     story = []
     story += title_block(
         "Multiple team membership | Learner case",
-        "Back from the task force",
-        "How can a team leader use someone’s outside experience without creating a status contest?",
+        "Back in the regular team",
+        "How can a team leader use experience gained in another team?",
         "Learner case · 30 to 40 minutes",
         RED,
     )
     story.append(
         callout(
             "The decision",
-            "Sam has ten minutes before the weekly planning meeting. The aim is to use Maya’s experience while respecting the knowledge already present in Atlas.",
+            "Sam has ten minutes before the weekly meeting. Maya knows a new handover method. Ruben knows how Atlas works. Sam needs a first step that uses both.",
             "teal",
         )
     )
     for text in [
-        "Atlas is the afternoon operations team at a large distribution centre. Its eighteen members receive orders, prepare shipments, answer questions from drivers, and solve delays during a busy shift. Maya has worked in Atlas for four years. Her colleagues trust her, but she has no formal senior role. The team leader and two senior coordinators usually decide how the work is organised.",
-        "Six weeks ago, Maya was invited to join Helix, a temporary task force with employees from four locations. Helix had been asked to reduce late departures across the company. Senior managers followed the project closely because delays had become expensive and customers were complaining.",
-        "Maya’s knowledge of the daily operation proved useful. Other Helix members often asked for her view before making a decision. She led a small test of a new handover method and presented the results at a meeting attended by the operations director. Several parts of Helix’s final proposal came from her work. Within Helix, Maya had more influence than she normally has in Atlas.",
-        "Maya has now returned to her regular shift. Her job title, pay, and place in the Atlas team have not changed. At the start-of-shift meeting, team leader Sam welcomes her back and says, “It must have been exciting to work on such an important project.” Sam then gives Maya her usual tasks.",
+        "Atlas is the afternoon team at a large distribution centre. Its eighteen members prepare shipments, answer drivers’ questions, and solve delays. Maya has worked in Atlas for four years. Her colleagues trust her, but she has no senior role. Team leader Sam and two senior coordinators usually decide how the work is organised.",
+        "For six weeks, Maya also worked in Helix. This was a temporary improvement team with employees from four locations. Its job was to reduce late departures. Senior managers followed the work because the delays were expensive and customers were complaining.",
+        "Maya knew a lot about the daily operation. That knowledge became important in Helix. Colleagues often asked for her opinion. She tested a new handover method and presented the results to the operations director. In Helix, people listened to Maya more than they usually did in Atlas.",
+        "Maya has now returned to her normal work in Atlas. Her job has not changed. Sam welcomes her back and gives her the same duties as before.",
     ]:
         story.append(para(text))
 
     story.append(PageBreak())
     story.append(h2("The first week back"))
     for text in [
-        "During the next few shifts, Maya regularly mentions Helix. When Atlas has a problem, she explains how the task force handled something similar. Some colleagues want to hear more. Others appear irritated. One colleague says, “Helix could spend all day making plans. We have trucks waiting outside.”",
-        "Ruben, one of the senior coordinators, reacts most strongly. He designed Atlas’s current handover sheet and has used it for several years. Maya points out that late order changes are still being missed between shifts. She suggests trying the handover board that Helix tested. Ruben replies that the idea might work elsewhere but does not fit Atlas. The discussion ends without a decision.",
-        "The missed changes are a real problem. Earlier that week, the loading team prepared the wrong shipment because a late update had not reached them. Ruben knows the current system well, but he has not found a reliable solution. Maya has seen another method work, although she does not yet know whether it will suit the staffing and layout at Atlas.",
-        "Sam wants to make use of Maya’s experience while respecting Ruben’s knowledge of the local operation. Sam also wants to avoid turning the meeting into a debate about whether Maya has become more important than her colleagues.",
+        "During her first week back, Maya often mentions Helix. When Atlas has a problem, she explains how Helix handled something similar. Some colleagues are interested. Others become annoyed. One colleague says, “Helix had time to make plans. We have trucks waiting outside.”",
+        "Ruben, one of the senior coordinators, reacts most strongly. He designed the handover sheet that Atlas uses. Maya says that late order changes are still being missed. She suggests trying the handover board used in Helix. Ruben thinks it will not work in Atlas. The discussion ends without a decision.",
+        "The problem is real. Earlier that week, the loading team prepared the wrong shipment because it did not receive a late change. Ruben knows the Atlas process well. Maya has seen another method work, although she does not yet know whether it will fit Atlas.",
+        "Sam wants to use Maya’s new experience and Ruben’s local knowledge. He also wants them to work together rather than compete over whose opinion matters most.",
     ]:
         story.append(para(text))
 
@@ -529,10 +529,10 @@ def status_case_story():
     story.append(
         options_table(
             [
-                ("A", "Publicly praise Maya’s work on the important Helix task force and ask her to present everything she learned."),
-                ("B", "Put Maya in charge of replacing the current handover process with the Helix method."),
-                ("C", "Ask Maya and Ruben to choose one Helix idea, adapt it to Atlas, and test it together for one week."),
-                ("D", "Give Maya her normal work and stop discussing Helix so that the team can return to its usual routine."),
+                ("A", "Praise Maya in the meeting and ask her to present everything she learned in Helix."),
+                ("B", "Let Maya replace the Atlas handover method with the Helix method."),
+                ("C", "Ask Maya and Ruben to adapt one Helix idea and test it together for one week."),
+                ("D", "Return to the old routine and stop discussing Helix."),
             ],
             RED,
         )
@@ -541,29 +541,29 @@ def status_case_story():
     story.append(h2("Map the situation before choosing"))
     story.append(
         callout(
-            "Relative standing",
-            "Relative standing means how much weight a person’s views and contributions carry compared with those of other people in the same team. A person can have high standing in one team and ordinary standing in another.",
+            "Who gets listened to?",
+            "In every team, some people’s views carry more weight than others. Maya’s views carried more weight in Helix than they normally do in Atlas. What happens now that she is back?",
             "red",
         )
     )
     story += bullet_list(
         [
-            "Maya’s relative standing in Atlas and Helix.",
-            "How visible and important Helix is within the company.",
-            "What Maya brings back from Helix.",
-            "Which current problem and colleague could benefit from that experience.",
+            "Who usually gets listened to in Atlas.",
+            "How Maya’s role was different in Helix.",
+            "What useful idea Maya brings back.",
+            "Which Atlas problem could benefit from that idea.",
         ]
     )
+    story.append(PageBreak())
     story.append(h2("Discussion questions"))
     story += numbered_list(
         [
-            "How does Maya’s standing differ between Atlas and Helix?",
-            "Why might her experience in a visible task force affect what happens when she returns?",
-            "What explains Ruben’s reaction? Give at least two possible explanations.",
-            "Which option should Sam choose? Explain what it achieves and what risks remain.",
-            "What should Sam say to Maya and Ruben when giving them the assignment?",
-            "Design the one-week test. What should Maya provide, what should Ruben provide, and what result should they examine?",
-            "What information would you need before concluding that Maya’s different standing caused her behaviour?",
+            "Whose opinion usually matters most in Atlas? How was Maya’s role different in Helix?",
+            "Why might Ruben react badly to Maya’s suggestion?",
+            "Which option should Sam choose? Explain your choice.",
+            "What should Sam say to Maya and Ruben?",
+            "How should the one-week test work? What should Maya and Ruben each contribute?",
+            "What result should they measure at the end of the week?",
         ]
     )
     story.append(Spacer(1, 3 * mm))
@@ -583,30 +583,30 @@ def status_guide_story():
     story = []
     story += title_block(
         "Instructor guide | Suggested responses",
-        "Back from the task force",
-        "A guide to the case on multiple team membership, status differences, and returning to a team.",
+        "Back in the regular team",
+        "A guide to the case about returning to a team with useful experience from another team.",
         "Instructor guide",
         TEAL,
     )
     story.append(h2("Central idea"))
     for text in [
-        "The same person can have different standing in different teams. Maya has ordinary standing in Atlas but becomes an influential member of Helix. Returning to Atlas places her back among colleagues who do not automatically treat her contribution in the same way.",
-        "The leader can manage this transition through the work itself. Maya should receive an opportunity to use what she learned in a way that helps another Atlas member solve a real problem. This makes her contribution visible without requiring her to claim greater importance.",
+        "People may be listened to more in one team than in another. Maya became an important voice in Helix. Back in Atlas, she returns to her old role and works with colleagues who know the local process.",
+        "Sam can make the return easier by giving Maya and Ruben a small problem to solve together. Maya brings a new idea. Ruben brings detailed knowledge of Atlas. The team can then judge the result of their work.",
     ]:
         story.append(para(text))
     story.append(h2("Recommended answer"))
     story.append(
         callout(
             "Choose Option C",
-            "Ask Maya and Ruben to adapt one idea and test it together. This connects Maya’s outside experience to a problem Atlas already needs to solve. Ruben remains involved because he understands the local process. Their joint test gives the team something concrete to evaluate.",
+            "Ask Maya and Ruben to adapt one idea and test it together. Atlas already needs to solve the handover problem. Maya knows another method and Ruben knows the local process. Their joint test gives the team a clear result to judge.",
             "green",
         )
     )
     story.append(h3("Why the other choices are weaker"))
     for title, text in [
-        ("Option A", "Recognition may help Maya, but this choice places the prestige of Helix at the centre of the conversation. The team receives little evidence that Maya’s experience will improve its work."),
-        ("Option B", "Maya’s knowledge is used, but she receives sole ownership. Ruben may become defensive, and the team is encouraged to compare Maya’s standing with his."),
-        ("Option D", "The immediate disagreement is avoided, but useful experience is discarded and the difficult return remains unaddressed."),
+        ("Option A", "Maya receives recognition, but Atlas still cannot judge her idea."),
+        ("Option B", "Maya can use her idea, but Ruben’s local knowledge is left out."),
+        ("Option D", "Atlas avoids the disagreement but keeps its handover problem."),
     ]:
         story.append(para(f"<b>{escape(title)}.</b> {escape(text)}", raw=True))
 
@@ -615,28 +615,28 @@ def status_guide_story():
     story.append(
         callout(
             "A workable opening",
-            "“Maya, you saw a different handover method during Helix. Ruben, you know where our current process works and where it breaks down. I would like the two of you to choose one small change that could help us catch late order updates. Adapt it to this shift, test it for one week, and bring the results back together. Tell us what worked, what did not work, and whether we should continue.”",
+            "“Maya, you saw a different handover method in Helix. Ruben, you know our current process. Please choose one small change together that could help us catch late order updates. Adapt it to this shift and test it for one week. Then tell us what happened and whether we should continue.”",
             "teal",
         )
     )
     story.append(
         para(
-            "This wording gives each person a clear contribution. Maya supplies the outside idea. Ruben supplies local knowledge. The team judges the result instead of deciding whose status claim is stronger."
+            "This wording gives each person a clear contribution. Maya brings the new idea and Ruben brings local knowledge. The team judges their result."
         )
     )
     story.append(h2("Suggested responses"))
     answers = [
         (
-            "1. How does Maya’s standing differ between Atlas and Helix?",
-            "Maya has ordinary standing in Atlas. Her colleagues respect her, but senior members normally shape decisions. In Helix, her practical knowledge became central, senior people asked for her judgment, and her work entered the final proposal. Her relative standing was therefore higher in Helix than in Atlas.",
+            "1. Whose views carry more weight?",
+            "Maya is a respected team member in Atlas, but senior colleagues usually make the decisions. In Helix, people often asked for her opinion and used her work. Her views therefore carried more weight in Helix than in Atlas.",
         ),
         (
             "2. Why might Helix’s visibility matter?",
-            "Helix was followed by senior management and worked on a company-wide problem. That visibility makes Maya’s position in Helix harder for her and her colleagues to dismiss as an unimportant temporary assignment. The research found that differences in relative standing were more strongly associated with teammate-focused behaviour when the outside team had higher public standing.",
+            "Senior managers followed Helix because it worked on an important company problem. Maya and her colleagues may therefore give more weight to what she did there. The research also found a stronger pattern when the other team had higher public standing.",
         ),
         (
             "3. What could explain Ruben’s reaction?",
-            "Ruben may feel that Maya is questioning a process he designed. He may also believe that Helix lacked the practical constraints faced by Atlas. His reaction could reflect defensiveness, genuine technical disagreement, concern about disruption, or some combination. The case does not allow students to diagnose his motive.",
+            "Ruben may feel that Maya is criticising a process he designed. He may also have real doubts about whether the Helix method fits Atlas. Students do not have enough information to know his exact reason.",
         ),
     ]
     for question, answer in answers:
@@ -646,19 +646,15 @@ def status_guide_story():
     answers = [
         (
             "4. Why is Option C preferable?",
-            "It turns the status issue into a shared task. Maya can show the value of her outside experience by helping Ruben and Atlas. Ruben can make the idea workable in the local setting. A small test also limits the cost if the Helix method does not fit.",
+            "It gives Maya and Ruben a shared task. Maya can show whether her new idea helps Atlas. Ruben can make the idea fit the local work. A small test also limits the cost if the method does not work.",
         ),
         (
             "5. What should Sam say?",
-            "A good answer explains why Maya and Ruben are both needed, names the problem they will address, keeps the test small, and gives them shared responsibility for reporting the result. Sam should avoid telling the team that Maya now knows best because she worked with senior managers.",
+            "A good answer explains why Maya and Ruben are both needed. It names the problem, keeps the test small, and gives them shared responsibility for the result.",
         ),
         (
             "6. What should the test contain?",
-            "Maya explains the part of the Helix method intended to capture late changes. Ruben identifies where it conflicts with Atlas’s timing, staffing, or layout. Together they create a simple adapted handover board. One shift uses it for a week. They record how many late changes were received, how many were missed, and whether the board created extra work or confusion. Maya and Ruben present the result together.",
-        ),
-        (
-            "7. What evidence would be needed before claiming causality?",
-            "The case shows Maya returning with different standing and then behaving differently, but several other explanations remain possible. Her behaviour could reflect new knowledge, greater confidence, the selection process that placed her in Helix, or the specific problem Atlas faces. Stronger causal evidence would require repeated observations, direct measures of how Maya interprets her standing, a comparison group, or a design in which team assignments change for reasons unrelated to prior behaviour.",
+            "Maya explains how the Helix method records late changes. Ruben checks whether it fits the timing, staffing, and layout at Atlas. Together they make a simple handover board. One shift uses it for a week. They record how many late changes were received and missed. They also ask users whether the board caused extra work or confusion. Maya and Ruben present the result together.",
         ),
     ]
     for question, answer in answers:
@@ -1053,7 +1049,7 @@ def build_all():
             "mtm-status-reentry-mini-case.pdf",
             status_case_story(),
             "Status re-entry learner case",
-            "Back from the Task Force",
+            "Back in the Regular Team",
             "Multiple team membership, status differences, and team re-entry",
         )
     )
@@ -1062,7 +1058,7 @@ def build_all():
             "mtm-status-reentry-instructor-guide.pdf",
             status_guide_story(),
             "Status re-entry instructor guide",
-            "Instructor Guide: Back from the Task Force",
+            "Instructor Guide: Back in the Regular Team",
             "Suggested responses for the status re-entry teaching case",
         )
     )

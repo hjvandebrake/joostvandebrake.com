@@ -391,7 +391,7 @@ window.MTM_CONTENT = {
     {
       id: 'context',
       title: {en: 'What surrounds the work', nl: 'Wat er rond het werk gebeurt'},
-      intro: {en: 'The same portfolio can work differently as people gain experience or teams change. Priority conflicts and returns from outside assignments also matter.', nl: 'Hetzelfde teamportfolio kan anders werken naarmate mensen ervaring opdoen of teams veranderen. Conflicten over prioriteiten en terugkeer van externe opdrachten spelen ook mee.'},
+      intro: {en: 'The same portfolio can work differently as people gain experience or teams change. Priority conflicts and returns from other teams also matter.', nl: 'Hetzelfde teamportfolio kan anders werken naarmate mensen ervaring opdoen of teams veranderen. Conflicten over prioriteiten en terugkeer uit andere teams spelen ook mee.'},
       questions: [
         {
           id: 'fluidity',
@@ -673,54 +673,54 @@ window.MTM_CONTENT = {
       }
     },
     status: {
-      title: {en: 'Back from the task force', nl: 'Terug van de taskforce'},
+      title: {en: 'Back in the regular team', nl: 'Terug in het vaste team'},
       meta: {en: 'Interactive case | status and team re-entry | 10 to 15 minutes', nl: 'Interactieve casus | status en terugkeer naar een team | 10 tot 15 minuten'},
       paragraphs: {
         en: [
-          'Atlas is the afternoon operations team at a large distribution centre. Maya has worked there for four years. Her colleagues trust her, although the team leader and two senior coordinators usually decide how the work is organised. Maya then spends six weeks in Helix, a temporary task force trying to reduce late departures across four locations. Senior managers follow the project closely. Maya’s practical knowledge becomes important. She leads a test of a new handover method and presents the results to the operations director.',
-          'When Maya returns, her formal role in Atlas is unchanged. She often explains how Helix handled similar problems. Some colleagues are interested, while others are irritated. Ruben, a senior coordinator, reacts most strongly. He designed Atlas’s current handover sheet. Maya says that late order changes are still being missed and suggests trying the Helix method. Ruben thinks that the method will not fit Atlas. Earlier that week, the loading team prepared the wrong shipment because a late change had not reached them.',
-          'Sam, the team leader, has ten minutes before the weekly planning meeting. Maya brings useful outside experience, and Ruben understands the local operation. Sam needs a first step that uses both and gives Atlas a concrete result to judge.'
+          'Atlas is the afternoon team at a large distribution centre. Maya has worked there for four years. Her colleagues trust her, but Sam and two senior coordinators usually decide how the work is organised. For six weeks, Maya also worked in Helix, a temporary improvement team with employees from four locations. Helix tested ways to reduce late departures. Maya’s knowledge became important. She tested a new handover method and presented the results to the operations director.',
+          'Maya has now returned to her normal work in Atlas. She often explains how Helix solved similar problems. Some colleagues are interested. Others become annoyed. Ruben, a senior coordinator, reacts most strongly. He designed the handover sheet that Atlas uses. Maya says late order changes are still being missed and suggests trying the Helix method. Ruben thinks it will not work in Atlas. Earlier that week, the loading team prepared the wrong shipment because it did not receive a late change.',
+          'Sam has ten minutes before the weekly meeting. Maya knows a new method and Ruben knows how Atlas works. Sam needs a first step that uses both.'
         ],
         nl: [
-          'Atlas is het operationele middagteam van een groot distributiecentrum. Maya werkt er vier jaar. Haar collega’s vertrouwen haar, al bepalen de teamleider en twee senior coördinatoren meestal hoe het werk wordt georganiseerd. Daarna werkt Maya zes weken in Helix, een tijdelijke taskforce die te late vertrekken op vier locaties wil verminderen. Het senior management volgt het project nauwgezet. Maya’s praktijkkennis wordt belangrijk. Ze leidt een proef met een nieuwe overdrachtsmethode en presenteert de resultaten aan de operationeel directeur.',
-          'Wanneer Maya terugkeert, verandert haar formele rol in Atlas niet. Ze vertelt vaak hoe Helix vergelijkbare problemen aanpakte. Sommige collega’s zijn geïnteresseerd; anderen reageren geïrriteerd. Ruben, een senior coördinator, reageert het sterkst. Hij heeft het huidige overdrachtsformulier van Atlas ontworpen. Maya zegt dat late wijzigingen in orders nog steeds worden gemist en stelt voor de methode van Helix te proberen. Ruben denkt dat deze niet bij Atlas past. Eerder die week maakte het laadteam de verkeerde zending klaar doordat een late wijziging hen niet had bereikt.',
-          'Sam, de teamleider, heeft tien minuten voor het wekelijkse planningsoverleg. Maya brengt nuttige ervaring van buiten mee en Ruben kent de lokale operatie. Sam moet een eerste stap kiezen die beide benut en Atlas een concreet resultaat geeft om te beoordelen.'
+          'Atlas is het middagteam van een groot distributiecentrum. Maya werkt er al vier jaar. Haar collega’s vertrouwen haar, maar Sam en twee senior coördinatoren bepalen meestal hoe het werk wordt georganiseerd. Zes weken lang werkte Maya ook in Helix, een tijdelijk verbeterteam met medewerkers van vier locaties. Helix testte manieren om vertragingen te verminderen. Maya’s kennis werd belangrijk. Ze testte een nieuwe overdrachtsmethode en presenteerde de resultaten aan de operationeel directeur.',
+          'Maya is nu terug in haar gewone werk bij Atlas. Ze vertelt vaak hoe Helix vergelijkbare problemen oploste. Sommige collega’s zijn geïnteresseerd. Anderen raken geïrriteerd. Ruben, een senior coördinator, reageert het sterkst. Hij heeft het overdrachtsformulier van Atlas ontworpen. Maya zegt dat late wijzigingen nog steeds worden gemist en stelt voor de methode van Helix te proberen. Ruben denkt dat deze niet werkt bij Atlas. Eerder die week maakte het laadteam de verkeerde zending klaar omdat het een late wijziging niet had ontvangen.',
+          'Sam heeft tien minuten voor het wekelijkse overleg. Maya kent een nieuwe methode en Ruben weet hoe Atlas werkt. Sam heeft een eerste stap nodig die beide gebruikt.'
         ]
       },
       question: {en: 'What should Sam do first?', nl: 'Wat moet Sam als eerste doen?'},
       options: [
-        {id: 'praise', en: 'Praise Maya publicly and ask her to present everything she learned from Helix', nl: 'Maya publiek prijzen en haar vragen alles te presenteren wat ze bij Helix heeft geleerd'},
-        {id: 'solo', en: 'Put Maya in charge of replacing the Atlas handover process with the Helix method', nl: 'Maya verantwoordelijk maken voor het vervangen van de overdrachtsmethode van Atlas door die van Helix'},
-        {id: 'enable', en: 'Ask Maya and Ruben to adapt one Helix idea and test it together for one week', nl: 'Maya en Ruben vragen één idee van Helix aan te passen en dit samen een week te testen'},
-        {id: 'ignore', en: 'Return Maya to her usual work and stop discussing Helix', nl: 'Maya haar gewone werk laten hervatten en Helix niet meer bespreken'}
+        {id: 'praise', en: 'Praise Maya and ask her to present everything she learned in Helix', nl: 'Maya prijzen en haar vragen alles te presenteren wat ze in Helix heeft geleerd'},
+        {id: 'solo', en: 'Let Maya replace the Atlas handover method with the Helix method', nl: 'Maya de overdrachtsmethode van Atlas laten vervangen door die van Helix'},
+        {id: 'enable', en: 'Ask Maya and Ruben to adapt one Helix idea and test it together for one week', nl: 'Maya en Ruben vragen één idee van Helix aan te passen en het samen een week te testen'},
+        {id: 'ignore', en: 'Return to the old routine and stop discussing Helix', nl: 'Teruggaan naar de oude werkwijze en Helix niet meer bespreken'}
       ],
       correct: 'enable',
       feedback: {
         en: {
-          praise: 'This recognises Maya’s contribution. It also places the prestige of Helix at the centre of the meeting. Atlas still has little evidence of how her experience improves the work.',
-          solo: 'Maya would use her experience alone. Ruben’s local knowledge would be sidelined, and the change could become a contest over whose judgment counts.',
-          enable: 'Maya supplies outside experience, and Ruben supplies local knowledge. Their shared test gives Atlas a concrete result to judge.',
-          ignore: 'The team loses a chance to solve a real handover problem. The tension around Maya’s return is also left to continue.'
+          praise: 'Maya receives recognition, but Atlas still does not know whether her idea will improve the work.',
+          solo: 'Maya can use her new knowledge, but Ruben’s local knowledge is left out and the change may create more resistance.',
+          enable: 'Maya brings the new idea and Ruben brings local knowledge. Their shared test gives Atlas a clear result to judge.',
+          ignore: 'The disagreement stops for now, but Atlas loses a chance to solve its handover problem.'
         },
         nl: {
-          praise: 'Hiermee erkent Sam Maya’s bijdrage. Tegelijk komt het prestige van Helix centraal te staan. Atlas ziet nog weinig bewijs van hoe haar ervaring het werk verbetert.',
-          solo: 'Maya gebruikt haar ervaring dan alleen. Rubens lokale kennis krijgt geen plaats, en de verandering kan een strijd worden over wiens oordeel telt.',
-          enable: 'Maya brengt ervaring van buiten mee en Ruben kent de lokale werkwijze. Hun gezamenlijke proef geeft Atlas een concreet resultaat om te beoordelen.',
-          ignore: 'Het team mist een kans om een echt probleem in de overdracht op te lossen. De spanning rond Maya’s terugkeer blijft ook bestaan.'
+          praise: 'Maya krijgt erkenning, maar Atlas weet nog steeds niet of haar idee het werk verbetert.',
+          solo: 'Maya kan haar nieuwe kennis gebruiken, maar Rubens lokale kennis ontbreekt en de verandering kan meer weerstand oproepen.',
+          enable: 'Maya brengt het nieuwe idee en Ruben brengt lokale kennis. Hun gezamenlijke proef geeft Atlas een duidelijk resultaat om te beoordelen.',
+          ignore: 'Het meningsverschil stopt voorlopig, maar Atlas mist een kans om het overdrachtsprobleem op te lossen.'
         }
       },
       questions: {
         en: [
-          'Whose views usually carry most weight in Atlas? How was Maya’s position different in Helix?',
-          'Why might the visibility of Helix affect Maya’s return?',
+          'Whose opinion usually matters most in Atlas? How was Maya’s role different in Helix?',
+          'Why might Ruben react badly to Maya’s suggestion?',
           'What should Maya and Ruben each contribute to the one-week test?',
-          'What evidence would you need before saying that the status difference caused Maya’s behaviour?'
+          'What result should they measure at the end of the week?'
         ],
         nl: [
-          'Wiens mening telt normaal het zwaarst in Atlas? Hoe was Maya’s positie in Helix anders?',
-          'Waarom kan de zichtbaarheid van Helix invloed hebben op Maya’s terugkeer?',
+          'Wiens mening telt normaal het zwaarst in Atlas? Hoe was Maya’s rol anders in Helix?',
+          'Waarom kan Ruben slecht reageren op Maya’s voorstel?',
           'Wat moeten Maya en Ruben ieder bijdragen aan de proef van één week?',
-          'Welk bewijs heeft u nodig voordat u zegt dat het statusverschil Maya’s gedrag veroorzaakte?'
+          'Welk resultaat moeten zij aan het einde van de week meten?'
         ]
       }
     }
