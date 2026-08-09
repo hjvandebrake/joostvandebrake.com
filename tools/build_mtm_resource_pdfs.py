@@ -570,8 +570,8 @@ def status_case_story():
     story.append(
         research_note(
             "This fictional case draws on an observational study of 692 returns by professional football players. Players created more scoring opportunities for club teammates when their relative standing in the club and national teams differed more. The association was stronger when the national team had higher public standing. The same pattern did not appear in the players’ own shots or their total recorded activity. These findings do not show that status differences caused the behaviour. The Atlas situation is a teaching adaptation, not an additional study.",
-            "Van de Brake, “Returning with a Different Status Position: Status Inconsistency in Multiple Team Membership.” Manuscript under review at Organization Science.",
-            "https://osf.io/esg7p/?view_only=7e898bf9fec24336b081e5c1e4b5ac10",
+            "Current research by Joost van de Brake on status differences across team memberships.",
+            "https://joostvandebrake.com/#research",
         )
     )
     story.append(Spacer(1, 4 * mm))
@@ -702,9 +702,9 @@ def status_guide_story():
     )
     story.append(
         research_note(
-            "Use the public research package for a fuller methods description and the reported analyses.",
-            "Van de Brake, “Returning with a Different Status Position: Status Inconsistency in Multiple Team Membership.” Manuscript under review at Organization Science.",
-            "https://osf.io/esg7p/?view_only=7e898bf9fec24336b081e5c1e4b5ac10",
+            "Further information about Joost van de Brake’s research on multiple team membership is available on his research page.",
+            "Current research by Joost van de Brake on status differences across team memberships.",
+            "https://joostvandebrake.com/#research",
         )
     )
     story.append(Spacer(1, 4 * mm))

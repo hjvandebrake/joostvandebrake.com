@@ -1084,24 +1084,6 @@ const pages = {
     <section class="sec">
       <div class="wrap">
         <div class="block">
-          <h2 class="block-h">${T('Use the MTM resources', 'Gebruik het MTM-materiaal')}</h2>
-          <div class="card resource-card featured">
-            <span class="card-tag teal">${T('Tool and cases', 'Tool en cases')}</span>
-            <h3>${T('Multiple Team Membership Resources', 'Materiaal over werken in meerdere teams')}</h3>
-            <p>${T(
-              'Use the MTM Portfolio Navigator to examine a real working week. The page also offers two classroom cases with separate instructor guides and plain-language links to the research.',
-              'Gebruik de MTM Portfolio Navigator om een echte werkweek te bekijken. De pagina biedt ook twee onderwijscases met aparte docentenhandleidingen en duidelijke links naar het onderzoek.'
-            )}</p>
-            <p>${T(
-              'Supported by the Dutch Research Council (NWO).',
-              'Ondersteund door de Nederlandse Organisatie voor Wetenschappelijk Onderzoek (NWO).'
-            )}</p>
-            <p class="meta"><span>${T('TOOL AND CASES', 'TOOL EN CASES')}</span><span>${T('SUPPORTED BY NWO', 'ONDERSTEUND DOOR NWO')}</span></p>
-            <a class="btn btn-red" href="${lang === 'nl' ? 'mtm-resources/?lang=nl' : 'mtm-resources/'}">${T('Open the MTM resources', 'Open het MTM-materiaal')}</a>
-          </div>
-        </div>
-
-        <div class="block">
           <h2 class="block-h">${T('How I add value', 'Wat ik te bieden heb')}</h2>
           <div class="off-grid">
             ${OFFERINGS.map(o=>`<div class="off"><h3>${L(o,'h')}</h3><p>${L(o,'body')}</p></div>`).join('')}
@@ -1164,8 +1146,8 @@ const pages = {
   resources(){
     document.getElementById('pg-resources').innerHTML = `
     <div class="pg-hd"><div class="wrap"><p class="eye">${T('Resources', 'Materiaal')}</p><h1>${T('Tools and materials', 'Tools en materiaal')}</h1><p>${T(
-      'Use an interactive research tool, or download selected materials from teaching sessions, talks, and applied work.',
-      'Gebruik een interactieve onderzoekstool of download geselecteerd materiaal van onderwijs, lezingen en toegepast werk.'
+      'Find practical tools and teaching materials based on my research. Employees, team leaders, HR professionals, and project managers can use the tools to examine how work is organised across teams. Educators can use the cases and instructor guides in class. This page also includes selected slides and practice notes from talks and applied projects.',
+      'Hier vindt u praktische tools en onderwijsmateriaal op basis van mijn onderzoek. Medewerkers, teamleiders, HR-professionals en projectmanagers kunnen de tools gebruiken om te bekijken hoe werk over teams is georganiseerd. Docenten kunnen de cases en handleidingen in hun onderwijs gebruiken. De pagina bevat ook geselecteerde slides en praktijknotities uit lezingen en toegepaste projecten.'
     )}</p></div></div>
 
     <section class="sec">
@@ -1174,14 +1156,18 @@ const pages = {
           <h2 class="block-h">${T('Available resources', 'Beschikbaar materiaal')}</h2>
           <div class="resource-list">
             <div class="card resource-card featured">
-              <span class="card-tag teal">${T('Practitioner and educator hub', 'Voor praktijk en onderwijs')}</span>
+              <span class="card-tag teal">${T('Interactive tool and teaching cases', 'Interactieve tool en onderwijscases')}</span>
               <h3>${T('Multiple Team Membership Resources', 'Materiaal over werken in meerdere teams')}</h3>
               <p>${T(
-                'Open the Portfolio Navigator or download two longer classroom cases. Each case includes a separate instructor guide and a link to the research behind it.',
-                'Open de Portfolio Navigator of download twee langere onderwijscases. Elke case heeft een aparte docentenhandleiding en een link naar het achterliggende onderzoek.'
+                'This collection is for employees who work across several teams, the people who coordinate their work, HR professionals, and educators who teach teamwork.',
+                'Deze verzameling is bedoeld voor medewerkers die in meerdere teams werken, de mensen die hun werk coördineren, HR-professionals en docenten die onderwijs geven over teamwork.'
               )}</p>
-              <p class="meta"><span>${T('TOOL AND CASES', 'TOOL EN CASES')}</span><span>${T('SUPPORTED BY NWO', 'ONDERSTEUND DOOR NWO')}</span></p>
-              <a class="btn btn-red" href="${lang === 'nl' ? 'mtm-resources/?lang=nl' : 'mtm-resources/'}">${T('Open the MTM resource page', 'Open de MTM-pagina')}</a>
+              <p>${T(
+                'The MTM Portfolio Navigator helps users map how one working week is divided across teams and choose a small change to test. One classroom case compares two employees who belong to the same number of teams but experience very different workweeks. The other asks how a team leader should use someone’s outside experience after that person returns to the regular team. Both cases include separate instructor guides.',
+                'De MTM Portfolio Navigator helpt gebruikers in kaart te brengen hoe één werkweek over teams is verdeeld en een kleine verandering te kiezen om uit te proberen. De ene onderwijscase vergelijkt twee medewerkers die in evenveel teams werken maar heel verschillende werkweken ervaren. De andere vraagt hoe een teamleider iemands externe ervaring kan benutten nadat die persoon terugkeert naar het vaste team. Beide cases hebben een aparte docentenhandleiding.'
+              )}</p>
+              <p class="meta"><span>${T('INTERACTIVE TOOL', 'INTERACTIEVE TOOL')}</span><span>${T('TWO CASES', 'TWEE CASES')}</span><span>${T('INSTRUCTOR GUIDES', 'DOCENTENHANDLEIDINGEN')}</span><span>${T('SUPPORTED BY NWO', 'ONDERSTEUND DOOR NWO')}</span></p>
+              <a class="btn btn-red" href="${lang === 'nl' ? 'mtm-resources/?lang=nl' : 'mtm-resources/'}">${T('Explore the MTM tools and cases', 'Bekijk de MTM-tool en cases')}</a>
             </div>
             <div class="card resource-card">
               <span class="card-tag">PowerPoint</span>

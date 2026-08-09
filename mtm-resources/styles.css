@@ -277,10 +277,18 @@ p:last-child {
 
 .hero-lead {
   max-width: 680px;
-  margin-bottom: 30px;
+  margin-bottom: 14px;
   color: var(--ink-600);
   font-size: clamp(1.03rem, 1.7vw, 1.23rem);
   font-weight: 300;
+  line-height: 1.72;
+}
+
+.hero-context {
+  max-width: 680px;
+  margin-bottom: 30px;
+  color: var(--ink-600);
+  font-size: 0.98rem;
   line-height: 1.72;
 }
 

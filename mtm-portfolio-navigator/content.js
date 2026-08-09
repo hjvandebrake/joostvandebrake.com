@@ -575,7 +575,7 @@ window.MTM_CONTENT = {
       id: 'ppsychCurrent',
       status: 'rr',
       title: {en: 'Helpful and difficult experiences across teams', nl: 'Behulpzame en moeilijke ervaringen tussen teams'},
-      citation: 'Van de Brake, Mistry, & Rapp, current Personnel Psychology R&R',
+      citation: 'Van de Brake, Mistry, & Rapp, current scale-development research',
       finding: {en: 'Current scale research separates helpful and difficult experiences across teams. Helpful experiences can support development and make work in another team easier. Difficult experiences arise when team demands clash. Both can occur at once.', nl: 'Lopend schaalonderzoek onderscheidt behulpzame en moeilijke ervaringen tussen teams. Behulpzame ervaringen kunnen ontwikkeling ondersteunen en werk in een ander team makkelijker maken. Moeilijke ervaringen ontstaan wanneer teameisen botsen. Beide kunnen tegelijk voorkomen.'},
       url: '../#research'
     },
@@ -591,9 +591,9 @@ window.MTM_CONTENT = {
       id: 'statusCurrent',
       status: 'review',
       title: {en: 'Status differences after returning to a team', nl: 'Statusverschillen na terugkeer in een team'},
-      citation: 'Van de Brake, current manuscript under review at Organization Science',
+      citation: 'Current research by Joost van de Brake on status differences across team memberships',
       finding: {en: 'Across 692 returns in professional football, larger status differences were linked with more chances created for teammates, especially after returning from a prominent team. The study used public market values and followed patterns that already existed. The workplace case applies this finding to a different setting.', nl: 'Bij 692 terugkeermomenten in het betaald voetbal hingen grotere statusverschillen samen met meer gecreëerde kansen voor teamgenoten, vooral na terugkeer uit een prominent team. Het onderzoek gebruikte openbare marktwaarden en volgde bestaande patronen. De werkplekcasus past deze bevinding toe op een andere omgeving.'},
-      url: 'https://osf.io/esg7p/?view_only=7e898bf9fec24336b081e5c1e4b5ac10'
+      url: '../#research'
     }
   ],
 
