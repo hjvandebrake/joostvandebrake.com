@@ -17,6 +17,15 @@
   margin-inline: auto;
 }
 
+/* Research, Teaching, Practice, Resources, and Contact are reading pages, not
+   landing pages. Their frame follows the text: a 76-character column stranded
+   in a 1120px container is what makes those pages look narrow, and the fix is
+   the container, not longer lines. Cards get wider for the same reason, two
+   across instead of three. The home page keeps the full width for its grids. */
+body:not([data-page="home"]) .wrap {
+  width: min(var(--content-read), calc(100% - (2 * var(--page-pad))));
+}
+
 .sec {
   padding: var(--sp-section) var(--page-pad);
   background: var(--white);
@@ -218,7 +227,9 @@
   border: none;
   color: var(--ink-600);
   font-family: var(--sans);
-  font-size: var(--t-sm);
+  /* pinned rather than --t-sm: five labels plus the name and the language
+     switch have to fit the bar, and the Dutch labels are the long ones */
+  font-size: var(--t-xs);
   font-weight: var(--w-regular);
   white-space: nowrap;
   text-decoration: none;
@@ -527,11 +538,11 @@
   gap: 14px;
 }
 
-.home-offers  { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
-.featured-pubs{ grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
-.card-grid    { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
-.proj-grid    { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
-.off-grid     { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+.home-offers  { grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr)); }
+.featured-pubs{ grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); }
+.card-grid    { grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); }
+.proj-grid    { grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr)); }
+.off-grid     { grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); }
 
 /* Featured publications */
 .fp {
@@ -651,7 +662,7 @@
 
 .aud-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
   gap: 14px;
   margin-top: var(--sp-7);
 }
@@ -714,7 +725,7 @@
 
 .facts-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
   gap: 14px;
 }
 
@@ -766,7 +777,10 @@
   line-height: var(--lh-tight);
 }
 
-.pg-hd .wrap p {
+/* :not(.eye) matters. This rule is two classes deep, so without it the
+   eyebrow above the page title lost its size, weight, and red to the
+   standfirst styling and rendered as plain grey body copy. */
+.pg-hd .wrap p:not(.eye) {
   max-width: var(--measure);
   color: var(--ink-600);
   font-size: var(--t-md);
@@ -795,7 +809,10 @@
   font-weight: var(--w-bold);
 }
 
-.block p {
+/* Direct children only. As `.block p` this rule reached down into the
+   publication list, the award list, and the cards, and overrode every
+   .pub-auth, .pub-venue, .li-meta, and .li-body underneath it. */
+.block > p {
   max-width: var(--measure);
   margin-bottom: var(--sp-3);
   color: var(--ink-700);
@@ -803,7 +820,7 @@
   line-height: var(--lh-body);
 }
 
-.block p:last-child {
+.block > p:last-child {
   margin-bottom: 0;
 }
 
@@ -953,11 +970,11 @@
 .resource-list {
   display: grid;
   gap: 14px;
-  max-width: 720px;
+  max-width: var(--content-read);
 }
 
 .resource-card {
-  max-width: 720px;
+  max-width: var(--content-read);
 }
 
 .resource-card.featured {
@@ -1056,6 +1073,14 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--sp-7);
+}
+
+/* Side by side at the reading width, the detail grid fell to 189px a column,
+   which is not enough for an address or an email. The invitation sits above
+   the details instead, and the details keep two comfortable columns. */
+body[data-page="contact"] .ct-cols {
+  grid-template-columns: 1fr;
+  gap: var(--sp-6);
 }
 
 .ct-desc {

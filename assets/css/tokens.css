@@ -69,9 +69,14 @@
 
   /* ---------- Type scale (8 steps) ------------------------------------- */
   /* Root stays at the visitor's own browser setting; everything is rem.   */
-  --t-2xs:  0.72rem;   /* uppercase eyebrows and labels only               */
-  --t-xs:   0.8rem;    /* meta lines, citations, file sizes                */
-  --t-sm:   0.9rem;    /* card body, secondary copy                        */
+  /* These are calibrated against a 16px root. The homepage used to set
+     html { font-size: 18px }, so every rem value below it rendered 12.5%
+     larger than the number suggests. Dropping to the reader's own root
+     without adjusting the scale shrank all the secondary copy; these steps
+     put card text, meta lines, and labels back where they were.            */
+  --t-2xs:  0.78rem;   /* uppercase eyebrows and labels only               */
+  --t-xs:   0.875rem;  /* meta lines, citations, file sizes                */
+  --t-sm:   1rem;      /* card body, secondary copy                        */
   --t-base: 1.0625rem; /* body copy (17px at default settings)             */
   --t-md:   1.2rem;    /* lead paragraphs                                  */
   --t-lg:   1.45rem;   /* h3, card titles                                  */
@@ -110,8 +115,9 @@
 
   /* ---------- Layout ---------------------------------------------------- */
   --page-pad: clamp(20px, 4.5vw, 56px);
-  --content:  1120px;
-  --measure:  68ch;    /* maximum comfortable line length for body copy    */
+  --content:  1120px;   /* landing pages and tools, where grids run wide    */
+  --content-read: 860px;/* reading pages, where the frame follows the text  */
+  --measure:  76ch;    /* maximum comfortable line length for body copy    */
   --header-h: 64px;
 
   /* ---------- Geometry -------------------------------------------------- */
