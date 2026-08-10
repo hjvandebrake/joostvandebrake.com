@@ -53,6 +53,7 @@ window.MTM_RESOURCE_COPY = {
     definitionTitle: "Kijk hoe de teams samenhangen",
     definitionOne: "Multiple team membership betekent dat iemand in dezelfde periode in twee of meer teams werkt. Dit komt voor in de zorg, publieke dienstverlening, logistiek, productie, onderwijs, projectwerk, en veel andere omgevingen.",
     definitionTwo: "De dagelijkse ervaring hangt af van de inrichting van die lidmaatschappen. De ene persoon heeft een duidelijk basisteam en lange blokken met geconcentreerd werk. De andere wisselt de hele dag tussen teams. De Navigator helpt beide mensen hun situatie te beschrijven en een werkbare verandering te kiezen.",
+    figureAlt: "Iemand met een laptop onder de arm loopt van een overleg met drie collega's naar een overleg met drie anderen, over een pad dat de twee teams verbindt.",
     educatorEye: "Voor docenten",
     educatorTitle: "Twee direct inzetbare cases over werken in meerdere teams",
     educatorIntro: "Elke case bevat een studentenversie en een aparte docentenhandleiding. De verhalen spelen in herkenbare werksituaties en leggen het onderzoek in eenvoudige taal uit.",

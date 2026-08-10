@@ -484,6 +484,19 @@ p:last-child {
   line-height: 1.76;
 }
 
+/* The illustration sits under the sentence it illustrates. Its paper is the
+   same warm off-white as the band, so it needs no frame. */
+.definition-figure {
+  margin: 26px 0 0;
+}
+
+.definition-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+}
+
 .resource-section {
   background: var(--white);
 }

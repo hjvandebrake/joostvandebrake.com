@@ -5,6 +5,7 @@
   const buttons = Array.from(document.querySelectorAll("[data-lang]"));
   const copyNodes = Array.from(document.querySelectorAll("[data-copy]"));
   const ariaNodes = Array.from(document.querySelectorAll("[data-aria-copy]"));
+  const altNodes = Array.from(document.querySelectorAll("[data-alt-copy]"));
   const internalLinks = Array.from(document.querySelectorAll(".lang-link"));
 
   copyNodes.forEach((node) => {
@@ -12,6 +13,9 @@
   });
   ariaNodes.forEach((node) => {
     node.dataset.enAria = node.getAttribute("aria-label") || "";
+  });
+  altNodes.forEach((node) => {
+    node.dataset.enAlt = node.getAttribute("alt") || "";
   });
 
   function languageFromUrl() {
@@ -38,6 +42,15 @@
         node.setAttribute("aria-label", node.dataset.enAria);
       } else if (Object.prototype.hasOwnProperty.call(strings, key)) {
         node.setAttribute("aria-label", strings[key]);
+      }
+    });
+
+    altNodes.forEach((node) => {
+      const key = node.dataset.altCopy;
+      if (lang === "en") {
+        node.setAttribute("alt", node.dataset.enAlt);
+      } else if (Object.prototype.hasOwnProperty.call(strings, key)) {
+        node.setAttribute("alt", strings[key]);
       }
     });
 
