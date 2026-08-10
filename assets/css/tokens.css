@@ -1,0 +1,142 @@
+/* ==========================================================================
+   joostvandebrake.com — design tokens
+   Single source of truth for colour, type, spacing, and geometry.
+   Load this FIRST on every page, before base.css and before any page stylesheet.
+
+   Palette is the warm set already used on /mtm-resources/ and
+   /mtm-portfolio-navigator/. The homepage OKLCH values have been retired:
+   two of them (--teal, --red-dk) fell outside the sRGB gamut and rendered
+   differently on wide-gamut displays.
+   ========================================================================== */
+
+:root {
+  /* ---------- Brand ---------------------------------------------------- */
+  --red:        #963f2d;   /* primary accent, buttons, eyebrows            */
+  --red-dark:   #753022;   /* hover / pressed                              */
+  --red-soft:   #f6e9e4;   /* tint background                              */
+
+  --teal:       #276c6c;   /* secondary accent                             */
+  --teal-dark:  #1d5051;   /* dark teal band, hover                        */
+  --teal-soft:  #e4f0ed;   /* tint background                              */
+
+  /* ---------- Publication-status accents ------------------------------- */
+  /* Used only by the research-status badge. Do not reuse decoratively.    */
+  --green:      #2e6a4c;
+  --green-soft: #e7f1eb;
+  --gold:       #9a6b22;
+  --gold-soft:  #f7f0df;
+  --gold-ink:   #725019;   /* text on --gold-soft                          */
+
+  /* ---------- Neutrals (one warm ramp) --------------------------------- */
+  --ink-950:    #181a1f;   /* dark bands, footer                           */
+  --ink-900:    #22242a;   /* headings                                     */
+  --ink-800:    #30333a;
+  --ink-700:    #444851;   /* body copy                                    */
+  --ink-600:    #5b606a;   /* LIGHTEST COLOUR PERMITTED FOR TEXT           */
+  --ink-500:    #717680;   /* control borders; text only on pure white     */
+  --ink-300:    #bfc1c5;   /* decorative hairlines only, never a control   */
+  --ink-200:    #d9d9d7;   /* hairlines                                    */
+  --ink-150:    #e7e5e1;
+  --ink-100:    #f1efeb;   /* tint fills                                   */
+  --warm-50:    #f8f7f4;   /* page background                              */
+  --white:      #ffffff;
+
+  /* --ink-400 has been removed on purpose. It measured 3.01:1 on white and
+     2.97:1 on the old homepage background, which fails WCAG AA for text.
+
+     Measured ratios for the ones that remain:
+       ink-600 on white     6.31    ink-600 on warm-50   5.89   -> safe anywhere
+       ink-500 on white     4.56    ink-500 on warm-50   4.26   -> white only
+       ink-300 on white     1.80                               -> never a control
+
+     Anything that a visitor has to see in order to operate the interface,
+     including button and input borders, needs 3:1 against its background
+     (WCAG 1.4.11). That is why the ghost button and the language switch use
+     --ink-500 for their border and not --ink-300. */
+
+  /* ---------- Reversed-out text on dark bands -------------------------- */
+  --on-dark:        rgba(255, 255, 255, 0.86);
+  --on-dark-strong: #ffffff;
+  --on-dark-quiet:  rgba(255, 255, 255, 0.70);  /* never below 0.70        */
+  --on-dark-rule:   rgba(255, 255, 255, 0.16);
+  --on-dark-accent: #dfa99b;                    /* eyebrows on --ink-950   */
+  --on-teal-accent: #c5ded9;                    /* eyebrows on --teal-dark */
+
+  /* ---------- Type families -------------------------------------------- */
+  --serif: "Libre Baskerville", Georgia, serif;
+  --sans:  "Source Sans 3", system-ui, -apple-system, BlinkMacSystemFont,
+           "Segoe UI", sans-serif;
+
+  /* ---------- Type scale (8 steps) ------------------------------------- */
+  /* Root stays at the visitor's own browser setting; everything is rem.   */
+  --t-2xs:  0.72rem;   /* uppercase eyebrows and labels only               */
+  --t-xs:   0.8rem;    /* meta lines, citations, file sizes                */
+  --t-sm:   0.9rem;    /* card body, secondary copy                        */
+  --t-base: 1.0625rem; /* body copy (17px at default settings)             */
+  --t-md:   1.2rem;    /* lead paragraphs                                  */
+  --t-lg:   1.45rem;   /* h3, card titles                                  */
+  --t-xl:   clamp(1.7rem, 3.2vw, 2.4rem);   /* h2                          */
+  --t-2xl:  clamp(1.9rem, 3.8vw, 2.7rem);   /* page h1                     */
+  --t-display: clamp(2.3rem, 5vw, 3.9rem);  /* hero h1 only, all pages     */
+
+  /* ---------- Weights --------------------------------------------------- */
+  /* 300 is deliberately absent. Light weight on long body copy was the
+     main readability complaint; 400 is the floor for running text.        */
+  --w-regular: 400;
+  --w-medium:  600;
+  --w-bold:    700;
+
+  /* ---------- Leading (4 steps) ---------------------------------------- */
+  --lh-tight: 1.15;   /* display and h1                                    */
+  --lh-snug:  1.35;   /* h2, h3, card titles                               */
+  --lh-body:  1.65;   /* running text                                      */
+  --lh-loose: 1.75;   /* lead paragraphs and long definitions              */
+
+  /* ---------- Tracking -------------------------------------------------- */
+  --track-display: -0.03em;
+  --track-normal:   0;
+  --track-label:    0.09em;   /* the single uppercase-label value          */
+
+  /* ---------- Spacing (4px ramp) --------------------------------------- */
+  --sp-1:  4px;
+  --sp-2:  8px;
+  --sp-3:  12px;
+  --sp-4:  16px;
+  --sp-5:  24px;
+  --sp-6:  32px;
+  --sp-7:  48px;
+  --sp-8:  64px;
+  --sp-section: clamp(56px, 8vw, 96px);
+
+  /* ---------- Layout ---------------------------------------------------- */
+  --page-pad: clamp(20px, 4.5vw, 56px);
+  --content:  1120px;
+  --measure:  68ch;    /* maximum comfortable line length for body copy    */
+  --header-h: 64px;
+
+  /* ---------- Geometry -------------------------------------------------- */
+  --radius-sm:   3px;
+  --radius-md:   8px;
+  --radius-pill: 999px;
+
+  --shadow-sm: 0 8px 24px rgba(28, 27, 25, 0.08);
+  --shadow-md: 0 22px 60px rgba(28, 27, 25, 0.13);
+
+  /* ---------- Motion ---------------------------------------------------- */
+  --ease:      cubic-bezier(0.2, 0, 0.2, 1);
+  --dur-fast:  120ms;
+  --dur-base:  200ms;
+}
+
+/* --------------------------------------------------------------------------
+   Shared breakpoints. Only these three are used across the site.
+   Replaces the seven that were in use (390 / 480 / 620 / 640 / 680 / 800 /
+   820 / 900 / 980).
+
+     --bp-sm:  640px   phone to large phone
+     --bp-md:  900px   tablet, and the point where nav collapses
+     --bp-lg: 1180px   container reaches its --content maximum
+
+   Custom properties cannot be used inside media queries, so these live here
+   as documentation. Write the numbers literally and use only these three.
+   -------------------------------------------------------------------------- */

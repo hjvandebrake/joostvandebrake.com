@@ -9,6 +9,7 @@ A static site for Joost van de Brake, Associate Professor and Research Director 
 - Live URL: https://joostvandebrake.com/
 - Source: `index.html` plus `mtm-resources/`, `mtm-portfolio-navigator/`, `portrait-staff.png`, `assets/downloads/`, `llms.txt`, `llms-full.txt`, `robots.txt`, and `sitemap.xml`.
 - No build step. The HTML is the source.
+- Styling is shared. `assets/css/tokens.css` holds the whole palette, type scale, spacing, and geometry, and every page loads it first. `assets/css/base.css` follows with the accessibility floor (focus rings, skip link, reduced motion, print). Page stylesheets load last: `assets/css/home.css` for the main site, `styles.css` inside each tool directory. Change a colour or a type size in `tokens.css`, never in a page stylesheet, and never reintroduce a per-page `:root` palette.
 - The main-site routing is hash-based and rendered client-side. A pre-rendered home page sits in the initial HTML for crawlers that do not execute JavaScript. Standalone tools use normal directory routes.
 
 ## Source of truth for content

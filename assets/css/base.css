@@ -1,0 +1,238 @@
+/* ==========================================================================
+   joostvandebrake.com — base layer
+   Load AFTER tokens.css and BEFORE any page stylesheet.
+
+   Everything here was previously present on the two MTM pages and missing
+   from the homepage: visible keyboard focus, a skip link, reduced-motion
+   handling, print rules, and a link treatment that does not rely on colour
+   alone.
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  /* 100%, not a px value: a visitor who has raised their default text size
+     keeps that setting. The old homepage rule (font-size: 18px) overrode it. */
+  font-size: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 26px);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--warm-50);
+  color: var(--ink-900);
+  font-family: var(--sans);
+  font-size: var(--t-base);
+  font-weight: var(--w-regular);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, p, dl, dd, ul, ol, figure {
+  margin-top: 0;
+}
+
+h1, h2, h3, h4 {
+  color: var(--ink-900);
+  font-family: var(--serif);
+  font-weight: var(--w-bold);
+  text-wrap: balance;
+}
+
+h1 {
+  margin-bottom: var(--sp-5);
+  font-size: var(--t-2xl);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--track-display);
+}
+
+h2 {
+  margin-bottom: var(--sp-3);
+  font-size: var(--t-xl);
+  line-height: var(--lh-snug);
+  letter-spacing: -0.02em;
+}
+
+h3 {
+  margin-bottom: var(--sp-2);
+  font-size: var(--t-lg);
+  line-height: var(--lh-snug);
+}
+
+h4 {
+  margin-bottom: var(--sp-2);
+  font-size: var(--t-md);
+  line-height: var(--lh-snug);
+}
+
+/* Running text gets a line-length cap. Without one, body copy on the
+   homepage ran the full 1100px container, roughly 110 characters a line. */
+p {
+  max-width: var(--measure);
+  margin-bottom: var(--sp-3);
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Links
+   Underlined by default. Colour alone is not a sufficient signal, and the
+   homepage previously stripped underlines site-wide with a { text-decoration:
+   none }.
+   -------------------------------------------------------------------------- */
+
+a {
+  color: var(--red);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  color: var(--red-dark);
+}
+
+/* Structural links (nav items, cards, buttons) opt out individually. */
+.no-underline,
+.button,
+.brand,
+.nav-link,
+.card-link {
+  text-decoration: none;
+}
+
+/* --------------------------------------------------------------------------
+   Keyboard focus
+   -------------------------------------------------------------------------- */
+
+:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* On dark bands the teal ring is hard to see. */
+.on-dark :focus-visible,
+footer :focus-visible {
+  outline-color: var(--on-dark-accent);
+}
+
+/* --------------------------------------------------------------------------
+   Skip link
+   -------------------------------------------------------------------------- */
+
+.skip-link {
+  position: fixed;
+  top: 10px;
+  left: 12px;
+  z-index: 1000;
+  padding: 10px 16px;
+  background: var(--ink-950);
+  color: var(--white);
+  border-radius: var(--radius-sm);
+  font-weight: var(--w-bold);
+  text-decoration: none;
+  transform: translateY(-180%);
+  transition: transform var(--dur-fast) var(--ease);
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+  color: var(--white);
+}
+
+/* --------------------------------------------------------------------------
+   Touch targets
+   -------------------------------------------------------------------------- */
+
+button,
+[role="button"],
+.button,
+.lang-button,
+.nav-link {
+  min-height: 44px;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* --------------------------------------------------------------------------
+   Images
+   -------------------------------------------------------------------------- */
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* --------------------------------------------------------------------------
+   Motion
+   -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Print
+   -------------------------------------------------------------------------- */
+
+@media print {
+  body {
+    background: #fff;
+    color: #000;
+    font-size: 11pt;
+  }
+
+  .skip-link,
+  .site-head,
+  .nav,
+  .nav-toggle,
+  .lang-switch,
+  .lang-row,
+  .hero-actions,
+  .hero-btns,
+  .case-actions,
+  footer {
+    display: none !important;
+  }
+
+  a::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    word-break: break-all;
+  }
+
+  a[href^="#"]::after,
+  a[href^="mailto"]::after {
+    content: "";
+  }
+
+  h1, h2, h3 {
+    break-after: avoid;
+  }
+
+  p, li, article {
+    break-inside: avoid;
+  }
+}

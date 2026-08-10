@@ -1,34 +1,5 @@
-:root {
-  --red: #963f2d;
-  --red-dark: #753022;
-  --red-soft: #f6e9e4;
-  --teal: #276c6c;
-  --teal-dark: #1d5051;
-  --teal-soft: #e4f0ed;
-  --green: #2e6a4c;
-  --green-soft: #e7f1eb;
-  --ink-950: #181a1f;
-  --ink-900: #22242a;
-  --ink-800: #30333a;
-  --ink-700: #444851;
-  --ink-600: #5b606a;
-  --ink-500: #717680;
-  --ink-300: #bfc1c5;
-  --ink-200: #d9d9d7;
-  --ink-150: #e7e5e1;
-  --ink-100: #f1efeb;
-  --warm-50: #f8f7f4;
-  --white: #ffffff;
-  --serif: "Libre Baskerville", Georgia, serif;
-  --sans: "Source Sans 3", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --shadow-sm: 0 8px 24px rgba(28, 27, 25, 0.08);
-  --shadow-md: 0 22px 60px rgba(28, 27, 25, 0.13);
-  --radius-sm: 3px;
-  --radius-md: 8px;
-  --page-pad: clamp(20px, 4.5vw, 56px);
-  --content: 1120px;
-}
-
+/* Colour, type, and geometry tokens live in /assets/css/tokens.css,
+   which is loaded before this file on every page of the site. */
 *,
 *::before,
 *::after {
@@ -45,8 +16,6 @@ body {
   color: var(--ink-900);
   background: var(--warm-50);
   font-family: var(--sans);
-  font-size: 16px;
-  line-height: 1.62;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -436,9 +405,15 @@ p:last-child {
   text-transform: uppercase;
 }
 
-.preview-priority h2 {
-  margin-bottom: 7px;
+/* Styled like a heading but not one. This is sample output inside a decorative
+   card, and as an <h2> it was announcing itself as the first section of the
+   page to screen readers and to search engines. */
+.preview-priority > .preview-priority-title {
+  margin: 0 0 7px;
+  color: var(--ink-950);
+  font-family: var(--serif);
   font-size: 1.05rem;
+  font-weight: 700;
   line-height: 1.3;
 }
 
@@ -985,12 +960,12 @@ p:last-child {
   text-transform: uppercase;
 }
 
-.under-review {
+.evidence-status.under-review {
   color: var(--red-dark);
   background: var(--red-soft);
 }
 
-.published {
+.evidence-status.published {
   color: var(--green);
   background: var(--green-soft);
 }
