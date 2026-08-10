@@ -68,6 +68,11 @@
     document.querySelectorAll('[data-copy="back"], [data-copy="resources"]').forEach((node) => {
       node.setAttribute('href', state.lang === 'nl' ? '../mtm-resources/?lang=nl' : '../mtm-resources/');
     });
+    /* Links back into the main site keep the reader's language too. */
+    document.querySelectorAll('[data-site-path]').forEach((node) => {
+      const path = node.dataset.sitePath;
+      node.setAttribute('href', state.lang === 'nl' ? path + '?lang=nl' : path);
+    });
     document.querySelectorAll('[data-copy="teachingCasesButton"]').forEach((node) => {
       node.setAttribute('href', state.lang === 'nl' ? '../mtm-resources/?lang=nl#educators' : '../mtm-resources/#educators');
     });
@@ -88,6 +93,12 @@
     return labels[status] || status;
   }
 
+  /* Links into the main site keep the reader's language; DOIs are left alone. */
+  function evidenceHref(url) {
+    if (url.startsWith('http') || state.lang !== 'nl') return url;
+    return url + (url.indexOf('?') === -1 ? '?' : '&') + 'lang=nl';
+  }
+
   function renderEvidence() {
     const grid = document.getElementById('evidence-grid');
     grid.innerHTML = data.evidence.map((item) => `
@@ -96,7 +107,7 @@
         <h3>${escapeHtml(l(item.title))}</h3>
         <p class="evidence-citation">${escapeHtml(item.citation)}</p>
         <p>${escapeHtml(l(item.finding))}</p>
-        <a href="${escapeHtml(item.url)}" ${item.url.startsWith('http') ? 'target="_blank" rel="noopener"' : ''}>${escapeHtml(t('researchBehind'))} <span aria-hidden="true">→</span></a>
+        <a href="${escapeHtml(evidenceHref(item.url))}" ${item.url.startsWith('http') ? 'target="_blank" rel="noopener"' : ''}>${escapeHtml(t('researchBehind'))} <span aria-hidden="true">→</span></a>
       </article>
     `).join('');
   }

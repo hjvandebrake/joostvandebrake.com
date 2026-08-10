@@ -2,6 +2,19 @@
 
 > Researcher and consultant on modern teamwork. Studies and advises on multiple team membership, hybrid work, team collaboration, and the stress and strain of modern team arrangements. Associate Professor and Research Director of the Organizational Behaviour programme at the University of Groningen, Faculty of Economics and Business. NWO Veni laureate (2022). Based in Groningen, the Netherlands.
 
+## Pages
+
+- Home: <https://joostvandebrake.com/>
+- Research: <https://joostvandebrake.com/research/>
+- Teaching: <https://joostvandebrake.com/teaching/>
+- Working with organisations: <https://joostvandebrake.com/practice/>
+- Resources: <https://joostvandebrake.com/resources/>
+- Contact: <https://joostvandebrake.com/contact/>
+- Multiple team membership resources: <https://joostvandebrake.com/mtm-resources/>
+- MTM Portfolio Navigator: <https://joostvandebrake.com/mtm-portfolio-navigator/>
+
+Every page is available in Dutch at the same address with `?lang=nl`.
+
 ## Core expertise
 
 Joost van de Brake helps organisations make sense of modern teamwork. His core expertise covers:

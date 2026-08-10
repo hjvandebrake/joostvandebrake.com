@@ -5,7 +5,7 @@
   const buttons = Array.from(document.querySelectorAll("[data-lang]"));
   const copyNodes = Array.from(document.querySelectorAll("[data-copy]"));
   const ariaNodes = Array.from(document.querySelectorAll("[data-aria-copy]"));
-  const navigatorLinks = Array.from(document.querySelectorAll(".navigator-link"));
+  const internalLinks = Array.from(document.querySelectorAll(".lang-link"));
 
   copyNodes.forEach((node) => {
     node.dataset.en = node.textContent;
@@ -47,7 +47,7 @@
       button.setAttribute("aria-pressed", String(isActive));
     });
 
-    navigatorLinks.forEach((link) => {
+    internalLinks.forEach((link) => {
       const url = new URL(link.dataset.baseHref || link.getAttribute("href"), window.location.href);
       link.dataset.baseHref = link.dataset.baseHref || link.getAttribute("href");
       if (lang === "nl") url.searchParams.set("lang", "nl");

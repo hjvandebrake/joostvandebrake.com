@@ -450,60 +450,19 @@ p:last-child {
   line-height: 1.42;
 }
 
-.outcome-strip {
-  color: rgba(255, 255, 255, 0.72);
-  background: var(--ink-950);
-}
-
-.outcome-inner {
-  width: min(var(--content), calc(100% - (2 * var(--page-pad))));
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  margin-inline: auto;
-}
-
-.outcome-item {
-  min-height: 174px;
-  padding: 30px 24px;
-  border-left: 1px solid rgba(255, 255, 255, 0.13);
-}
-
-.outcome-item:last-child {
-  border-right: 1px solid rgba(255, 255, 255, 0.13);
-}
-
-.outcome-item > span {
-  display: block;
-  margin-bottom: 16px;
-  color: #dfa99b;
-  font-family: var(--serif);
-  font-size: 0.82rem;
-}
-
-.outcome-item strong {
-  display: block;
-  margin-bottom: 7px;
-  color: var(--white);
-  font-family: var(--serif);
-  font-size: 0.93rem;
-  line-height: 1.4;
-}
-
-.outcome-item p {
-  margin: 0;
-  font-size: 0.78rem;
-  line-height: 1.55;
-}
-
 .plain-section,
 .resource-section,
 .evidence-section {
   padding: clamp(62px, 8vw, 96px) 0;
 }
 
+/* The definition used to sit fourth of seven and reversed out of near-black,
+   which is the least comfortable place on the page to read carefully. It is
+   the passage a newcomer needs most, so it now runs second, on warm paper. */
 .plain-section {
-  color: rgba(255, 255, 255, 0.82);
-  background: var(--ink-950);
+  color: var(--ink-700);
+  background: var(--warm-50);
+  border-bottom: 1px solid var(--ink-200);
 }
 
 .definition-grid {
@@ -512,17 +471,13 @@ p:last-child {
   gap: clamp(44px, 8vw, 96px);
 }
 
-.plain-section .eyebrow {
-  color: #dfa99b;
-}
-
 .plain-section h2 {
-  color: var(--white);
+  color: var(--ink-950);
 }
 
 .definition-copy {
   padding-left: 30px;
-  border-left: 1px solid rgba(255, 255, 255, 0.24);
+  border-left: 1px solid var(--ink-200);
 }
 
 .definition-copy p {
@@ -536,6 +491,7 @@ p:last-child {
 .educator-section {
   background: var(--warm-50);
   border-top: 1px solid var(--ink-200);
+  border-bottom: 1px solid var(--ink-200);
 }
 
 .section-heading {
@@ -577,51 +533,11 @@ p:last-child {
   line-height: 1.7;
 }
 
-.plain-list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 9px 22px;
-  margin: 23px 0 28px;
-  padding: 20px 0;
-  border-top: 1px solid var(--ink-200);
-  border-bottom: 1px solid var(--ink-200);
-  list-style: none;
-}
-
-.plain-list li {
-  position: relative;
-  padding-left: 17px;
-  color: var(--ink-700);
-  font-size: 0.84rem;
-}
-
-.plain-list li::before {
-  content: "";
-  position: absolute;
-  top: 0.68em;
-  left: 0;
-  width: 6px;
-  height: 6px;
-  background: var(--teal);
-  border-radius: 50%;
-}
-
 .tool-actions {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 16px 20px;
-}
-
-.text-link {
-  color: var(--red);
-  font-size: 0.84rem;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.text-link:hover {
-  text-decoration: underline;
 }
 
 .tool-aside {
@@ -960,12 +876,12 @@ p:last-child {
   text-transform: uppercase;
 }
 
-.evidence-status.under-review {
+.evidence-status.status-current {
   color: var(--red-dark);
   background: var(--red-soft);
 }
 
-.evidence-status.published {
+.evidence-status.status-published {
   color: var(--green);
   background: var(--green-soft);
 }
@@ -1088,17 +1004,8 @@ footer {
     min-height: 0;
   }
 
-  .outcome-inner,
   .research-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .outcome-item:nth-child(3) {
-    border-top: 1px solid rgba(255, 255, 255, 0.13);
-  }
-
-  .outcome-item:nth-child(4) {
-    border-top: 1px solid rgba(255, 255, 255, 0.13);
   }
 
   .definition-copy {
@@ -1128,19 +1035,11 @@ footer {
     padding: 22px;
   }
 
-  .plain-list,
   .evidence-grid,
   .research-grid,
-  .outcome-inner,
   .contact-grid,
   .footer-inner {
     grid-template-columns: 1fr;
-  }
-
-  .outcome-item {
-    min-height: 0;
-    border-right: 1px solid rgba(255, 255, 255, 0.13);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.13);
   }
 
   .hero-actions .button {

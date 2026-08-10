@@ -569,7 +569,7 @@ window.MTM_CONTENT = {
       title: {en: 'The Connectivity Paradox of Flexible Team Arrangements', nl: 'The Connectivity Paradox of Flexible Team Arrangements'},
       citation: 'Berger, Van de Brake, Bruch, & Van der Vegt, accepted for publication in Academy of Management Journal',
       finding: {en: 'Employees in several ongoing teams reported stronger workplace connections, while employees moving through short-term teams reported weaker connections. The two patterns did not combine. Across organizations, flexible teaming was linked with stronger connections and better company performance. The study compared existing team arrangements.', nl: 'Medewerkers in meerdere vaste teams rapporteerden sterkere verbindingen op het werk, terwijl medewerkers in kortlopende teams zwakkere verbindingen rapporteerden. De twee patronen versterkten elkaar niet. Tussen organisaties hing flexibel teamwerk samen met sterkere verbindingen en betere bedrijfsprestaties. Het onderzoek vergeleek bestaande teamindelingen.'},
-      url: '../#research'
+      url: '/research/'
     },
     {
       id: 'ppsychCurrent',
@@ -577,7 +577,7 @@ window.MTM_CONTENT = {
       title: {en: 'Helpful and difficult experiences across teams', nl: 'Behulpzame en moeilijke ervaringen tussen teams'},
       citation: 'Van de Brake, Mistry, & Rapp, current scale-development research',
       finding: {en: 'Current scale research separates helpful and difficult experiences across teams. Helpful experiences can support development and make work in another team easier. Difficult experiences arise when team demands clash. Both can occur at once.', nl: 'Lopend schaalonderzoek onderscheidt behulpzame en moeilijke ervaringen tussen teams. Behulpzame ervaringen kunnen ontwikkeling ondersteunen en werk in een ander team makkelijker maken. Moeilijke ervaringen ontstaan wanneer teameisen botsen. Beide kunnen tegelijk voorkomen.'},
-      url: '../#research'
+      url: '/research/'
     },
     {
       id: 'attentionCurrent',
@@ -593,7 +593,7 @@ window.MTM_CONTENT = {
       title: {en: 'Status differences after returning to a team', nl: 'Statusverschillen na terugkeer in een team'},
       citation: 'Current research by Joost van de Brake on status differences across team memberships',
       finding: {en: 'Across 692 returns in professional football, larger status differences were linked with more chances created for teammates, especially after returning from a prominent team. The study used public market values and followed patterns that already existed. The workplace case applies this finding to a different setting.', nl: 'Bij 692 terugkeermomenten in het betaald voetbal hingen grotere statusverschillen samen met meer gecreëerde kansen voor teamgenoten, vooral na terugkeer uit een prominent team. Het onderzoek gebruikte openbare marktwaarden en volgde bestaande patronen. De werkplekcasus past deze bevinding toe op een andere omgeving.'},
-      url: '../#research'
+      url: '/research/'
     }
   ],
 

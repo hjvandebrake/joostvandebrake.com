@@ -407,7 +407,7 @@
 
 .hero-wrap {
   display: grid;
-  grid-template-columns: 3fr 2fr;
+  grid-template-columns: minmax(0, 1fr) 300px;
   align-items: center;
   gap: var(--sp-7);
   width: min(var(--content), 100%);
@@ -419,7 +419,7 @@
 }
 
 .hero-tagline {
-  max-width: 540px;
+  max-width: 620px;
   margin: var(--sp-2) 0 var(--sp-4);
   color: var(--red);
   font-family: var(--serif);
@@ -430,7 +430,7 @@
 }
 
 .hero-content .lead {
-  max-width: 540px;
+  max-width: 620px;
   margin-bottom: var(--sp-6);
 }
 
@@ -440,8 +440,12 @@
   gap: 10px;
 }
 
+/* The source file is 420 x 560. Displaying it near that size left it soft on
+   any high-density screen, so the box is capped well below it: at 300px the
+   image still has 1.4x the pixels the box needs. */
 .portrait {
   aspect-ratio: 4 / 5;
+  max-width: 300px;
   overflow: hidden;
   border: 1px solid var(--ink-200);
   border-radius: var(--radius-sm);
@@ -1134,10 +1138,6 @@ footer {
   .hero-wrap {
     grid-template-columns: 1fr;
     gap: var(--sp-6);
-  }
-
-  .portrait {
-    max-width: 320px;
   }
 
   .highlights-grid {

@@ -31,9 +31,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:opsz,wght@9..40,300;9..40,400;9..40,600;9..40,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/tokens.css?rev=20260810">
-  <link rel="stylesheet" href="/assets/css/base.css?rev=20260810">
-  <link rel="stylesheet" href="styles.css?rev=20260810">
+  <link rel="stylesheet" href="/assets/css/tokens.css?rev=20260810b">
+  <link rel="stylesheet" href="/assets/css/base.css?rev=20260810b">
+  <link rel="stylesheet" href="styles.css?rev=20260810b">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -77,12 +77,12 @@
 
   <header class="site-head">
     <div class="head-inner">
-      <a class="brand" href="../#home" aria-label="Joost van de Brake, home">
+      <a class="brand lang-link" href="/" aria-label="Joost van de Brake, home">
         <span class="brand-name">Joost van de Brake</span>
         <span class="brand-sub" data-copy="brandSub">Research on teams and modern work</span>
       </a>
       <div class="head-actions">
-        <a class="back-link" href="../#resources" data-copy="back">Back to all resources</a>
+        <a class="back-link lang-link" href="/resources/" data-copy="back">Back to all resources</a>
         <div class="lang-switch" role="group" aria-label="Language">
           <button type="button" class="lang-button is-active" data-lang="en" aria-pressed="true">EN</button>
           <button type="button" class="lang-button" data-lang="nl" aria-pressed="false">NL</button>
@@ -101,8 +101,8 @@
           <p class="hero-lead" data-copy="heroLead">Many people contribute to several teams at the same time. Each team brings its own meetings, deadlines, working relationships, and expectations. Experience from one team can help in another, yet the same arrangement can divide attention and leave priorities unresolved.</p>
           <p class="hero-context" data-copy="heroLeadTwo">The strain depends on how the memberships fit together. A person with a clear home team and protected blocks of time faces a different week from someone who switches between teams throughout the day, even when both belong to the same number of teams. The MTM Portfolio Navigator helps people map that arrangement, see which parts create pressure, preserve what is useful, and choose a small work-design change to test.</p>
           <div class="hero-actions">
-            <a class="button button-primary navigator-link" href="../mtm-portfolio-navigator/" data-copy="practitionerButton">Start the 5-minute Navigator</a>
-            <a class="button button-secondary navigator-link" href="../mtm-portfolio-navigator/?example=fragmented#navigator" data-copy="exampleButton">See an example result</a>
+            <a class="button button-primary lang-link" href="../mtm-portfolio-navigator/" data-copy="practitionerButton">Start the 5-minute Navigator</a>
+            <a class="button button-secondary lang-link" href="../mtm-portfolio-navigator/?example=fragmented#navigator" data-copy="exampleButton">See an example result</a>
           </div>
           <p class="hero-note" data-copy="heroNote">Built from Joost van de Brake’s research on working across teams.</p>
         </div>
@@ -131,12 +131,16 @@
       </div>
     </section>
 
-    <section class="outcome-strip" id="what-you-get" aria-label="What the Navigator gives you" data-aria-copy="outcomeAria">
-      <div class="outcome-inner">
-        <div class="outcome-item"><span>01</span><strong data-copy="outcomeOneTitle">See your portfolio</strong><p data-copy="outcomeOneBody">View how your working time is spread across teams.</p></div>
-        <div class="outcome-item"><span>02</span><strong data-copy="outcomeTwoTitle">Find the pressure point</strong><p data-copy="outcomeTwoBody">See which part of the setup deserves attention first.</p></div>
-        <div class="outcome-item"><span>03</span><strong data-copy="outcomeThreeTitle">Use what already works</strong><p data-copy="outcomeThreeBody">Keep the parts of your team portfolio that help you.</p></div>
-        <div class="outcome-item"><span>04</span><strong data-copy="outcomeFourTitle">Make a two-week plan</strong><p data-copy="outcomeFourBody">Turn one suggestion into a small test with a review date.</p></div>
+    <section class="plain-section">
+      <div class="content-wrap definition-grid">
+        <div>
+          <p class="eyebrow" data-copy="definitionEye">The basic idea</p>
+          <h2 data-copy="definitionTitle">Look at how the teams fit together</h2>
+        </div>
+        <div class="definition-copy">
+          <p data-copy="definitionOne">Multiple team membership means working in two or more teams during the same period. It appears in healthcare, public services, logistics, factories, education, project work, and many other settings.</p>
+          <p data-copy="definitionTwo">The daily experience depends on how those memberships are arranged. One person may have a clear home team and long blocks of focused work. Another may move between teams throughout the day. The Navigator helps both people describe their situation and choose a workable change.</p>
+        </div>
       </div>
     </section>
 
@@ -145,7 +149,7 @@
         <div class="section-heading section-heading-wide">
           <p class="eyebrow" data-copy="practiceEye">A practical tool for modern teamwork</p>
           <h2 data-copy="practiceTitle">Make a complicated working week easier to understand</h2>
-          <p data-copy="practiceIntro">Your team portfolio is the full set of teams you work in during the same period. Two people can belong to the same number of teams and still have very different working weeks. The Navigator makes that difference visible.</p>
+          <p data-copy="practiceIntro">Your team portfolio is the full set of teams you work in during the same period. The Navigator makes the shape of that portfolio visible.</p>
         </div>
 
         <article class="tool-card">
@@ -153,15 +157,8 @@
             <p class="card-label teal-label" data-copy="toolLabel">Free interactive Navigator</p>
             <h3 data-copy="toolTitle">More Than a Number: MTM Portfolio Navigator</h3>
             <p data-copy="toolBody">Describe how your time is divided and how often you move between teams. The Navigator turns your answers into a clear portfolio map. Each suggestion explains why it appeared and opens the research behind it.</p>
-            <ul class="plain-list">
-              <li data-copy="toolPointOne">Finish in about five minutes.</li>
-              <li data-copy="toolPointTwo">Receive a visual map of your working arrangement.</li>
-              <li data-copy="toolPointThree">Get suggestions for the employee and the leader.</li>
-              <li data-copy="toolPointFour">Build a two-week action plan you can print.</li>
-            </ul>
             <div class="tool-actions">
-              <a class="button button-primary navigator-link" href="../mtm-portfolio-navigator/" data-copy="openTool">Show me my team portfolio</a>
-              <a class="text-link navigator-link" href="../mtm-portfolio-navigator/?example=anchored#navigator" data-copy="openExample">Open a worked example</a>
+              <a class="button button-primary lang-link" href="../mtm-portfolio-navigator/" data-copy="openTool">Start the 5-minute Navigator</a>
             </div>
           </div>
           <aside class="tool-aside">
@@ -191,19 +188,6 @@
       </div>
     </section>
 
-    <section class="plain-section">
-      <div class="content-wrap definition-grid">
-        <div>
-          <p class="eyebrow" data-copy="definitionEye">The basic idea</p>
-          <h2 data-copy="definitionTitle">Look at how the teams fit together</h2>
-        </div>
-        <div class="definition-copy">
-          <p data-copy="definitionOne">Multiple team membership means working in two or more teams during the same period. It appears in healthcare, public services, logistics, factories, education, project work, and many other settings.</p>
-          <p data-copy="definitionTwo">The daily experience depends on how those memberships are arranged. One person may have a clear home team and long blocks of focused work. Another may move between teams throughout the day. The Navigator helps both people describe their situation and choose a workable change.</p>
-        </div>
-      </div>
-    </section>
-
     <section class="resource-section educator-section" id="educators">
       <div class="content-wrap">
         <div class="section-heading">
@@ -218,7 +202,7 @@
             <h3 data-copy="educatorToolTitle">Let students map a real working week</h3>
             <p data-copy="educatorToolBody">Students can complete the Navigator using a job, internship, volunteer role, or fictional employee. They enter the cases with a concrete example of how team arrangements differ.</p>
           </div>
-          <a class="button button-secondary navigator-link" href="../mtm-portfolio-navigator/" data-copy="educatorToolButton">Open the Navigator for class</a>
+          <a class="button button-secondary lang-link" href="../mtm-portfolio-navigator/" data-copy="educatorToolButton">Start the Navigator in class</a>
         </aside>
 
         <div class="case-grid">
@@ -290,7 +274,7 @@
           <article class="research-card">
             <span>03</span>
             <p class="card-label teal-label" data-copy="researchThreeLabel">Organisational experience</p>
-            <h3 data-copy="researchThreeTitle">Patterns differ by organisational tenure</h3>
+            <h3 data-copy="researchThreeTitle">Benefits and Disadvantages of Multiple Team Membership</h3>
             <p data-copy="researchThreeBody">The associations differed between newer and longer-serving employees, both in how they experienced the work and in their later performance.</p>
             <a href="https://doi.org/10.1111/joms.12539" target="_blank" rel="noopener" data-copy="researchThreeLink">Journal of Management Studies, 2020</a>
           </article>
@@ -310,16 +294,16 @@
 
         <div class="evidence-grid">
           <article class="evidence-card">
-            <span class="evidence-status under-review" data-copy="statusEvidenceLabel">Current research</span>
+            <span class="evidence-status status-current" data-copy="statusEvidenceLabel">Current research</span>
             <h3 data-copy="statusEvidenceTitle">Status differences when people return to a team</h3>
             <p data-copy="statusEvidenceBody">The study follows 692 occasions when football players returned to their club after national-team duty. Larger differences in relative standing across the teams were associated with more chances created for club teammates.</p>
             <p class="citation" data-copy="statusCitation">Current research by Joost van de Brake on status differences across team memberships.</p>
-            <a href="../#research" data-copy="openEvidence">View Joost’s research</a>
+            <a class="lang-link" href="/research/" data-copy="openEvidence">View Joost’s research</a>
           </article>
 
           <article class="evidence-card">
-            <span class="evidence-status published" data-copy="fourEvidenceLabel">Published</span>
-            <h3 data-copy="fourEvidenceTitle">More Than Just a Number</h3>
+            <span class="evidence-status status-published" data-copy="fourEvidenceLabel">Published</span>
+            <h3 data-copy="fourEvidenceTitle">Why two people in four teams have different weeks</h3>
             <p data-copy="fourEvidenceBody">The study compares several ways of describing work across teams. It shows how time distribution, switching, a clear home team, and prior familiarity shape a given arrangement.</p>
             <p class="citation" data-copy="fourCitation">Van de Brake, Van der Vegt, and Essens (2024), Journal of Applied Psychology.</p>
             <a href="https://doi.org/10.1037/apl0001168" target="_blank" rel="noopener" data-copy="openPaper">Read the published paper</a>
@@ -348,13 +332,13 @@
       </div>
       <div class="footer-links">
         <a href="mailto:h.j.van.de.brake@rug.nl" data-copy="contactLink">Contact</a>
-        <a href="../#research" data-copy="researchLink">Research</a>
-        <a href="../#resources" data-copy="allResourcesLink">All resources</a>
+        <a class="lang-link" href="/research/" data-copy="researchLink">Research</a>
+        <a class="lang-link" href="/resources/" data-copy="allResourcesLink">All resources</a>
       </div>
     </div>
   </footer>
 
-  <script src="content.js?rev=navigator-landing"></script>
-  <script src="app.js?rev=navigator-landing"></script>
+  <script src="content.js?rev=20260810b"></script>
+  <script src="app.js?rev=20260810b"></script>
 </body>
 </html>
