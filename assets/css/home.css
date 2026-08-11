@@ -800,6 +800,15 @@
   margin: 0;
 }
 
+/* Teaching and Working with organisations open with a paragraph; Research
+   opens with a single sentence, so its text block is much shorter and the
+   illustration stood a long way above and below it. Smaller here only, and
+   flush right so the frame still ends on the same edge. */
+body[data-page="research"] .pg-hd-figure {
+  justify-self: end;
+  max-width: 360px;
+}
+
 .pg-hd-figure img {
   display: block;
   width: 100%;
