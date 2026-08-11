@@ -817,18 +817,11 @@
   margin: 0;
 }
 
-/* Teaching and Working with organisations open with a paragraph; Research
-   opens with a single sentence, so its text block is much shorter. Narrowing
-   the whole column rather than the figure inside it keeps the illustration
-   next to the text instead of stranded against the right edge, and at this
-   size it barely rises above the text at all. */
-/* Inside the media query on purpose: this selector outranks the single-column
-   rule below, so unscoped it would keep two columns on a phone and squeeze the
-   text column to nothing. */
-@media (min-width: 901px) {
-  body[data-page="research"] .pg-hd.has-figure .wrap {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 290px);
-  }
+/* The title has roughly half the width it would have on its own, so it takes
+   a step down the scale. At full size it dominated the illustration beside it,
+   most visibly on Research, whose standfirst is a single sentence. */
+.pg-hd.has-figure .wrap h1 {
+  font-size: clamp(1.7rem, 2.6vw, 2.1rem);
 }
 
 .pg-hd-figure img {
