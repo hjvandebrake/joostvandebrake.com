@@ -48,13 +48,54 @@ function setLang(l, updateUrl){
 
 /* DATA */
 
+/* Selected peer-reviewed record, newest first. Metadata verified against
+   Crossref on 2026-08-11. `feat` marks the three shown on the home page. */
 const PUBS = [
-  {title:'More than just a number: Different conceptualizations of multiple team membership and their relationships with emotional exhaustion and turnover', auth:'Van de Brake, H. J., Van der Vegt, G. S., and Essens, P.', venue:'Journal of Applied Psychology, 109(5), 714 to 729', year:'2024', doi:'10.1037/apl0001168'},
-  {title:'Can I leave my hat on? A cross-level study of multiple team membership role separation', auth:'Van de Brake, H. J., and Berger, S.', venue:'Personnel Psychology', year:'2023', doi:'10.1111/peps.12495'},
-  {title:'Resource leverage, resource depletion: A multilevel perspective on multiple team membership', auth:'Berger, S., Van de Brake, H. J., and Bruch, H.', venue:'Journal of Applied Psychology', year:'2022', doi:'10.1037/apl0000889'},
-  {title:'Benefits and disadvantages of individuals’ multiple team membership: The moderating role of organizational tenure', auth:'Van de Brake, H. J., Walter, F., Rink, F. A., Essens, P., and Van der Vegt, G. S.', venue:'Journal of Management Studies', year:'2020', doi:'10.1111/joms.12539'},
-  {title:'The dynamic relationship between multiple team membership and individual job performance in knowledge-intensive work', auth:'Van de Brake, H. J., Walter, F., Rink, F. A., Essens, P., and Van der Vegt, G. S.', venue:'Journal of Organizational Behavior', year:'2018', doi:'10.1002/job.2260'},
-  {title:'Crossover of emotional exhaustion in collaboration networks: The roles of hindrance stressors and organisational tenure', auth:'Wörtler, B., Van de Brake, H. J., and Van der Vegt, G. S.', venue:'Work and Stress', year:'2025', doi:'10.1080/02678373.2025.2551498'},
+  {feat:1,
+   title:'The connectivity paradox of flexible team arrangements',
+   auth:'Berger, S., Van de Brake, H. J., Bruch, H., and Van der Vegt, G. S.',
+   venue:'Academy of Management Journal',
+   note:'Accepted for publication', nl:{note:'Geaccepteerd voor publicatie'}},
+
+  {title:'Crossover of emotional exhaustion in collaboration networks: The roles of hindrance stressors and organisational tenure',
+   auth:'Wörtler, B., Van de Brake, H. J., and Van der Vegt, G. S.',
+   venue:'Work and Stress, 40(2), 125 to 154', year:'2026', doi:'10.1080/02678373.2025.2551498'},
+
+  {title:'More hats than hours? Examining the associations between role sequence patterns, well-being, demographics and work-related characteristics across two countries',
+   auth:'Paryono, H. Y., De Vries, T. A., De Bloom, J., and Van de Brake, H. J.',
+   venue:'Journal of Occupational and Organizational Psychology, 99(3), e70146', year:'2026', doi:'10.1111/joop.70146'},
+
+  {title:'When (and when not) remote work harms employee productivity: A multilevel perspective',
+   auth:'Berger, S., Van de Brake, H. J., Fastje, F., and Van der Vegt, G. S.',
+   venue:'Academy of Management Proceedings, 2025(1), 12164', year:'2025', doi:'10.5465/AMPROC.2025.329bp',
+   note:'Best Paper Award, OB Division, Academy of Management',
+   nl:{note:'Best Paper Award, OB Division, Academy of Management'}},
+
+  {feat:1,
+   title:'More than just a number: Different conceptualizations of multiple team membership and their relationships with emotional exhaustion and turnover',
+   auth:'Van de Brake, H. J., Van der Vegt, G. S., and Essens, P.',
+   venue:'Journal of Applied Psychology, 109(5), 714 to 729', year:'2024', doi:'10.1037/apl0001168'},
+
+  {feat:1,
+   title:'Can I leave my hat on? A cross-level study of multiple team membership role separation',
+   auth:'Van de Brake, H. J., and Berger, S.',
+   venue:'Personnel Psychology, 76(1), 221 to 248', year:'2023', doi:'10.1111/peps.12495'},
+
+  {title:'Resource leverage, resource depletion: A multilevel perspective on multiple team membership',
+   auth:'Berger, S., Van de Brake, H. J., and Bruch, H.',
+   venue:'Journal of Applied Psychology, 107(2), 298 to 309', year:'2022', doi:'10.1037/apl0000889'},
+
+  {title:'Benefits and disadvantages of individuals’ multiple team membership: The moderating role of organizational tenure',
+   auth:'Van de Brake, H. J., Walter, F., Rink, F. A., Essens, P., and Van der Vegt, G. S.',
+   venue:'Journal of Management Studies, 57(8), 1502 to 1530', year:'2020', doi:'10.1111/joms.12539'},
+
+  {title:'Multiple team membership and job performance: The role of employees’ information-sharing networks',
+   auth:'Van de Brake, H. J., Walter, F., Rink, F. A., Essens, P., and Van der Vegt, G. S.',
+   venue:'Journal of Occupational and Organizational Psychology, 93(4), 967 to 987', year:'2020', doi:'10.1111/joop.12326'},
+
+  {title:'The dynamic relationship between multiple team membership and individual job performance in knowledge-intensive work',
+   auth:'Van de Brake, H. J., Walter, F., Rink, F. A., Essens, P., and Van der Vegt, G. S.',
+   venue:'Journal of Organizational Behavior, 39(9), 1219 to 1231', year:'2018', doi:'10.1002/job.2260'},
 ];
 
 const WIP = [
@@ -105,14 +146,8 @@ const AWARDS = [
    nl:{year:'2024 en 2025', body:'Toegekend voor langdurige, kwalitatief hoogwaardige peer review op de jaarlijkse conferentie van de Academy of Management.'}},
   {year:'2022', name:'Early Career Research Award', body:'Faculty of Economics and Business Research Institute, University of Groningen.',
    nl:{body:'FEB Research Institute, Rijksuniversiteit Groningen.'}},
-  {year:'2020', name:'Best Dissertation Award, runner-up', body:'FEB Research Institute, University of Groningen.',
-   nl:{name:'Best Dissertation Award, tweede plaats', body:'FEB Research Institute, Rijksuniversiteit Groningen.'}},
   {year:'2019', name:'Journal of Organizational Behavior Best Paper Award, runner-up', body:'For the 2018 paper on multiple team membership and individual job performance.',
    nl:{name:'Journal of Organizational Behavior Best Paper Award, tweede plaats', body:'Voor het artikel uit 2018 over multiple team membership en individuele werkprestatie.'}},
-  {year:'2017', name:'Best Paper Proceedings', body:'Academy of Management annual meeting.',
-   nl:{body:'Jaarlijkse conferentie van de Academy of Management.'}},
-  {year:'2014', name:'Master’s Thesis Award', body:'Dutch Sociological Association.',
-   nl:{name:'Scriptieprijs Master', body:'Nederlandse Sociologische Vereniging.'}},
 ];
 
 const TEACHING = [
@@ -220,12 +255,14 @@ const QUICK_FACTS = [
 /* PAGES */
 
 function publication(p){
-  return `<div class="pub-item"><div><p class="pub-title">${p.title}</p><p class="pub-auth">${p.auth}</p><p class="pub-venue">${p.venue}, ${p.year}</p></div>${p.doi?`<a class="pub-doi" href="https://doi.org/${p.doi}" target="_blank" rel="noopener">doi:${p.doi}</a>`:''}</div>`;
+  const ref = [p.venue, p.year].filter(Boolean).join(', ');
+  const note = L(p, 'note');
+  return `<div class="pub-item"><div><p class="pub-title">${p.title}</p><p class="pub-auth">${p.auth}</p><p class="pub-venue">${ref}</p>${note?`<p class="pub-note">${note}</p>`:''}</div>${p.doi?`<a class="pub-doi" href="https://doi.org/${p.doi}" target="_blank" rel="noopener">doi:${p.doi}</a>`:''}</div>`;
 }
 
 const pages = {
   home(){
-    const topPubs = PUBS.slice(0, 3);
+    const topPubs = PUBS.filter(p => p.feat);
     document.getElementById('pg-home').innerHTML = `
     <section class="hero">
       <div class="hero-wrap">
@@ -285,7 +322,7 @@ const pages = {
           <a class="btn btn-ghost btn-sm" href="${U('/research/')}">${T('All publications →', 'Alle publicaties →')}</a>
         </div>
         <div class="featured-pubs">
-          ${topPubs.map(p=>`<article class="fp"><p class="venue">${p.venue.split(',')[0]}</p><p class="title">${p.title}</p><p class="auth">${p.auth}</p>${p.doi?`<a class="doi-link" href="https://doi.org/${p.doi}" target="_blank" rel="noopener">doi:${p.doi} →</a>`:''}</article>`).join('')}
+          ${topPubs.map(p=>`<article class="fp"><p class="venue">${p.venue.split(',')[0]}</p><p class="title">${p.title}</p><p class="auth">${p.auth}</p>${p.doi?`<a class="doi-link" href="https://doi.org/${p.doi}" target="_blank" rel="noopener">doi:${p.doi} →</a>`:`<p class="fp-note">${L(p,'note')}</p>`}</article>`).join('')}
         </div>
       </div>
     </section>
@@ -360,8 +397,13 @@ const pages = {
         <div class="block">
           <h2 class="block-h">${T('About my research', 'Over mijn onderzoek')}</h2>
           <p>${T(
-            'Two threads run through my work. The first is the now-common arrangement of <strong>multiple team membership</strong>, in which employees contribute to several project teams at once, and the stress and strain it can produce for individuals and teams. The second is the <strong>temporal and network context</strong> of collaboration that decides whether teamwork holds up under hybrid work, turnover, and disruption.',
-            'Twee thema\'s lopen door mijn werk. Het eerste is het inmiddels veelvoorkomende verschijnsel van <strong>multiple team membership</strong>, waarbij medewerkers tegelijkertijd bijdragen aan meerdere projectteams, en de stress en spanning die dit kan opleveren voor individuen en teams. Het tweede is de <strong>temporele en netwerkcontext</strong> van samenwerking, die bepaalt of teamwerk standhoudt onder hybride werk, verloop en verstoring.'
+            'One question runs through my work: what happens when organisations spread the same people across several teams at once. I began with <strong>multiple team membership</strong>, the arrangement in which employees contribute to several teams during the same period, and found that its consequences depend far more on how that participation is organised than on how many teams someone belongs to.',
+            'Eén vraag loopt door mijn werk: wat gebeurt er wanneer organisaties dezelfde mensen tegelijk over meerdere teams verdelen. Ik begon met <strong>multiple team membership</strong>, de situatie waarin medewerkers in dezelfde periode aan meerdere teams bijdragen, en ontdekte dat de gevolgen veel meer afhangen van de manier waarop die deelname is georganiseerd dan van het aantal teams waarin iemand werkt.'
+          )}</p>
+
+          <p>${T(
+            'Successive studies replaced the simple count with the things that actually decide the outcome: how the relationship between memberships and performance develops over time, how organisational tenure changes it, how information-sharing networks carry it, whether roles across teams differ or overlap, and how often people switch between them.',
+            'Opeenvolgende studies vervingen dat simpele aantal door de factoren die de uitkomst werkelijk bepalen: hoe de relatie tussen teamlidmaatschappen en prestatie zich over tijd ontwikkelt, hoe diensttijd binnen de organisatie haar verandert, hoe informatienetwerken haar dragen, of rollen tussen teams verschillen of samenvallen, en hoe vaak mensen daartussen wisselen.'
           )}</p>
 
           <p>${T(
@@ -370,8 +412,13 @@ const pages = {
           )}</p>
 
           <p>${T(
-            'A second strand examines the temporal and network context of teamwork. Ongoing projects ask when hybrid work-from-home arrangements help or harm individuals and teams, how unit-level remote-work configurations affect psychological safety, coordination, and performance, and how stress and strain such as emotional exhaustion travel through everyday collaboration networks. Across both strands the agenda is the same: to take modern team arrangements seriously, and to translate what the evidence shows into the design of work.',
-            'Een tweede onderzoekslijn richt zich op de temporele en netwerkcontext van teamwerk. Lopende projecten onderzoeken wanneer hybride thuiswerkarrangementen individuen en teams helpen of schaden, hoe remote-werkconfiguraties op afdelingsniveau de psychologische veiligheid, coördinatie en prestaties beïnvloeden, en hoe stress en spanning zoals emotionele uitputting zich verspreiden via dagelijkse samenwerkingsnetwerken. Over beide onderzoekslijnen heen blijft de agenda hetzelfde: moderne teamarrangementen serieus nemen en de evidence vertalen naar de inrichting van werk.'
+            'The programme now reaches beyond the individual team portfolio. Work with Stefan Berger examines the design of flexible team arrangements at the level of the organisation, and a multilevel study of remote work shows that the benefits of working from home depend on how the schedules of the people around you are configured. Ongoing projects ask how unit-level remote-work configurations affect psychological safety and performance, and how strain such as emotional exhaustion travels through everyday collaboration networks.',
+            'De onderzoekslijn reikt inmiddels verder dan het teamportfolio van het individu. Werk met Stefan Berger onderzoekt het ontwerp van flexibele teamarrangementen op organisatieniveau, en een meerlaagse studie naar remote werk laat zien dat de voordelen van thuiswerken afhangen van de manier waarop de roosters van de mensen om u heen zijn ingericht. Lopende projecten onderzoeken hoe remote-werkconfiguraties op afdelingsniveau de psychologische veiligheid en prestaties beïnvloeden, en hoe spanning zoals emotionele uitputting zich verspreidt via dagelijkse samenwerkingsnetwerken.'
+          )}</p>
+
+          <p>${T(
+            'The common thread is that these are organisational design choices. Whether working across several teams costs or pays is settled by how the work is arranged, not by how hard the individual tries. That is what makes the evidence usable: it points at decisions someone can actually take.',
+            'De rode draad is dat dit ontwerpkeuzes van de organisatie zijn. Of werken in meerdere teams iets kost of oplevert, wordt bepaald door de manier waarop het werk is ingericht, niet door hoe hard het individu zijn best doet. Dat maakt de evidence bruikbaar: zij wijst op beslissingen die iemand daadwerkelijk kan nemen.'
           )}</p>
         </div>
 
@@ -403,11 +450,26 @@ const pages = {
         </div>
 
         <div class="block">
-          <h2 class="block-h">${T('Editorial and service', 'Redactie en bestuurlijke rollen')}</h2>
+          <h2 class="block-h">${T('Collaborations', 'Samenwerkingen')}</h2>
+          <p>${T(
+            'Most of my current projects run with colleagues abroad. With Tammy Rapp at Ohio University and Saleem Mistry at the University of Delaware I study when concurrent team roles create synergy and when they create conflict, and I coordinate the multi-wave organisational study behind it. With Martin Hoegl at LMU Munich, Max Reinwald at the University of Mannheim, and Stefan Berger I run a daily diary study of multiple team membership. With Jessica Reif and Jonathon Cummings at Duke University I developed an integrative review of the temporal structure of modern teamwork, a collaboration that goes back to my Fulbright period at the Duke Network Analysis Center.',
+            'De meeste van mijn lopende projecten voer ik uit met collega’s in het buitenland. Met Tammy Rapp aan Ohio University en Saleem Mistry aan de University of Delaware onderzoek ik wanneer gelijktijdige teamrollen synergie opleveren en wanneer conflict, en coördineer ik de bijbehorende meergolfsstudie in organisaties. Met Martin Hoegl aan LMU München, Max Reinwald aan de Universiteit van Mannheim en Stefan Berger doe ik een dagboekstudie naar multiple team membership. Met Jessica Reif en Jonathon Cummings aan Duke University werkte ik aan een integratief overzicht van de temporele structuur van modern teamwerk, een samenwerking die teruggaat op mijn Fulbright-periode bij het Duke Network Analysis Center.'
+          )}</p>
+          <p>${T(
+            'A second cluster of projects runs with researchers in China, among them Xiao-Yun Xie and colleagues at Zhejiang University, on how working across teams relates to coordination, creativity, and speaking up at work. Most of these projects began when colleagues approached me to contribute the multiple team membership side of the question.',
+            'Een tweede groep projecten loopt met onderzoekers in China, onder wie Xiao-Yun Xie en collega’s aan Zhejiang University, over de vraag hoe werken in meerdere teams samenhangt met coördinatie, creativiteit en het aankaarten van problemen op het werk. De meeste van deze projecten begonnen toen collega’s mij benaderden om de kant van multiple team membership in te brengen.'
+          )}</p>
+        </div>
+
+        <div class="block">
+          <h2 class="block-h">${T('Leadership and service', 'Leiderschap en bestuurlijke rollen')}</h2>
           <ul>
+            <li><p class="li-h">${T('Research Director, Organizational Behaviour programme', 'Onderzoeksdirecteur, programma Organizational Behaviour')}</p><p class="li-body">${T('Since February 2026 I direct the OB research programme at the Faculty of Economics and Business. I assess doctoral proposals and allocate research time and funding. In 2026 I also served on the faculty committee that selected eleven PhD candidates.', 'Sinds februari 2026 geef ik leiding aan het OB-onderzoeksprogramma van de Faculteit Economie en Bedrijfskunde. Ik beoordeel promotievoorstellen en verdeel onderzoekstijd en middelen. In 2026 zat ik daarnaast in de facultaire commissie die elf promovendi selecteerde.')}</p></li>
+            <li><p class="li-h">${T('Research dashboard, HRM and Organizational Behavior', 'Onderzoeksdashboard, HRM and Organizational Behavior')}</p><p class="li-body">${T('I designed and built the department’s first research dashboard, bringing together publications, expertise, doctoral projects, collaboration networks, and funding opportunities in one place so that colleagues can find each other and build proposals.', 'Ik ontwierp en bouwde het eerste onderzoeksdashboard van de afdeling, waarin publicaties, expertise, promotieprojecten, samenwerkingsnetwerken en subsidiemogelijkheden samenkomen, zodat collega’s elkaar kunnen vinden en voorstellen kunnen opbouwen.')}</p></li>
+            <li><p class="li-h">${T('Generative AI in research', 'Generatieve AI in onderzoek')}</p><p class="li-body">${T('I initiated a faculty-wide effort on generative AI in research, wrote the opening note, and chair the workgroup turning it into shared guidance. The starting point is that these tools should improve the quality and transparency of research rather than simply increase output.', 'Ik startte een facultair traject over generatieve AI in onderzoek, schreef de agenderende notitie en zit de werkgroep voor die dit omzet in gedeelde richtlijnen. Uitgangspunt is dat deze hulpmiddelen de kwaliteit en transparantie van onderzoek moeten verbeteren, niet louter de productie verhogen.')}</p></li>
             <li><p class="li-h">${T('Associate Editor, Group and Organization Management', 'Associate Editor, Group and Organization Management')}</p><p class="li-body">${T('I review and shepherd submissions on teams, multiple team membership, and modern work arrangements.', 'Ik beoordeel en begeleid manuscripten over teams, multiple team membership en moderne werkarrangementen.')}</p></li>
             <li><p class="li-h">${T('Interview panel member, NWO Veni', 'Lid commissie NWO Veni')}</p><p class="li-body">${T('Served on the Veni interview panel of the Dutch Research Council in the Social Sciences and Humanities domain, panel <em>Economics and Business Administration</em>, evaluating proposals from early-career researchers.', 'Lid van de interviewcommissie van NWO Veni in het domein Sociale en Geesteswetenschappen, panel <em>Economie en Bedrijfskunde</em>, voor het beoordelen van voorstellen van early-career onderzoekers.')}</p></li>
-            <li><p class="li-h">${T('Academy of Management, Making Connections Committee', 'Academy of Management, Making Connections Committee')}</p><p class="li-body">${T('Active in the OB Division of the Academy of Management. Ten consecutive years of presenting, organising professional development workshops, and acting as a discussant at the annual research symposium on multiple team membership.', 'Actief in de OB Division van de Academy of Management. Tien opeenvolgende jaren actief met presentaties, het organiseren van professional development workshops en als discussant op het jaarlijkse onderzoekssymposium over multiple team membership.')}</p></li>
+            <li><p class="li-h">${T('Academy of Management, OB Division', 'Academy of Management, OB Division')}</p><p class="li-body">${T('Co-founder and co-organiser of the annual professional development workshop <em>How to Manage Academic Collaborations</em>, held every year since 2020, and a member of the Making Connections Committee. Discussant at the Academy’s research symposium on multiple team membership in 2022 and 2025.', 'Medeoprichter en medeorganisator van de jaarlijkse professional development workshop <em>How to Manage Academic Collaborations</em>, sinds 2020 elk jaar gehouden, en lid van de Making Connections Committee. Discussant op het onderzoekssymposium over multiple team membership van de Academy in 2022 en 2025.')}</p></li>
             <li><p class="li-h">${T('Institutional Review Board, FEB, University of Groningen', 'Institutional Review Board, FEB, Rijksuniversiteit Groningen')}</p><p class="li-body">${T('Reviewing research-ethics applications for the Faculty of Economics and Business.', 'Beoordelen van aanvragen rond onderzoeksethiek voor de Faculteit Economie en Bedrijfskunde.')}</p></li>
             <li><p class="li-h">${T('FEB Research Institute (FEBRI)', 'FEB Research Institute (FEBRI)')}</p><p class="li-body">${T('FEBRI Fellow, reviewer and discussant at the annual FEBRI conference, lecturer at the FEBRI publishing workshop for PhD students.', 'FEBRI Fellow, reviewer en discussant op de jaarlijkse FEBRI-conferentie, en docent in de FEBRI-publicatieworkshop voor promovendi.')}</p></li>
             <li><p class="li-h">${T('Ad-hoc reviewing', 'Ad-hoc reviews')}</p><p class="li-body">${T('Academy of Management Journal, Organization Science, Management Science, and others.', 'Academy of Management Journal, Organization Science, Management Science en andere tijdschriften.')}</p></li>
@@ -470,8 +532,16 @@ const pages = {
         <div class="block">
           <h2 class="block-h">${T('PhD supervision', 'Begeleiding promovendi')}</h2>
           <p>${T(
-            'I supervise PhD candidates as daily supervisor on questions related to modern team arrangements, including multiple team membership, hybrid and remote work, and employee well-being. Across my career I have also supervised approximately 150 BSc and MSc theses, almost all of them on practical questions from organisations such as applied research institutes, energy and infrastructure companies, municipalities, public-sector agencies, and banks.',
-            'Ik begeleid promovendi als dagelijks begeleider op vraagstukken rond moderne teamarrangementen, waaronder multiple team membership, hybride en remote werk, en welzijn van medewerkers. In de loop van mijn carrière heb ik daarnaast ongeveer 150 BSc- en MSc-scripties begeleid, vrijwel altijd over praktische vraagstukken bij organisaties zoals toegepaste onderzoeksinstituten, energie- en infrastructuurbedrijven, gemeenten, publieke instanties en banken.'
+            'I supervise PhD candidates as daily supervisor on modern team arrangements. <strong>Tunahan Sari</strong> has three studies underway, one of them selected for oral presentation at the 2026 Academy of Management meeting. <strong>Bishal Saha</strong>, who started in 2026, is developing a network theory of dynamic participation using longitudinal data from two mental-healthcare organisations. <strong>Franzisca Fastje</strong> works on remote and hybrid work in teams and has moved to a postdoctoral fellowship at the University of Queensland. <strong>Herman Paryono</strong> studies multiple roles across countries and is now a postdoctoral researcher in Groningen.',
+            'Ik begeleid promovendi als dagelijks begeleider op het terrein van moderne teamarrangementen. <strong>Tunahan Sari</strong> heeft drie studies lopen, waarvan er één is geselecteerd voor een mondelinge presentatie op de Academy of Management-conferentie van 2026. <strong>Bishal Saha</strong>, die in 2026 begon, ontwikkelt een netwerktheorie van dynamische deelname op basis van longitudinale gegevens uit twee ggz-organisaties. <strong>Franzisca Fastje</strong> doet onderzoek naar remote en hybride werk in teams en is inmiddels postdoc aan de University of Queensland. <strong>Herman Paryono</strong> onderzoekt meervoudige rollen in verschillende landen en is nu postdoc in Groningen.'
+          )}</p>
+          <p>${T(
+            'Earlier, Gerben van der Vegt and I jointly supervised <strong>Burkhard Wörtler</strong>’s postdoctoral project, which produced a longitudinal study of how emotional exhaustion travels through collaboration networks. My approach is to give researchers ownership of their own project while working closely with them on concepts, methods, and writing, so that they leave with a profile of their own.',
+            'Eerder begeleidden Gerben van der Vegt en ik samen het postdocproject van <strong>Burkhard Wörtler</strong>, dat een longitudinale studie opleverde naar de manier waarop emotionele uitputting zich door samenwerkingsnetwerken verspreidt. Mijn aanpak is om onderzoekers eigenaar te laten zijn van hun eigen project en tegelijk nauw met hen samen te werken aan concepten, methoden en schrijven, zodat zij met een eigen profiel vertrekken.'
+          )}</p>
+          <p>${T(
+            'I also supervise BSc and MSc theses, almost all of them on practical questions brought in by organisations such as applied research institutes, energy and infrastructure companies, municipalities, public-sector agencies, and banks.',
+            'Daarnaast begeleid ik BSc- en MSc-scripties, vrijwel altijd over praktische vraagstukken die door organisaties worden aangedragen, zoals toegepaste onderzoeksinstituten, energie- en infrastructuurbedrijven, gemeenten, publieke instanties en banken.'
           )}</p>
           <p>${T(
             'I am open to supervising new PhD candidates working on related topics. If that sounds like you, please <a href="mailto:h.j.van.de.brake@rug.nl" style="color:var(--red)">get in touch</a>.',
@@ -550,8 +620,8 @@ const pages = {
         <div class="block">
           <h2 class="block-h">${T('Media and public engagement', 'Media en maatschappelijke betrokkenheid')}</h2>
           <p>${T(
-            'I am regularly approached by Dutch national media on multiple team membership, hybrid work, and workplace well-being. Coverage and interviews have appeared in Dutch national newspapers, news sites, and business podcasts. I also speak at industry symposia and at events organised by Dutch ministries.',
-            'Ik word regelmatig benaderd door Nederlandse landelijke media over multiple team membership, hybride werk en welzijn op het werk. Berichtgeving en interviews verschenen onder andere in landelijke kranten, nieuwssites en businesspodcasts. Ik spreek ook op sectorbijeenkomsten en op bijeenkomsten van Nederlandse ministeries.'
+            'I am regularly approached by Dutch national media on multiple team membership, hybrid work, and workplace well-being. Coverage and interviews have appeared in Dutch national newspapers, news sites, and business podcasts. I also speak at industry symposia and at events organised by Dutch ministries. In June 2026 I gave an invited talk on three success factors for sustainable employability at the Zorgvisie congress on solutions for the tight healthcare labour market.',
+            'Ik word regelmatig benaderd door Nederlandse landelijke media over multiple team membership, hybride werk en welzijn op het werk. Berichtgeving en interviews verschenen onder andere in landelijke kranten, nieuwssites en businesspodcasts. Ik spreek ook op sectorbijeenkomsten en op bijeenkomsten van Nederlandse ministeries. In juni 2026 gaf ik op uitnodiging de presentatie <em>3 succesfactoren voor duurzame inzetbaarheid</em> op het Zorgvisie-congres over oplossingen voor de krappe arbeidsmarkt in de zorg.'
           )}</p>
         </div>
       </div>

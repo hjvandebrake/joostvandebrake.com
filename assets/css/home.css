@@ -573,6 +573,16 @@
   font-size: var(--t-sm);
 }
 
+/* Sits where the DOI would be, for work that does not have one yet. */
+.fp .fp-note {
+  max-width: none;
+  align-self: start;
+  margin-top: auto;
+  color: var(--teal-dark);
+  font-size: var(--t-xs);
+  font-weight: var(--w-medium);
+}
+
 /* Was 'Courier New', a third typeface used only for DOIs. */
 .fp .doi-link,
 .pub-doi {
@@ -931,6 +941,15 @@ body[data-page="research"] .pg-hd-figure {
   color: var(--ink-600);
   font-size: var(--t-sm);
   font-style: italic;
+}
+
+/* Status or a paper-specific distinction, under the reference line. */
+.pub-note {
+  max-width: none;
+  margin-top: 4px;
+  color: var(--teal-dark);
+  font-size: var(--t-xs);
+  font-weight: var(--w-medium);
 }
 
 .pub-doi {
