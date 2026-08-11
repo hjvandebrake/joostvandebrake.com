@@ -115,9 +115,8 @@
 
   /* ---------- Layout ---------------------------------------------------- */
   --page-pad: clamp(20px, 4.5vw, 56px);
-  --content:  1120px;   /* landing pages and tools, where grids run wide    */
-  --content-read: 860px;/* reading pages, where the frame follows the text  */
-  --measure:  76ch;    /* maximum comfortable line length for body copy    */
+  --content:  1120px;   /* every page: one frame, one left edge            */
+  --measure:  88ch;    /* maximum line length for body copy               */
   --header-h: 64px;
 
   /* ---------- Geometry -------------------------------------------------- */

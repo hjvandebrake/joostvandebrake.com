@@ -17,15 +17,6 @@
   margin-inline: auto;
 }
 
-/* Research, Teaching, Practice, Resources, and Contact are reading pages, not
-   landing pages. Their frame follows the text: a 76-character column stranded
-   in a 1120px container is what makes those pages look narrow, and the fix is
-   the container, not longer lines. Cards get wider for the same reason, two
-   across instead of three. The home page keeps the full width for its grids. */
-body:not([data-page="home"]) .wrap {
-  width: min(var(--content-read), calc(100% - (2 * var(--page-pad))));
-}
-
 .sec {
   padding: var(--sp-section) var(--page-pad);
   background: var(--white);
@@ -538,11 +529,14 @@ body:not([data-page="home"]) .wrap {
   gap: 14px;
 }
 
+/* The home page runs its grids three across; it is a landing page and the
+   cards there are short. The sub-page grids carry a paragraph each, so their
+   tracks are wide enough to land on two across in the same frame. */
 .home-offers  { grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr)); }
 .featured-pubs{ grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); }
-.card-grid    { grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); }
-.proj-grid    { grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr)); }
-.off-grid     { grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); }
+.card-grid    { grid-template-columns: repeat(auto-fill, minmax(min(380px, 100%), 1fr)); }
+.proj-grid    { grid-template-columns: repeat(auto-fill, minmax(min(380px, 100%), 1fr)); }
+.off-grid     { grid-template-columns: repeat(auto-fill, minmax(min(380px, 100%), 1fr)); }
 
 /* Featured publications */
 .fp {
@@ -797,16 +791,9 @@ body:not([data-page="home"]) .wrap {
    header: the page is still a heading and a standfirst, with a picture. */
 .pg-hd.has-figure .wrap {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 340px);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 440px);
   align-items: center;
   gap: var(--sp-7);
-}
-
-/* The title has half the width it had, so it takes a step down the scale.
-   Without this the longer titles ran to four lines and the header grew taller
-   than the illustration beside it. */
-.pg-hd.has-figure .wrap h1 {
-  font-size: clamp(1.8rem, 3vw, 2.3rem);
 }
 
 .pg-hd-figure {
@@ -1006,14 +993,17 @@ body:not([data-page="home"]) .wrap {
   font-size: var(--t-xs);
 }
 
+/* Cards rather than banners: a single column of these across the full frame
+   left each short one looking like a strip. The MTM entry keeps the full
+   width because it carries the most copy. */
 .resource-list {
   display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(380px, 100%), 1fr));
   gap: 14px;
-  max-width: var(--content-read);
 }
 
-.resource-card {
-  max-width: var(--content-read);
+.resource-card.featured {
+  grid-column: 1 / -1;
 }
 
 .resource-card.featured {
@@ -1114,13 +1104,6 @@ body:not([data-page="home"]) .wrap {
   gap: var(--sp-7);
 }
 
-/* Side by side at the reading width, the detail grid fell to 189px a column,
-   which is not enough for an address or an email. The invitation sits above
-   the details instead, and the details keep two comfortable columns. */
-body[data-page="contact"] .ct-cols {
-  grid-template-columns: 1fr;
-  gap: var(--sp-6);
-}
 
 .ct-desc {
   max-width: var(--measure);
