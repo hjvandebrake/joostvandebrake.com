@@ -792,6 +792,45 @@ body:not([data-page="home"]) .wrap {
   margin-bottom: var(--sp-2);
 }
 
+/* Research, Teaching, and Working with organisations each open with an
+   illustration beside the title. It is deliberately the smaller half of the
+   header: the page is still a heading and a standfirst, with a picture. */
+.pg-hd.has-figure .wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 340px);
+  align-items: center;
+  gap: var(--sp-7);
+}
+
+/* The title has half the width it had, so it takes a step down the scale.
+   Without this the longer titles ran to four lines and the header grew taller
+   than the illustration beside it. */
+.pg-hd.has-figure .wrap h1 {
+  font-size: clamp(1.8rem, 3vw, 2.3rem);
+}
+
+.pg-hd-figure {
+  margin: 0;
+}
+
+.pg-hd-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+}
+
+@media (max-width: 900px) {
+  .pg-hd.has-figure .wrap {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+
+  .pg-hd-figure {
+    max-width: 420px;
+  }
+}
+
 /* --------------------------------------------------------------------------
    Rich content blocks
    -------------------------------------------------------------------------- */

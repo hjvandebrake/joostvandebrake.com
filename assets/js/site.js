@@ -343,10 +343,17 @@ const pages = {
 
   research(){
     document.getElementById('pg-research').innerHTML = `
-    <div class="pg-hd"><div class="wrap"><p class="eye">${T('Research', 'Onderzoek')}</p><h1>${T('Teams, networks, and the modern shape of work', 'Teams, netwerken en de moderne vormgeving van werk')}</h1><p>${T(
+    <div class="pg-hd has-figure"><div class="wrap">
+      <div class="pg-hd-text"><p class="eye">${T('Research', 'Onderzoek')}</p><h1>${T('Teams, networks, and the modern shape of work', 'Teams, netwerken en de moderne vormgeving van werk')}</h1><p>${T(
       'My research investigates how people work together within and across teams in modern organisations.',
       'Mijn onderzoek bestudeert hoe mensen samenwerken binnen en tussen teams in moderne organisaties.'
-    )}</p></div></div>
+    )}</p></div>
+      <figure class="pg-hd-figure">
+        <img src="/assets/illustrations/research.webp" width="800" height="600"
+             alt="${T('Joost van de Brake at a desk, annotating a manuscript beside notebooks, printed charts, a network diagram, and a stack of organisational behaviour books.', 'Joost van de Brake aan zijn bureau, met aantekeningen in een manuscript, naast notitieboeken, uitgeprinte grafieken, een netwerkdiagram en een stapel boeken over organisatiegedrag.')}"
+             loading="eager" decoding="async">
+      </figure>
+    </div></div>
 
     <section class="sec">
       <div class="wrap">
@@ -419,10 +426,17 @@ const pages = {
 
   teaching(){
     document.getElementById('pg-teaching').innerHTML = `
-    <div class="pg-hd"><div class="wrap"><p class="eye">${T('Teaching', 'Onderwijs')}</p><h1>${T('Research-driven teaching on teams, leadership, and modern work', 'Onderzoeksgedreven onderwijs over teams, leiderschap en modern werk')}</h1><p>${T(
+    <div class="pg-hd has-figure"><div class="wrap">
+      <div class="pg-hd-text"><p class="eye">${T('Teaching', 'Onderwijs')}</p><h1>${T('Research-driven teaching on teams, leadership, and modern work', 'Onderzoeksgedreven onderwijs over teams, leiderschap en modern werk')}</h1><p>${T(
       'I teach management students, business administration students, and senior executives about the challenges of modern work arrangements: team dynamics, multiple team membership, hybrid work, and sustainable employability. The approach bridges academic theory and practical application, and I actively involve students in my own research projects.',
       'Ik geef onderwijs aan studenten Management en Bedrijfskunde en aan senior leidinggevenden over de uitdagingen van moderne werkarrangementen: teamdynamiek, multiple team membership, hybride werk en duurzame inzetbaarheid. Mijn aanpak verbindt academische theorie met praktische toepassing, en ik betrek studenten actief bij mijn eigen onderzoeksprojecten.'
-    )}</p></div></div>
+    )}</p></div>
+      <figure class="pg-hd-figure">
+        <img src="/assets/illustrations/teaching.webp" width="800" height="600"
+             alt="${T('Joost van de Brake teaching a full lecture hall, with a network diagram and charts on the screen behind him.', 'Joost van de Brake geeft college in een volle collegezaal, met een netwerkdiagram en grafieken op het scherm achter hem.')}"
+             loading="eager" decoding="async">
+      </figure>
+    </div></div>
 
     <section class="sec">
       <div class="wrap">
@@ -486,10 +500,17 @@ const pages = {
 
   practice(){
     document.getElementById('pg-practice').innerHTML = `
-    <div class="pg-hd"><div class="wrap"><p class="eye">${T('Working with organisations', 'Samenwerking met de praktijk')}</p><h1>${T('Evidence-based help with team and collaboration challenges', 'Evidence-based ondersteuning bij vraagstukken rond teams en samenwerking')}</h1><p>${T(
+    <div class="pg-hd has-figure"><div class="wrap">
+      <div class="pg-hd-text"><p class="eye">${T('Working with organisations', 'Samenwerking met de praktijk')}</p><h1>${T('Evidence-based help with team and collaboration challenges', 'Evidence-based ondersteuning bij vraagstukken rond teams en samenwerking')}</h1><p>${T(
       'I work with HR teams, leadership, and project controllers in organisations that want to take their team and people questions seriously, and act on what the evidence actually shows. Past partners include applied research institutes, hospitals, energy and infrastructure companies, national healthcare bodies, municipalities, and ministries. I am open to new partnerships.',
       'Ik werk samen met HR-teams, leidinggevenden en projectcontrollers in organisaties die hun team- en mensvraagstukken serieus willen aanpakken en willen handelen op basis van wat de evidence laat zien. Eerdere partners zijn onder andere toegepaste onderzoeksinstituten, ziekenhuizen, energie- en infrastructuurbedrijven, landelijke zorgkoepels, gemeenten en ministeries. Ik sta open voor nieuwe samenwerkingen.'
-    )}</p></div></div>
+    )}</p></div>
+      <figure class="pg-hd-figure">
+        <img src="/assets/illustrations/practice.webp" width="800" height="600"
+             alt="${T('Joost van de Brake in discussion with five colleagues around a table covered in printed charts and network diagrams.', 'Joost van de Brake in gesprek met vijf collega’s rond een tafel vol uitgeprinte grafieken en netwerkdiagrammen.')}"
+             loading="eager" decoding="async">
+      </figure>
+    </div></div>
 
     <section class="sec">
       <div class="wrap">
