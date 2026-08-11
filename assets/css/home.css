@@ -431,6 +431,14 @@
   line-height: var(--lh-snug);
 }
 
+.hero-identity {
+  max-width: 620px;
+  margin: calc(-1 * var(--sp-1)) 0 var(--sp-3);
+  color: var(--ink-600);
+  font-size: var(--t-xs);
+  line-height: var(--lh-body);
+}
+
 .hero-content .lead {
   max-width: 620px;
   margin-bottom: var(--sp-6);

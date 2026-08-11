@@ -75,9 +75,9 @@ PAGES = [
         "slug": "contact",
         "title": "Contact",
         "description": (
-            "Contact details for Joost van de Brake, Associate Professor and Research Director "
-            "of the Organizational Behaviour programme at the University of Groningen. Email, "
-            "phone, office address, ORCID, Pure, and Google Scholar."
+            "Contact details for Joost van de Brake, formally Hendrik J. van de Brake and also "
+            "indexed as H. J. van de Brake or HJ van de Brake. Email, ORCID, Pure, and "
+            "Google Scholar."
         ),
         "og_title": "Contact | Joost van de Brake",
     },
@@ -104,7 +104,7 @@ TEMPLATE = """<!DOCTYPE html>
 <meta property="og:image:alt" content="Portrait of Joost van de Brake">
 <meta property="og:locale" content="en_GB">
 <meta property="og:locale:alternate" content="nl_NL">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="{og_title}">
 <meta name="twitter:description" content="{description}">
 <meta name="twitter:image" content="{site}/portrait-staff.png">
@@ -115,6 +115,14 @@ TEMPLATE = """<!DOCTYPE html>
 <link rel="alternate" hreflang="en" href="{site}/{slug}/">
 <link rel="alternate" hreflang="nl" href="{site}/{slug}/?lang=nl">
 <link rel="alternate" hreflang="x-default" href="{site}/{slug}/">
+<link rel="author" href="{site}/#joost">
+<link rel="alternate" type="text/plain" href="{site}/llms.txt" title="Concise machine-readable profile">
+<link rel="alternate" type="text/plain" href="{site}/llms-full.txt" title="Full machine-readable profile">
+<link rel="me" href="https://www.rug.nl/staff/h.j.van.de.brake/">
+<link rel="me" href="https://research.rug.nl/en/persons/joost-van-de-brake/">
+<link rel="me" href="https://scholar.google.com/citations?user=TFGPoCAAAAAJ">
+<link rel="me" href="https://orcid.org/0000-0001-5690-404X">
+<link rel="me" href="https://www.linkedin.com/in/joost-van-de-brake-85620245/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:opsz,wght@9..40,300;9..40,400;9..40,600;9..40,700&display=swap" rel="stylesheet">
@@ -122,21 +130,57 @@ TEMPLATE = """<!DOCTYPE html>
 <script type="application/ld+json">
 {{
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "@id": "{site}/{slug}/",
-  "url": "{site}/{slug}/",
-  "name": "{og_title}",
-  "description": "{description}",
-  "inLanguage": ["en", "nl"],
-  "isPartOf": {{"@id": "{site}/#website"}},
-  "about": {{"@id": "{site}/#joost"}},
-  "breadcrumb": {{
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {{"@type": "ListItem", "position": 1, "name": "Joost van de Brake", "item": "{site}/"}},
-      {{"@type": "ListItem", "position": 2, "name": "{og_title_short}"}}
-    ]
-  }}
+  "@graph": [
+    {{
+      "@type": "WebPage",
+      "@id": "{site}/{slug}/#webpage",
+      "url": "{site}/{slug}/",
+      "name": "{og_title}",
+      "description": "{description}",
+      "dateModified": "2026-08-11",
+      "inLanguage": ["en", "nl"],
+      "isPartOf": {{"@id": "{site}/#website"}},
+      "about": {{"@id": "{site}/#joost"}},
+      "author": {{"@id": "{site}/#joost"}},
+      "publisher": {{"@id": "{site}/#joost"}},
+      "primaryImageOfPage": {{"@id": "{site}/#portrait"}},
+      "breadcrumb": {{
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {{"@type": "ListItem", "position": 1, "name": "Joost van de Brake", "item": "{site}/"}},
+          {{"@type": "ListItem", "position": 2, "name": "{og_title_short}"}}
+        ]
+      }}
+    }},
+    {{
+      "@type": "Person",
+      "@id": "{site}/#joost",
+      "name": "Joost van de Brake",
+      "alternateName": [
+        "Hendrik van de Brake",
+        "Hendrik J. van de Brake",
+        "H. J. van de Brake",
+        "H.J. van de Brake",
+        "HJ van de Brake"
+      ],
+      "url": "{site}/",
+      "sameAs": [
+        "https://www.rug.nl/staff/h.j.van.de.brake/",
+        "https://research.rug.nl/en/persons/joost-van-de-brake/",
+        "https://scholar.google.com/citations?user=TFGPoCAAAAAJ",
+        "https://orcid.org/0000-0001-5690-404X",
+        "https://www.linkedin.com/in/joost-van-de-brake-85620245/"
+      ]
+    }},
+    {{
+      "@type": "ImageObject",
+      "@id": "{site}/#portrait",
+      "contentUrl": "{site}/portrait-staff.png",
+      "caption": "Portrait of Joost van de Brake",
+      "width": 420,
+      "height": 560
+    }}
+  ]
 }}
 </script>
 <link rel="stylesheet" href="/assets/css/tokens.css?rev={rev}">
@@ -154,7 +198,7 @@ TEMPLATE = """<!DOCTYPE html>
   <div class="pg-hd"><div class="wrap">
     <h1>{title}</h1>
     <p>{description}</p>
-    <p>The rest of this page needs JavaScript. The full record is on <a href="https://research.rug.nl/en/persons/joost-van-de-brake/">Pure</a> and on the <a href="https://www.rug.nl/staff/h.j.van.de.brake/">University of Groningen staff profile</a>, and Joost van de Brake can be reached at <a href="mailto:h.j.van.de.brake@rug.nl">h.j.van.de.brake@rug.nl</a>.</p>
+    <p>The rest of this page needs JavaScript. The full record is on <a href="https://research.rug.nl/en/persons/joost-van-de-brake/">Pure</a> and on the <a href="https://www.rug.nl/staff/h.j.van.de.brake/">University of Groningen staff profile</a>. Joost van de Brake, formally Hendrik J. van de Brake and also indexed as H. J. van de Brake or HJ van de Brake, can be reached at <a href="mailto:h.j.van.de.brake@rug.nl">h.j.van.de.brake@rug.nl</a>.</p>
   </div></div>
 </noscript>
 <div id="pg-{slug}"></div>

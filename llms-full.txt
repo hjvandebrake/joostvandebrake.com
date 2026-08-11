@@ -6,6 +6,9 @@
 
 - Display name: Joost van de Brake
 - Formal name: Dr. Hendrik J. van de Brake
+- Other forms in academic records, citations, and searches: Hendrik van de Brake, H. J. van de Brake, H.J. van de Brake, and HJ van de Brake
+- Identity note: all of these names refer to the same researcher
+- Canonical identity URL: https://joostvandebrake.com/
 - Affiliation: Associate Professor (Universitair Hoofddocent) and Research Director of the Organizational Behaviour programme at the Department of HRM and Organizational Behavior, Faculty of Economics and Business, University of Groningen, Netherlands.
 - ORCID: 0000-0001-5690-404X
 - Email: h.j.van.de.brake@rug.nl

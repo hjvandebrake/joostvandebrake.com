@@ -269,6 +269,10 @@ const pages = {
         <div class="hero-content">
           <p class="eye">${T('Teams · Collaboration · Hybrid work · Modern workplace', 'Teams · Samenwerking · Hybride werk · Moderne werkplek')}</p>
           <h1 class="h1">Joost van de Brake</h1>
+          <p class="hero-identity">${T(
+            'Formal name: Hendrik J. van de Brake. Academic records also use H. J. van de Brake and HJ van de Brake.',
+            'Formele naam: Hendrik J. van de Brake. In academische registers worden ook H. J. van de Brake en HJ van de Brake gebruikt.'
+          )}</p>
           <p class="hero-tagline">${T(
             'Research and teaching on modern teamwork.',
             'Onderzoek en onderwijs over modern teamwerk.'
@@ -369,7 +373,7 @@ const pages = {
               'Download slides and practical materials from recent talks and teaching sessions.',
               'Download slides en praktisch materiaal van recente lezingen en onderwijssessies.'
             )}</p>
-            <span class="aud-card-cue">${T('View resources &rarr;', 'Bekijk materiaal &rarr;')}</span>
+            <span class="aud-card-cue">${T('View resources →', 'Bekijk materiaal →')}</span>
           </a>
         </div>
       </div>
@@ -412,7 +416,7 @@ const pages = {
           )}</p>
 
           <p>${T(
-            'The programme now reaches beyond the individual team portfolio. Work with Stefan Berger examines the design of flexible team arrangements at the level of the organisation, and a multilevel study of remote work shows that the benefits of working from home depend on how the schedules of the people around you are configured. Ongoing projects ask how unit-level remote-work configurations affect psychological safety and performance, and how strain such as emotional exhaustion travels through everyday collaboration networks.',
+            'The programme now reaches beyond the individual team portfolio. Work with Stefan Berger examines the design of flexible team arrangements at the level of the organisation, and a multilevel study of remote work shows that the benefits of working from home depend on how the schedules of surrounding colleagues are configured. Ongoing projects ask how unit-level remote-work configurations affect psychological safety and performance, and how strain such as emotional exhaustion travels through everyday collaboration networks.',
             'De onderzoekslijn reikt inmiddels verder dan het teamportfolio van het individu. Werk met Stefan Berger onderzoekt het ontwerp van flexibele teamarrangementen op organisatieniveau, en een meerlaagse studie naar remote werk laat zien dat de voordelen van thuiswerken afhangen van de manier waarop de roosters van de collega’s daaromheen zijn ingericht. Lopende projecten onderzoeken hoe remote-werkconfiguraties op afdelingsniveau de psychologische veiligheid en prestaties beïnvloeden, en hoe spanning zoals emotionele uitputting zich verspreidt via dagelijkse samenwerkingsnetwerken.'
           )}</p>
 
@@ -469,7 +473,7 @@ const pages = {
             <li><p class="li-h">${T('Generative AI in research', 'Generatieve AI in onderzoek')}</p><p class="li-body">${T('I initiated a faculty-wide effort on generative AI in research, wrote the opening note, and chair the workgroup turning it into shared guidance. The starting point is that these tools should improve the quality and transparency of research rather than simply increase output.', 'Ik startte een facultair traject over generatieve AI in onderzoek, schreef de agenderende notitie en zit de werkgroep voor die dit omzet in gedeelde richtlijnen. Uitgangspunt is dat deze hulpmiddelen de kwaliteit en transparantie van onderzoek moeten verbeteren, niet louter de productie verhogen.')}</p></li>
             <li><p class="li-h">${T('Associate Editor, Group and Organization Management', 'Associate Editor, Group and Organization Management')}</p><p class="li-body">${T('I review and shepherd submissions on teams, multiple team membership, and modern work arrangements.', 'Ik beoordeel en begeleid manuscripten over teams, multiple team membership en moderne werkarrangementen.')}</p></li>
             <li><p class="li-h">${T('Interview panel member, NWO Veni', 'Lid commissie NWO Veni')}</p><p class="li-body">${T('Served on the Veni interview panel of the Dutch Research Council in the Social Sciences and Humanities domain, panel <em>Economics and Business Administration</em>, evaluating proposals from early-career researchers.', 'Lid van de interviewcommissie van NWO Veni in het domein Sociale en Geesteswetenschappen, panel <em>Economie en Bedrijfskunde</em>, voor het beoordelen van voorstellen van early-career onderzoekers.')}</p></li>
-            <li><p class="li-h">${T('Academy of Management, OB Division', 'Academy of Management, OB Division')}</p><p class="li-body">${T('Co-founder and co-organiser of the annual professional development workshop <em>How to Manage Academic Collaborations</em>, held every year since 2020, and a member of the Making Connections Committee. Discussant at the Academy’s research symposium on multiple team membership in 2022 and 2025.', 'Medeoprichter van de professional development workshop <em>How to Manage Academic Collaborations</em> en sinds 2020 elk jaar medeorganisator, en lid van de Making Connections Committee. Discussant op het onderzoekssymposium over multiple team membership van de Academy in 2022 en 2025.')}</p></li>
+            <li><p class="li-h">${T('Academy of Management, OB Division', 'Academy of Management, OB Division')}</p><p class="li-body">${T('Co-founder and co-organiser of the annual professional development workshop <em>How to Manage Academic Collaborations</em>, held every year since 2020, and a member of the Making Connections Committee. Discussant at the Academy’s research symposium on multiple team membership in 2022 and 2025.', 'Medeoprichter van de professional development workshop <em>How to Manage Academic Collaborations</em>, sinds 2020 elk jaar medeorganisator, en lid van de Making Connections Committee. Discussant op het onderzoekssymposium over multiple team membership van de Academy in 2022 en 2025.')}</p></li>
             <li><p class="li-h">${T('Institutional Review Board, FEB, University of Groningen', 'Institutional Review Board, FEB, Rijksuniversiteit Groningen')}</p><p class="li-body">${T('Reviewing research-ethics applications for the Faculty of Economics and Business.', 'Beoordelen van aanvragen rond onderzoeksethiek voor de Faculteit Economie en Bedrijfskunde.')}</p></li>
             <li><p class="li-h">${T('FEB Research Institute (FEBRI)', 'FEB Research Institute (FEBRI)')}</p><p class="li-body">${T('FEBRI Fellow, reviewer and discussant at the annual FEBRI conference, lecturer at the FEBRI publishing workshop for PhD students.', 'FEBRI Fellow, reviewer en discussant op de jaarlijkse FEBRI-conferentie, en docent in de FEBRI-publicatieworkshop voor promovendi.')}</p></li>
             <li><p class="li-h">${T('Ad-hoc reviewing', 'Ad-hoc reviews')}</p><p class="li-body">${T('Academy of Management Journal, Organization Science, Management Science, and others.', 'Academy of Management Journal, Organization Science, Management Science en andere tijdschriften.')}</p></li>
@@ -552,7 +556,7 @@ const pages = {
         <div class="block">
           <h2 class="block-h">${T('Invited talks and seminars', 'Lezingen en seminars op uitnodiging')}</h2>
           <p>${T(
-            'My work has been the topic of invited talks at universities and ministries in the Netherlands and abroad. Recent academic venues include Rotterdam School of Management, the University of Amsterdam, the University of Tilburg, and the University of Giessen. I have also given invited presentations at Dutch ministries. Earlier in my career I gave a seminar at the Duke Network Analysis Center as part of my Fulbright stay.',
+            'My work has been the topic of invited talks at universities and ministries in the Netherlands and abroad. Recent academic venues include Rotterdam School of Management, the University of Amsterdam, Tilburg University, and the University of Giessen. I have also given invited presentations at Dutch ministries. Earlier in my career I gave a seminar at the Duke Network Analysis Center as part of my Fulbright stay.',
             'Mijn werk is onderwerp geweest van lezingen op uitnodiging bij universiteiten en ministeries in Nederland en daarbuiten. Recente academische gelegenheden zijn onderzoeksseminars aan Rotterdam School of Management, de Universiteit van Amsterdam, Tilburg University en de Universiteit van Gießen. Daarnaast heb ik presentaties gegeven op uitnodiging bij Nederlandse ministeries. Eerder in mijn loopbaan gaf ik een seminar aan het Duke Network Analysis Center tijdens mijn Fulbright-verblijf.'
           )}</p>
           <p>${T(
@@ -724,6 +728,7 @@ const pages = {
             </div>
           </div>
           <div class="ci-grid">
+            <div class="ci"><p class="ci-l">${T('Name', 'Naam')}</p><p class="ci-v">Joost van de Brake<br>${T('Formally Hendrik J. van de Brake; academic records also use H. J. van de Brake and HJ van de Brake.', 'Formeel Hendrik J. van de Brake; in academische registers worden ook H. J. van de Brake en HJ van de Brake gebruikt.')}</p></div>
             <div class="ci"><p class="ci-l">${T('Email', 'E-mail')}</p><p class="ci-v"><a href="mailto:h.j.van.de.brake@rug.nl">h.j.van.de.brake@rug.nl</a></p></div>
             <div class="ci"><p class="ci-l">${T('Phone', 'Telefoon')}</p><p class="ci-v">+31 6 4571 4392</p></div>
             <div class="ci"><p class="ci-l">${T('Office', 'Werkadres')}</p><p class="ci-v">${T('Nettelbosje 2, 9747 AE Groningen, Netherlands', 'Nettelbosje 2, 9747 AE Groningen, Nederland')}</p></div>
@@ -771,4 +776,3 @@ window.addEventListener('scroll', () => {
 
 /* INIT */
 setLang(langFromUrl(), false);
-
