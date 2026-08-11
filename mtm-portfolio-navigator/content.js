@@ -172,7 +172,7 @@ window.MTM_CONTENT = {
       limitsTitle: 'Zet één patroon om in een gesprek over werkontwerp',
       limitsBody: 'Bekijk de uitkomst met de mensen die het werk plannen en coördineren. Kies één patroon. Spreek af wie een kleine verandering ondersteunt. Bepaal wanneer u het resultaat bespreekt.',
       limitsAction: 'De Navigator ondersteunt reflectie en gesprekken over werkontwerp. Beslissingen over medewerkers vragen om bredere informatie en een passende professionele werkwijze.',
-      footerTitle: 'Meer Dan Een Getal: MTM Portfolio Navigator',
+      footerTitle: 'Meer dan een getal: MTM Portfolio Navigator',
       footerFunding: 'Ondersteund door NWO. Ontwikkeld door Joost van de Brake op basis van zijn onderzoek naar multiple team membership.',
       contact: 'Contact',
       research: 'Onderzoek',
