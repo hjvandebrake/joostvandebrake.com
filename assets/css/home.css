@@ -472,7 +472,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: grayscale(8%) contrast(1.03);
 }
 
 /* --------------------------------------------------------------------------
@@ -819,12 +818,17 @@
 }
 
 /* Teaching and Working with organisations open with a paragraph; Research
-   opens with a single sentence, so its text block is much shorter and the
-   illustration stood a long way above and below it. Smaller here only, and
-   flush right so the frame still ends on the same edge. */
-body[data-page="research"] .pg-hd-figure {
-  justify-self: end;
-  max-width: 360px;
+   opens with a single sentence, so its text block is much shorter. Narrowing
+   the whole column rather than the figure inside it keeps the illustration
+   next to the text instead of stranded against the right edge, and at this
+   size it barely rises above the text at all. */
+/* Inside the media query on purpose: this selector outranks the single-column
+   rule below, so unscoped it would keep two columns on a phone and squeeze the
+   text column to nothing. */
+@media (min-width: 901px) {
+  body[data-page="research"] .pg-hd.has-figure .wrap {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 290px);
+  }
 }
 
 .pg-hd-figure img {

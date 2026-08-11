@@ -287,7 +287,7 @@ const pages = {
             <a class="btn btn-ghost" href="${U('/practice/')}">${T('Working with organisations', 'Samenwerking met de praktijk')}</a>
           </div>
         </div>
-        <div class="portrait"><picture><source srcset="/portrait-staff.webp" type="image/webp"><img src="/portrait-staff.png" alt="${T('Portrait of Joost van de Brake', 'Portret van Joost van de Brake')}" width="420" height="560" loading="eager" fetchpriority="high"></picture></div>
+        <div class="portrait"><picture><source srcset="/portrait-staff.webp?v=20260811b" type="image/webp"><img src="/portrait-staff.png?v=20260811b" alt="${T('Portrait of Joost van de Brake', 'Portret van Joost van de Brake')}" width="420" height="560" loading="eager" fetchpriority="high"></picture></div>
       </div>
     </section>
 
