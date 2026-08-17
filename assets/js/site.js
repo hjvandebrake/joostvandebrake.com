@@ -287,7 +287,7 @@ const pages = {
             <a class="btn btn-ghost" href="${U('/practice/')}">${T('Working with organisations', 'Samenwerking met de praktijk')}</a>
           </div>
         </div>
-        <div class="portrait"><picture><source srcset="/portrait-staff.webp?v=20260811c" type="image/webp"><img src="/portrait-staff.png?v=20260811c" alt="${T('Portrait of Joost van de Brake', 'Portret van Joost van de Brake')}" width="420" height="560" loading="eager" fetchpriority="high"></picture></div>
+        <div class="portrait"><picture><source srcset="/portrait-staff.webp?v=20260817a" type="image/webp"><img src="/portrait-staff.png?v=20260817a" alt="${T('Portrait of Joost van de Brake', 'Portret van Joost van de Brake')}" width="420" height="560" loading="eager" fetchpriority="high"></picture></div>
       </div>
     </section>
 
@@ -386,11 +386,11 @@ const pages = {
     document.getElementById('pg-research').innerHTML = `
     <div class="pg-hd has-figure"><div class="wrap">
       <div class="pg-hd-text"><p class="eye">${T('Research', 'Onderzoek')}</p><h1>${T('Teams, networks, and the modern shape of work', 'Teams, netwerken en de moderne vormgeving van werk')}</h1><p>${T(
-      'My research investigates how people work together within and across teams in modern organisations.',
-      'Mijn onderzoek gaat over de vraag hoe mensen samenwerken binnen en tussen teams in moderne organisaties.'
+      'My research investigates how people work together within and across teams in modern organisations. It covers multiple team membership, flexible and hybrid arrangements, and the conditions under which people can do that work well.',
+      'Mijn onderzoek gaat over de vraag hoe mensen samenwerken binnen en tussen teams in moderne organisaties. Het beslaat multiple team membership, flexibele en hybride werkvormen, en de voorwaarden waaronder mensen dat werk goed kunnen doen.'
     )}</p></div>
       <figure class="pg-hd-figure">
-        <img src="/assets/illustrations/research.webp?v=20260811c" width="1000" height="750"
+        <img src="/assets/illustrations/research.webp?v=20260817a" width="1000" height="750"
              alt="${T('Joost van de Brake at a desk, annotating a manuscript beside notebooks, printed charts, a network diagram, and a stack of organisational behaviour books.', 'Joost van de Brake aan zijn bureau terwijl hij aantekeningen maakt in een manuscript, naast notitieboeken, uitgeprinte grafieken, een netwerkdiagram en een stapel boeken over organisatiegedrag.')}"
              loading="eager" decoding="async">
       </figure>
@@ -498,7 +498,7 @@ const pages = {
       'Ik geef onderwijs aan studenten Management en Bedrijfskunde en aan senior leidinggevenden over de uitdagingen van moderne werkarrangementen: teamdynamiek, multiple team membership, hybride werk en duurzame inzetbaarheid. Mijn aanpak verbindt academische theorie met praktische toepassing, en ik betrek studenten actief bij mijn eigen onderzoeksprojecten.'
     )}</p></div>
       <figure class="pg-hd-figure">
-        <img src="/assets/illustrations/teaching.webp?v=20260811c" width="1000" height="750"
+        <img src="/assets/illustrations/teaching.webp?v=20260817a" width="1000" height="750"
              alt="${T('Joost van de Brake teaching a full lecture hall, with a network diagram and charts on the screen behind him.', 'Joost van de Brake geeft college in een volle collegezaal, met een netwerkdiagram en grafieken op het scherm achter hem.')}"
              loading="eager" decoding="async">
       </figure>
@@ -580,7 +580,7 @@ const pages = {
       'Ik werk samen met HR-teams, leidinggevenden en projectcontrollers in organisaties die hun team- en mensvraagstukken serieus willen aanpakken en willen handelen op basis van wat de evidence laat zien. Eerdere partners zijn onder andere toegepaste onderzoeksinstituten, ziekenhuizen, energie- en infrastructuurbedrijven, landelijke zorgkoepels, gemeenten en ministeries. Ik sta open voor nieuwe samenwerkingen.'
     )}</p></div>
       <figure class="pg-hd-figure">
-        <img src="/assets/illustrations/practice.webp?v=20260811c" width="1000" height="750"
+        <img src="/assets/illustrations/practice.webp?v=20260817a" width="1000" height="750"
              alt="${T('Joost van de Brake in discussion with five colleagues around a table covered in printed charts and network diagrams.', 'Joost van de Brake in gesprek met vijf collega’s rond een tafel vol uitgeprinte grafieken en netwerkdiagrammen.')}"
              loading="eager" decoding="async">
       </figure>
