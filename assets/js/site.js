@@ -282,9 +282,7 @@ const pages = {
             'Ik bestudeer hoe mensen samenwerken binnen en tussen teams, en vertaal dat werk naar onderwijs, executive opleidingen en samenwerkingen met organisaties. Specifiek gericht op multiple team membership, hybride werk en de stress en spanning van moderne teamarrangementen.'
           )}</p>
           <div class="hero-btns">
-            <a class="btn btn-red" href="${U('/research/')}">${T('Research', 'Onderzoek')}</a>
-            <a class="btn btn-ghost" href="${U('/teaching/')}">${T('Teaching', 'Onderwijs')}</a>
-            <a class="btn btn-ghost" href="${U('/practice/')}">${T('Working with organisations', 'Samenwerking met de praktijk')}</a>
+            <a class="btn btn-red" href="${U('/research/')}">${T('Read the research', 'Bekijk het onderzoek')}</a>
           </div>
         </div>
         <div class="portrait"><picture><source srcset="/portrait-staff.webp?v=20260817a" type="image/webp"><img src="/portrait-staff.png?v=20260817a" alt="${T('Portrait of Joost van de Brake', 'Portret van Joost van de Brake')}" width="420" height="560" loading="eager" fetchpriority="high"></picture></div>
@@ -331,54 +329,20 @@ const pages = {
       </div>
     </section>
 
-    <section class="sec">
+    <section class="home-cta">
       <div class="wrap">
-        <div class="sec-head"><div><p class="eye">${T('Explore', 'Verken de site')}</p><h2 class="h2">${T('Five ways in', 'Vijf ingangen')}</h2></div></div>
-        <div class="aud-grid">
-          <a class="aud-card" href="${U('/research/')}">
-            <h3>${T('Research', 'Onderzoek')}</h3>
-            <p>${T(
-              'Full publication record, current work in progress, grants, awards, and editorial roles. Publications on multiple team membership and the stress and strain of modern teamwork.',
-              'Volledig publicatieoverzicht, lopend werk, subsidies, prijzen en redactionele rollen. Publicaties over multiple team membership en de stress en spanning van modern teamwerk.'
-            )}</p>
-            <span class="aud-card-cue">${T('See research →', 'Bekijk onderzoek →')}</span>
-          </a>
-          <a class="aud-card" href="${U('/teaching/')}">
-            <h3>${T('Teaching', 'Onderwijs')}</h3>
-            <p>${T(
-              'BSc, MSc, and executive courses on teams and organisational behaviour. PhD supervision on modern team arrangements. Invited talks at universities and ministries.',
-              'BSc-, MSc- en executive vakken over teams en organisatiegedrag. Begeleiding van promovendi op het terrein van moderne teamarrangementen. Lezingen op uitnodiging bij universiteiten en ministeries.'
-            )}</p>
-            <span class="aud-card-cue">${T('See teaching →', 'Bekijk onderwijs →')}</span>
-          </a>
-          <a class="aud-card" href="${U('/practice/')}">
-            <h3>${T('Working with organisations', 'Samenwerking met de praktijk')}</h3>
-            <p>${T(
-              'How I work with HR teams, leadership, and project controllers on team and collaboration challenges. Partnerships with research institutes, hospitals, infrastructure companies, ministries, and others.',
-              'Hoe ik samenwerk met HR-teams, leidinggevenden en projectcontrollers aan team- en samenwerkingsvraagstukken. Samenwerkingen met onderzoeksinstituten, ziekenhuizen, infrastructuurbedrijven, ministeries en anderen.'
-            )}</p>
-            <span class="aud-card-cue">${T('How I work with companies →', 'Hoe ik met organisaties werk →')}</span>
-          </a>
-          <a class="aud-card" href="${U('/mtm-resources/')}">
-            <h3>${T('Multiple team membership resources', 'Materiaal over werken in meerdere teams')}</h3>
-            <p>${T(
-              'The dedicated MTM page combines the Portfolio Navigator with two classroom cases and separate instructor guides.',
-              'De aparte MTM-pagina combineert de Portfolio Navigator met twee onderwijscases en aparte docentenhandleidingen.'
-            )}</p>
-            <span class="aud-card-cue">${T('Open the MTM resources →', 'Open het MTM-materiaal →')}</span>
-          </a>
-          <a class="aud-card" href="${U('/resources/')}">
-            <h3>${T('Resources', 'Materiaal')}</h3>
-            <p>${T(
-              'Download slides and practical materials from recent talks and teaching sessions.',
-              'Download slides en praktisch materiaal van recente lezingen en onderwijssessies.'
-            )}</p>
-            <span class="aud-card-cue">${T('View resources →', 'Bekijk materiaal →')}</span>
-          </a>
+        <div>
+          <h2>${T('Working across several teams?', 'Werkt u in meerdere teams?')}</h2>
+          <p>${T(
+            'The MTM Portfolio Navigator maps how one working week is divided across teams and helps you choose a small change to test. Two classroom cases with separate instructor guides come with it. Free, and supported by NWO.',
+            'De MTM Portfolio Navigator brengt in kaart hoe één werkweek over teams is verdeeld en helpt u een kleine verandering te kiezen om uit te proberen. Er horen twee onderwijscases met aparte docentenhandleidingen bij. Gratis, en ondersteund door NWO.'
+          )}</p>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn btn-red" href="${U('/mtm-resources/')}">${T('Open the MTM resources', 'Bekijk het MTM-materiaal')}</a>
         </div>
       </div>
     </section>
-
 `;
   },
 
