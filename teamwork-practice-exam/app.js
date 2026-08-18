@@ -2,7 +2,7 @@
 
 const GRADING_API =
   "https://teamwork-practice-exam.compatibel.chatgpt.site/api/grade-open";
-const STORAGE_KEY = "teamwork-practice-exam-2026-v2";
+const STORAGE_KEY = "teamwork-practice-exam-2026-v3";
 const { MC_BLOCKS, OPEN_QUESTIONS, OPEN_ANSWER_LIMIT } = window.EXAM_DATA;
 const ALL_MC_QUESTIONS = MC_BLOCKS.flatMap((block) => block.questions);
 const TOTAL_OPEN_PARTS = OPEN_QUESTIONS.reduce(
