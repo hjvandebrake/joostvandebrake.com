@@ -63,11 +63,11 @@ PAGES = [
     },
     {
         "slug": "resources",
-        "title": "Tools and teaching materials on working across teams",
+        "title": "Tools and teaching materials on teams and AI",
         "description": (
-            "Free resources from Joost van de Brake's research: the MTM Portfolio Navigator, "
-            "two classroom cases with separate instructor guides, a teamwork practice exam, "
-            "and slides from recent talks."
+            "Teaching resources from Joost van de Brake: the NorthGrid AI accounting case with "
+            "data, presentation, and report, the MTM Portfolio Navigator, classroom cases, "
+            "a teamwork practice exam, and slides."
         ),
         "og_title": "Resources | Joost van de Brake",
     },
@@ -137,7 +137,7 @@ TEMPLATE = """<!DOCTYPE html>
       "url": "{site}/{slug}/",
       "name": "{og_title}",
       "description": "{description}",
-      "dateModified": "2026-08-11",
+      "dateModified": "{modified}",
       "inLanguage": ["en", "nl"],
       "isPartOf": {{"@id": "{site}/#website"}},
       "about": {{"@id": "{site}/#joost"}},
@@ -247,6 +247,7 @@ def main():
 
         html = TEMPLATE.format(
             site=SITE,
+            modified="2026-10-02" if slug == "resources" else "2026-08-11",
             slug=slug,
             rev=rev,
             nav=page_nav,

@@ -601,8 +601,8 @@ const pages = {
   resources(){
     document.getElementById('pg-resources').innerHTML = `
     <div class="pg-hd"><div class="wrap"><p class="eye">${T('Resources', 'Materiaal')}</p><h1>${T('Tools and materials', 'Tools en materiaal')}</h1><p>${T(
-      'Find practical tools and teaching materials based on my research. Employees, team leaders, HR professionals, and project managers can use the tools to examine how work is organised across teams. Educators can use the cases and instructor guides in class. This page also includes selected slides and practice notes from talks and applied projects.',
-      'Hier vindt u praktische tools en onderwijsmateriaal op basis van mijn onderzoek. Medewerkers, teamleiders, HR-professionals en projectmanagers kunnen de tools gebruiken om te bekijken hoe werk over teams is georganiseerd. Docenten kunnen de cases en handleidingen in hun onderwijs gebruiken. De pagina bevat ook geselecteerde slides en praktijknotities uit lezingen en toegepaste projecten.'
+      'Tools and teaching materials on teamwork, organisation, and AI. Explore the cases in class, try the tools at work, or download the materials from recent talks. The NorthGrid case includes a full dataset and the financial report that AI produced from it.',
+      'Tools en onderwijsmateriaal over teamwork, organisatie en AI. Gebruik de cases in het onderwijs, probeer de tools in uw werk of download materiaal uit recente lezingen. Bij de NorthGrid-casus vindt u de volledige dataset en het financiële verslag dat AI daarmee maakte.'
     )}</p></div></div>
 
     <section class="sec">
@@ -610,6 +610,36 @@ const pages = {
         <div class="block">
           <h2 class="block-h">${T('Available resources', 'Beschikbaar materiaal')}</h2>
           <div class="resource-list">
+            <article class="card resource-card featured" id="northgrid">
+              <span class="card-tag teal">${T('Teaching case · AI and financial reporting', 'Onderwijscasus · AI en financiële verslaggeving')}</span>
+              <div class="resource-case">
+                <div class="resource-case-copy">
+                  <h3>${T('NorthGrid: can AI prepare annual accounts?', 'NorthGrid: kan AI een jaarrekening maken?')}</h3>
+                  <p>${T(
+                    'A Dutch-language case for financial and management controllers. Claude created the fictional organisation and all 536 source files, with Gasunie as inspiration. Codex then received those files and independently worked through the year-end close.',
+                    'Een casus voor financial en management controllers. Claude maakte de fictieve organisatie en alle 536 bronbestanden, met Gasunie als inspiratie. Codex kreeg daarna de bestanden en werkte zelfstandig de jaarafsluiting uit.'
+                  )}</p>
+                  <p>${T(
+                    'The presentation follows the assignment, calculations, and later revisions, including text editing in Claude. The resulting report is still a draft with unresolved questions. The case is intended for discussion of what AI can do and what the controller still needs to assess.',
+                    'De presentatie laat de opdracht, berekeningen en vervolgrondes zien, inclusief de latere tekstredactie in Claude. Het verslag blijft een concept met open vragen. De casus helpt bespreken wat AI kan en wat de controller nog moet beoordelen.'
+                  )}</p>
+                </div>
+                <a class="resource-case-preview" href="/resources/northgrid/presentatie.html" aria-label="${T('Open the NorthGrid presentation in Dutch', 'Open de NorthGrid-presentatie')}">
+                  <img src="/resources/northgrid/voorvertoning.webp" width="960" height="540" alt="${T('Opening slide: Kan AI een jaarrekening maken?', 'Openingsdia: Kan AI een jaarrekening maken?')}" loading="lazy">
+                  <span>${T('View the complete case in your browser', 'Bekijk de hele casus in de browser')}</span>
+                </a>
+              </div>
+              <p class="meta"><span>${T('DUTCH MATERIALS', 'NEDERLANDSTALIG')}</span><span>${T('21 SLIDES', '21 DIA’S')}</span><span>${T('536 SOURCE FILES', '536 BRONBESTANDEN')}</span><span>${T('45-PAGE REPORT', 'VERSLAG VAN 45 PAGINA’S')}</span></p>
+              <div class="resource-case-actions">
+                <a class="btn btn-red" href="/resources/northgrid/presentatie.html">${T('Open presentation', 'Open presentatie')}</a>
+                <a class="btn btn-ghost" href="/resources/northgrid/NorthGrid_casus_2026.zip" download>${T('Download full package (45.6 MB)', 'Download volledig pakket (45,6 MB)')}</a>
+                <a class="btn btn-ghost" href="/resources/northgrid/jaarverslag-2026.pdf">${T('Read the report (PDF)', 'Bekijk het verslag (PDF)')}</a>
+              </div>
+              <p>${T(
+                'The ZIP contains the presentation, organisation slides, original prompt, all source data, the latest report in PDF and Word, calculation workbooks, management questions, and earlier versions. After extracting it, open START_HIER.html. The presentation also works offline.',
+                'De ZIP bevat de presentatie, organisatiedia’s, oorspronkelijke prompt, alle brondata, het laatste verslag in PDF en Word, rekenwerk, managementvragen en eerdere versies. Pak het bestand uit en open START_HIER.html. De presentatie werkt ook offline.'
+              )}</p>
+            </article>
             <div class="card resource-card featured">
               <span class="card-tag teal">${T('Interactive tool and teaching cases', 'Interactieve tool en onderwijscases')}</span>
               <h3>${T('Multiple Team Membership Resources', 'Materiaal over werken in meerdere teams')}</h3>

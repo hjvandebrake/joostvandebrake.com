@@ -1237,6 +1237,9 @@ footer {
 }
 
 @media (max-width: 640px) {
+  .logo { min-width: 0; flex-shrink: 1; }
+  .logo-sub { display: none; }
+
   .highlights-grid {
     grid-template-columns: 1fr;
   }
@@ -1257,3 +1260,19 @@ footer {
     white-space: normal;
   }
 }
+
+/* NorthGrid teaching case, using the shared resource styles and tokens. */
+.resource-case {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: var(--sp-6);
+  align-items: start;
+}
+.resource-case-copy { display: flex; flex-direction: column; gap: var(--sp-3); }
+.resource-case-preview { display: block; color: var(--red-dark); font-size: var(--t-xs); }
+.resource-case-preview img { display: block; width: 100%; height: auto; border: 1px solid var(--ink-200); border-radius: var(--radius-sm); margin-bottom: var(--sp-2); }
+.resource-case-actions { display: flex; flex-wrap: wrap; gap: var(--sp-3); margin-bottom: var(--sp-2); }
+#northgrid { scroll-margin-top: calc(var(--header-h) + var(--sp-5)); }
+@media (max-width: 720px) { .resource-case { grid-template-columns: 1fr; gap: var(--sp-5); } }
+
+.resource-case-actions .btn { max-width: 100%; text-align: center; }
