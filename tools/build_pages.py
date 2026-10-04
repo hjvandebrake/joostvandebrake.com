@@ -65,8 +65,8 @@ PAGES = [
         "slug": "resources",
         "title": "Tools and teaching materials on teams and AI",
         "description": (
-            "Teaching resources from Joost van de Brake: the NorthGrid AI accounting case with "
-            "data, presentation, and report, the MTM Portfolio Navigator, classroom cases, "
+            "Resources from Joost van de Brake: a working report and presentation on AI and research "
+            "at FEB, the NorthGrid AI accounting case, the MTM Portfolio Navigator, classroom cases, "
             "a teamwork practice exam, and slides."
         ),
         "og_title": "Resources | Joost van de Brake",
@@ -247,7 +247,7 @@ def main():
 
         html = TEMPLATE.format(
             site=SITE,
-            modified="2026-10-02" if slug == "resources" else "2026-08-11",
+            modified="2026-10-04" if slug == "resources" else "2026-08-11",
             slug=slug,
             rev=rev,
             nav=page_nav,

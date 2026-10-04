@@ -610,6 +610,31 @@ const pages = {
         <div class="block">
           <h2 class="block-h">${T('Available resources', 'Beschikbaar materiaal')}</h2>
           <div class="resource-list">
+            <article class="card resource-card featured" id="ai-research-feb">
+              <span class="card-tag">${T('Working report · AI and research', 'Werkrapport · AI en onderzoek')}</span>
+              <div class="resource-case">
+                <div class="resource-case-copy">
+                  <h3>${T('AI and the future of research at FEB', 'AI en de toekomst van onderzoek bij FEB')}</h3>
+                  <p>${T(
+                    'A working report and interactive presentation for the research working group of the Faculty of Economics and Business. It examines how AI may change research along three dimensions, namely the research cycle, the form of research, and the position of the researcher, from PhD candidate to full professor.',
+                    'Een werkrapport en interactieve presentatie voor de onderzoekswerkgroep van de Faculteit Economie en Bedrijfskunde. Het rapport onderzoekt hoe AI onderzoek kan veranderen langs drie dimensies, namelijk de onderzoekscyclus, de vorm van het onderzoek en de positie van de onderzoeker, van promovendus tot hoogleraar.'
+                  )}</p>
+                  <p>${T(
+                    'The presentation follows the chapters of the report, and every slide links to the section it summarises. Heatmaps show 54 reasoned assessments, without and with a faculty AI support programme, and each cell explains its benefit, risk, and sources. The report is a working document for discussion, not adopted faculty policy.',
+                    'De presentatie volgt de hoofdstukken van het rapport en elke dia verwijst naar het deel dat ze samenvat. Heatmaps tonen 54 onderbouwde beoordelingen, zonder en met een facultair ondersteuningsprogramma voor AI, en elke cel licht voordeel, risico en bronnen toe. Het rapport is een werkdocument voor de discussie en geen vastgesteld facultair beleid.'
+                  )}</p>
+                </div>
+                <a class="resource-case-preview" href="/resources/ai-research-feb/" aria-label="${T('Open the presentation AI and the future of research at FEB', 'Open de presentatie AI and the future of research at FEB')}">
+                  <img src="/resources/ai-research-feb/preview.webp" width="960" height="540" alt="${T('Opening slide: AI and the future of research at FEB', 'Openingsdia: AI and the future of research at FEB')}" loading="lazy">
+                  <span>${T('Open the presentation with the full report', 'Open de presentatie met het volledige rapport')}</span>
+                </a>
+              </div>
+              <p class="meta"><span>${T('ENGLISH', 'ENGELSTALIG')}</span><span>${T('31 SLIDES', '31 DIA’S')}</span><span>${T('54 ASSESSMENTS', '54 BEOORDELINGEN')}</span><span>${T('FULL REPORT INCLUDED', 'MET VOLLEDIG RAPPORT')}</span></p>
+              <div class="resource-case-actions">
+                <a class="btn btn-red" href="/resources/ai-research-feb/">${T('Open presentation', 'Open presentatie')}</a>
+                <a class="btn btn-ghost" href="/resources/ai-research-feb/report.html">${T('Read the report', 'Lees het rapport')}</a>
+              </div>
+            </article>
             <article class="card resource-card featured" id="northgrid">
               <span class="card-tag teal">${T('Teaching case · AI and financial reporting', 'Onderwijscasus · AI en financiële verslaggeving')}</span>
               <div class="resource-case">
