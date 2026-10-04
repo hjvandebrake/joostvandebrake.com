@@ -65,7 +65,7 @@ PAGES = [
         "slug": "resources",
         "title": "Tools and teaching materials on teams and AI",
         "description": (
-            "Resources from Joost van de Brake: a working report and presentation on AI and research "
+            "Resources from Joost van de Brake: a first analysis of AI and research "
             "at FEB, the NorthGrid AI accounting case, the MTM Portfolio Navigator, classroom cases, "
             "a teamwork practice exam, and slides."
         ),

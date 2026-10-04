@@ -611,28 +611,28 @@ const pages = {
           <h2 class="block-h">${T('Available resources', 'Beschikbaar materiaal')}</h2>
           <div class="resource-list">
             <article class="card resource-card featured" id="ai-research-feb">
-              <span class="card-tag">${T('Working report · AI and research', 'Werkrapport · AI en onderzoek')}</span>
+              <span class="card-tag">${T('Presentation · AI and research', 'Presentatie · AI en onderzoek')}</span>
               <div class="resource-case">
                 <div class="resource-case-copy">
-                  <h3>${T('AI and the future of research at FEB', 'AI en de toekomst van onderzoek bij FEB')}</h3>
+                  <h3>${T('AI and research at FEB', 'AI en onderzoek bij FEB')}</h3>
                   <p>${T(
-                    'A working report and interactive presentation for the research working group of the Faculty of Economics and Business. It examines how AI may change research along three dimensions, namely the research cycle, the form of research, and the position of the researcher, from PhD candidate to full professor.',
-                    'Een werkrapport en interactieve presentatie voor de onderzoekswerkgroep van de Faculteit Economie en Bedrijfskunde. Het rapport onderzoekt hoe AI onderzoek kan veranderen langs drie dimensies, namelijk de onderzoekscyclus, de vorm van het onderzoek en de positie van de onderzoeker, van promovendus tot hoogleraar.'
+                    'A first analysis for the working group on AI in research at the Faculty of Economics and Business. It links FEB’s strategy for research quality and impact to the ways in which AI can contribute, and looks at AI along three dimensions, namely the stage of a project, the form of research, and the researcher’s career position.',
+                    'Een eerste analyse voor de werkgroep AI in onderzoek van de Faculteit Economie en Bedrijfskunde. De presentatie verbindt de FEB-strategie voor onderzoekskwaliteit en impact met wat AI daaraan kan bijdragen, en bekijkt AI langs drie dimensies, namelijk de fase van een project, de vorm van het onderzoek en de loopbaanpositie van de onderzoeker.'
                   )}</p>
                   <p>${T(
-                    'The presentation follows the chapters of the report, and every slide links to the section it summarises. Heatmaps show 54 reasoned assessments, without and with a faculty AI support programme, and each cell explains its benefit, risk, and sources. The report is a working document for discussion, not adopted faculty policy.',
-                    'De presentatie volgt de hoofdstukken van het rapport en elke dia verwijst naar het deel dat ze samenvat. Heatmaps tonen 54 onderbouwde beoordelingen, zonder en met een facultair ondersteuningsprogramma voor AI, en elke cel licht voordeel, risico en bronnen toe. Het rapport is een werkdocument voor de discussie en geen vastgesteld facultair beleid.'
+                    'At its core is a source-grounded assessment of opportunities and risks, shown in heatmaps of 54 assessments without and with a faculty AI support programme, in which every cell explains its benefit, risk, and sources. A background report gives the underlying detail. The analysis is a working document for discussion, not adopted faculty policy.',
+                    'De kern is een op bronnen gebaseerde beoordeling van kansen en risico’s, weergegeven in heatmaps met 54 beoordelingen zonder en met een facultair ondersteuningsprogramma voor AI, waarin elke cel voordeel, risico en bronnen toelicht. Een achtergrondrapport geeft de onderliggende details. De analyse is een werkdocument voor de discussie en geen vastgesteld facultair beleid.'
                   )}</p>
                 </div>
-                <a class="resource-case-preview" href="/resources/ai-research-feb/" aria-label="${T('Open the presentation AI and the future of research at FEB', 'Open de presentatie AI and the future of research at FEB')}">
-                  <img src="/resources/ai-research-feb/preview.webp" width="960" height="540" alt="${T('Opening slide: AI and the future of research at FEB', 'Openingsdia: AI and the future of research at FEB')}" loading="lazy">
-                  <span>${T('Open the presentation with the full report', 'Open de presentatie met het volledige rapport')}</span>
+                <a class="resource-case-preview" href="/resources/ai-research-feb/" aria-label="${T('Open the presentation AI and research at FEB', 'Open de presentatie AI and research at FEB')}">
+                  <img src="/resources/ai-research-feb/preview.webp" width="960" height="540" alt="${T('Opening slide: AI and research at FEB', 'Openingsdia: AI and research at FEB')}" loading="lazy">
+                  <span>${T('Open the presentation in your browser', 'Open de presentatie in de browser')}</span>
                 </a>
               </div>
-              <p class="meta"><span>${T('ENGLISH', 'ENGELSTALIG')}</span><span>${T('31 SLIDES', '31 DIA’S')}</span><span>${T('54 ASSESSMENTS', '54 BEOORDELINGEN')}</span><span>${T('FULL REPORT INCLUDED', 'MET VOLLEDIG RAPPORT')}</span></p>
+              <p class="meta"><span>${T('ENGLISH', 'ENGELSTALIG')}</span><span>${T('13 SLIDES', '13 DIA’S')}</span><span>${T('54 ASSESSMENTS', '54 BEOORDELINGEN')}</span><span>${T('BACKGROUND REPORT', 'ACHTERGRONDRAPPORT')}</span></p>
               <div class="resource-case-actions">
                 <a class="btn btn-red" href="/resources/ai-research-feb/">${T('Open presentation', 'Open presentatie')}</a>
-                <a class="btn btn-ghost" href="/resources/ai-research-feb/report.html">${T('Read the report', 'Lees het rapport')}</a>
+                <a class="btn btn-ghost" href="/resources/ai-research-feb/report.html">${T('Background report', 'Achtergrondrapport')}</a>
               </div>
             </article>
             <article class="card resource-card featured" id="northgrid">
