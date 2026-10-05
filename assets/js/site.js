@@ -629,7 +629,7 @@ const pages = {
                   <span>${T('Open the presentation in your browser', 'Open de presentatie in de browser')}</span>
                 </a>
               </div>
-              <p class="meta"><span>${T('ENGLISH', 'ENGELSTALIG')}</span><span>${T('15 SLIDES', '15 DIA’S')}</span><span>${T('54 ASSESSMENTS', '54 BEOORDELINGEN')}</span><span>${T('BACKGROUND REPORT', 'ACHTERGRONDRAPPORT')}</span></p>
+              <p class="meta"><span>${T('ENGLISH', 'ENGELSTALIG')}</span><span>${T('14 SLIDES', '14 DIA’S')}</span><span>${T('54 ASSESSMENTS', '54 BEOORDELINGEN')}</span><span>${T('BACKGROUND REPORT', 'ACHTERGRONDRAPPORT')}</span></p>
               <div class="resource-case-actions">
                 <a class="btn btn-red" href="/resources/ai-research-feb/">${T('Open presentation', 'Open presentatie')}</a>
                 <a class="btn btn-ghost" href="/resources/ai-research-feb/report.html">${T('Background report', 'Achtergrondrapport')}</a>
