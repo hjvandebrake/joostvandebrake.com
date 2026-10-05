@@ -620,8 +620,8 @@ const pages = {
                     'Een eerste analyse voor de werkgroep AI in onderzoek van de Faculteit Economie en Bedrijfskunde. De presentatie verbindt de FEB-strategie voor onderzoekskwaliteit en impact met wat AI daaraan kan bijdragen, en bekijkt AI langs drie dimensies, namelijk de fase van een project, de vorm van het onderzoek en de loopbaanpositie van de onderzoeker.'
                   )}</p>
                   <p>${T(
-                    'At its core is a combined assessment of opportunities and risks. For every research form and stage, all the ways in which AI can help or harm the research are listed with their sources and then weighed for PhD candidates, early-career researchers, and senior researchers, without and with a faculty AI support programme. A background report gives the underlying detail. The analysis is a working document for discussion, not adopted faculty policy.',
-                    'De kern is een gecombineerde beoordeling van kansen en risico’s. Voor elke onderzoeksvorm en fase worden alle manieren waarop AI het onderzoek kan helpen of schaden met bronnen op een rij gezet en vervolgens gewogen voor promovendi, onderzoekers aan het begin van hun loopbaan en senior onderzoekers, zonder en met een facultair ondersteuningsprogramma voor AI. Een achtergrondrapport geeft de onderliggende details. De analyse is een werkdocument voor de discussie en geen vastgesteld facultair beleid.'
+                    'At its core is a combined assessment of opportunities and risks. For every research form and stage, the benefits and risks that the literature reports are listed with their sources, and for PhD candidates, early-career researchers, and senior researchers a reasoned judgment says which is likely to dominate, without and with a faculty AI support programme. A background report and a detailed analysis of the three dimensions give the underlying detail. The analysis is a working document for discussion, not adopted faculty policy.',
+                    'De kern is een gecombineerde beoordeling van kansen en risico’s. Voor elke onderzoeksvorm en fase staan de voordelen en risico’s uit de literatuur met bronnen op een rij, en voor promovendi, onderzoekers aan het begin van hun loopbaan en senior onderzoekers geeft een onderbouwd oordeel aan wat waarschijnlijk de overhand heeft, zonder en met een facultair ondersteuningsprogramma voor AI. Een achtergrondrapport en een uitgebreide analyse van de drie dimensies geven de onderliggende details. De analyse is een werkdocument voor de discussie en geen vastgesteld facultair beleid.'
                   )}</p>
                 </div>
                 <a class="resource-case-preview" href="/resources/ai-research-feb/" aria-label="${T('Open the presentation AI and research at FEB', 'Open de presentatie AI and research at FEB')}">
@@ -629,7 +629,7 @@ const pages = {
                   <span>${T('Open the presentation in your browser', 'Open de presentatie in de browser')}</span>
                 </a>
               </div>
-              <p class="meta"><span>${T('ENGLISH', 'ENGELSTALIG')}</span><span>${T('13 SLIDES', '13 DIA’S')}</span><span>${T('54 ASSESSMENTS', '54 BEOORDELINGEN')}</span><span>${T('BACKGROUND REPORT', 'ACHTERGRONDRAPPORT')}</span></p>
+              <p class="meta"><span>${T('ENGLISH', 'ENGELSTALIG')}</span><span>${T('14 SLIDES', '14 DIA’S')}</span><span>${T('54 ASSESSMENTS', '54 BEOORDELINGEN')}</span><span>${T('BACKGROUND REPORT', 'ACHTERGRONDRAPPORT')}</span></p>
               <div class="resource-case-actions">
                 <a class="btn btn-red" href="/resources/ai-research-feb/">${T('Open presentation', 'Open presentatie')}</a>
                 <a class="btn btn-ghost" href="/resources/ai-research-feb/report.html">${T('Background report', 'Achtergrondrapport')}</a>
