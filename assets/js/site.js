@@ -610,31 +610,6 @@ const pages = {
         <div class="block">
           <h2 class="block-h">${T('Available resources', 'Beschikbaar materiaal')}</h2>
           <div class="resource-list">
-            <article class="card resource-card featured" id="ai-research-feb">
-              <span class="card-tag">${T('Presentation · AI and research', 'Presentatie · AI en onderzoek')}</span>
-              <div class="resource-case">
-                <div class="resource-case-copy">
-                  <h3>${T('AI and research at FEB', 'AI en onderzoek bij FEB')}</h3>
-                  <p>${T(
-                    'A first analysis for the working group on AI in research at the Faculty of Economics and Business. It links FEB’s strategy for research quality and impact to the ways in which AI can contribute, and looks at AI along three dimensions, namely the stage of a project, the form of research, and the researcher’s career position.',
-                    'Een eerste analyse voor de werkgroep AI in onderzoek van de Faculteit Economie en Bedrijfskunde. De presentatie verbindt de FEB-strategie voor onderzoekskwaliteit en impact met wat AI daaraan kan bijdragen, en bekijkt AI langs drie dimensies, namelijk de fase van een project, de vorm van het onderzoek en de loopbaanpositie van de onderzoeker.'
-                  )}</p>
-                  <p>${T(
-                    'At its core is a combined assessment of opportunities and risks. For every research form and stage, the benefits and risks that the literature reports are listed with their sources, and for PhD candidates, early-career researchers, and senior researchers a reasoned judgment says which is likely to dominate, without and with a faculty AI support programme. A background report and a detailed analysis of the three dimensions give the underlying detail. The analysis is a working document for discussion, not adopted faculty policy.',
-                    'De kern is een gecombineerde beoordeling van kansen en risico’s. Voor elke onderzoeksvorm en fase staan de voordelen en risico’s uit de literatuur met bronnen op een rij, en voor promovendi, onderzoekers aan het begin van hun loopbaan en senior onderzoekers geeft een onderbouwd oordeel aan wat waarschijnlijk de overhand heeft, zonder en met een facultair ondersteuningsprogramma voor AI. Een achtergrondrapport en een uitgebreide analyse van de drie dimensies geven de onderliggende details. De analyse is een werkdocument voor de discussie en geen vastgesteld facultair beleid.'
-                  )}</p>
-                </div>
-                <a class="resource-case-preview" href="/resources/ai-research-feb/" aria-label="${T('Open the presentation AI and research at FEB', 'Open de presentatie AI and research at FEB')}">
-                  <img src="/resources/ai-research-feb/preview.webp" width="960" height="540" alt="${T('Opening slide: AI and research at FEB', 'Openingsdia: AI and research at FEB')}" loading="lazy">
-                  <span>${T('Open the presentation in your browser', 'Open de presentatie in de browser')}</span>
-                </a>
-              </div>
-              <p class="meta"><span>${T('ENGLISH', 'ENGELSTALIG')}</span><span>${T('11 PARTS', '11 ONDERDELEN')}</span><span>${T('54 ASSESSMENTS', '54 BEOORDELINGEN')}</span><span>${T('BACKGROUND REPORT', 'ACHTERGRONDRAPPORT')}</span></p>
-              <div class="resource-case-actions">
-                <a class="btn btn-red" href="/resources/ai-research-feb/">${T('Open presentation', 'Open presentatie')}</a>
-                <a class="btn btn-ghost" href="/resources/ai-research-feb/report.html">${T('Background report', 'Achtergrondrapport')}</a>
-              </div>
-            </article>
             <article class="card resource-card featured" id="northgrid">
               <span class="card-tag teal">${T('Teaching case · AI and financial reporting', 'Onderwijscasus · AI en financiële verslaggeving')}</span>
               <div class="resource-case">
@@ -710,6 +685,7 @@ const pages = {
               <a class="btn btn-red" href="/teamwork-practice-exam/?v=20260806-4">${T('Start practice exam', 'Start oefententamen')}</a>
             </div>
           </div>
+          <p style="margin-top:32px;font-size:12px;color:#a3abb3"><a href="/resources/ai-research-feb/" style="color:inherit;text-decoration:none">${T('AI and research at FEB (working document)', 'AI en onderzoek bij FEB (werkdocument)')}</a></p>
         </div>
       </div>
     </section>`;
