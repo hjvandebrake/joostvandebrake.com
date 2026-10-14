@@ -103,25 +103,6 @@ const PUBS = [
    venue:'Journal of Organizational Behavior, 39(9), 1219 to 1231', year:'2018', doi:'10.1002/job.2260'},
 ];
 
-const WIP = [
-  {title:'Multiple and fluid team membership, integrative framework',
-   summary:'An overarching framework that integrates multiple team membership and fluid team membership, tested with 5,704 employees in 82 firms.',
-   nl:{title:'Multiple en fluid team membership, geïntegreerd kader',
-       summary:'Een overkoepelend kader dat multiple team membership en fluid team membership samenbrengt, getoetst onder 5.704 medewerkers in 82 organisaties.'}},
-  {title:'Remote work configurations and psychological safety',
-   summary:'How unit-level remote work intensity erodes psychological safety and performance, particularly when in-office schedules are uncoordinated.',
-   nl:{title:'Remote-werkconfiguraties en psychologische veiligheid',
-       summary:'Hoe de intensiteit van remote werk op afdelingsniveau psychologische veiligheid en prestaties ondermijnt, vooral wanneer kantoorroosters niet op elkaar aansluiten.'}},
-  {title:'MTM, job crafting, and creativity',
-   summary:'Multiple team membership enhances both radical and incremental creativity for employees with high growth-need strength, by triggering promotion-oriented job crafting.',
-   nl:{title:'MTM, job crafting en creativiteit',
-       summary:'Multiple team membership vergroot zowel radicale als incrementele creativiteit voor werknemers met een sterke behoefte aan groei, doordat het promotiegericht job crafting in gang zet.'}},
-  {title:'Hybrid work and the social context of others',
-   summary:'The individual effects of hybrid work depend not only on a person’s own work-from-home intensity but also on the work-from-home intensity of others in their social context.',
-   nl:{title:'Hybride werk en de sociale context van anderen',
-       summary:'De individuele effecten van hybride werk hangen niet alleen af van iemands eigen thuiswerkintensiteit, maar ook van de thuiswerkintensiteit van anderen in zijn of haar sociale context.'}},
-];
-
 const GRANTS = [
   {tag:'NWO Veni', year:'2022', amount:'€280,000',
    title:'The consequences of working in multiple teams at the same time',
@@ -381,8 +362,8 @@ const pages = {
           )}</p>
 
           <p>${T(
-            'The programme now reaches beyond the individual team portfolio. A 2026 paper in the <em>Academy of Management Journal</em> with Stefan Berger, Heike Bruch, and Gerben van der Vegt connects multiple team membership with fluid team membership, the repeated entry into and exit from teams, and <a href="https://doi.org/10.5465/amj.2023.0869" target="_blank" rel="noopener">tests their implications for social capital and performance</a> for employees and for organisations. My single-authored theory paper in <em>Group and Organization Management</em> explains <a href="https://doi.org/10.1177/10596011261486495" target="_blank" rel="noopener">why memberships that look alike on paper are experienced differently</a>, depending on how strongly employees identify with each team and the status they hold in it. A multilevel study of remote work shows that the benefits of working from home depend on how the schedules of surrounding colleagues are configured, and a study in <em>Work and Stress</em> traces <a href="https://doi.org/10.1080/02678373.2025.2551498" target="_blank" rel="noopener">how emotional exhaustion travels through collaboration networks</a>. Ongoing projects ask how unit-level remote-work configurations affect psychological safety and performance.',
-            'De onderzoekslijn reikt inmiddels verder dan het teamportfolio van het individu. Een artikel uit 2026 in het <em>Academy of Management Journal</em> met Stefan Berger, Heike Bruch en Gerben van der Vegt verbindt multiple team membership met fluid team membership, het herhaaldelijk in- en uitstromen van teams, en <a href="https://doi.org/10.5465/amj.2023.0869" target="_blank" rel="noopener">toetst de gevolgen daarvan voor sociaal kapitaal en prestaties</a> van medewerkers en organisaties. Mijn theoretische artikel in <em>Group and Organization Management</em> legt uit <a href="https://doi.org/10.1177/10596011261486495" target="_blank" rel="noopener">waarom teamlidmaatschappen die op papier gelijk lijken verschillend worden ervaren</a>, afhankelijk van hoe sterk medewerkers zich met elk team identificeren en welke status zij daarin hebben. Een meerlaagse studie naar remote werk laat zien dat de voordelen van thuiswerken afhangen van de manier waarop de roosters van de collega’s daaromheen zijn ingericht, en een studie in <em>Work and Stress</em> laat zien <a href="https://doi.org/10.1080/02678373.2025.2551498" target="_blank" rel="noopener">hoe emotionele uitputting zich via samenwerkingsnetwerken verspreidt</a>. Lopende projecten onderzoeken hoe remote-werkconfiguraties op afdelingsniveau de psychologische veiligheid en prestaties beïnvloeden.'
+            'The programme now reaches beyond the individual team portfolio. A 2026 paper in the <em>Academy of Management Journal</em> with Stefan Berger, Heike Bruch, and Gerben van der Vegt connects multiple team membership with fluid team membership, the repeated entry into and exit from teams, and <a href="https://doi.org/10.5465/amj.2023.0869" target="_blank" rel="noopener">tests their implications for social capital and performance</a> for employees and for organisations. My single-authored theory paper in <em>Group and Organization Management</em> explains <a href="https://doi.org/10.1177/10596011261486495" target="_blank" rel="noopener">why memberships that look alike on paper are experienced differently</a>, depending on how strongly employees identify with each team and the status they hold in it. A multilevel study of remote work shows that the benefits of working from home depend on how the schedules of surrounding colleagues are configured, and a study in <em>Work and Stress</em> traces <a href="https://doi.org/10.1080/02678373.2025.2551498" target="_blank" rel="noopener">how emotional exhaustion travels through collaboration networks</a>.',
+            'De onderzoekslijn reikt inmiddels verder dan het teamportfolio van het individu. Een artikel uit 2026 in het <em>Academy of Management Journal</em> met Stefan Berger, Heike Bruch en Gerben van der Vegt verbindt multiple team membership met fluid team membership, het herhaaldelijk in- en uitstromen van teams, en <a href="https://doi.org/10.5465/amj.2023.0869" target="_blank" rel="noopener">toetst de gevolgen daarvan voor sociaal kapitaal en prestaties</a> van medewerkers en organisaties. Mijn theoretische artikel in <em>Group and Organization Management</em> legt uit <a href="https://doi.org/10.1177/10596011261486495" target="_blank" rel="noopener">waarom teamlidmaatschappen die op papier gelijk lijken verschillend worden ervaren</a>, afhankelijk van hoe sterk medewerkers zich met elk team identificeren en welke status zij daarin hebben. Een meerlaagse studie naar remote werk laat zien dat de voordelen van thuiswerken afhangen van de manier waarop de roosters van de collega’s daaromheen zijn ingericht, en een studie in <em>Work and Stress</em> laat zien <a href="https://doi.org/10.1080/02678373.2025.2551498" target="_blank" rel="noopener">hoe emotionele uitputting zich via samenwerkingsnetwerken verspreidt</a>.'
           )}</p>
 
           <p>${T(
@@ -405,17 +386,6 @@ const pages = {
           <div class="card-grid">
             ${GRANTS.map(g=>`<div class="card"><span class="card-tag">${g.tag}, ${g.year}</span><h3>${L(g,'title')}</h3><p>${L(g,'body')}</p><div class="meta"><span>${g.amount}</span></div></div>`).join('')}
           </div>
-        </div>
-
-        <div class="block">
-          <h2 class="block-h">${T('Current work in progress', 'Lopend werk')}</h2>
-          <ul>
-            ${WIP.map(w=>`<li><p class="li-h">${L(w,'title')}</p><p class="li-body">${L(w,'summary')}</p></li>`).join('')}
-          </ul>
-          <p style="font-size:0.92rem;color:var(--ink-700);line-height:1.7;margin-top:18px">${T(
-            'If you are working on related questions and would like to explore a collaboration, please <a href="mailto:h.j.van.de.brake@rug.nl" style="color:var(--red)">send me an email</a>.',
-            'Werkt u aan verwante vragen en wilt u een samenwerking verkennen? Stuur me dan <a href="mailto:h.j.van.de.brake@rug.nl" style="color:var(--red)">een mailtje</a>.'
-          )}</p>
         </div>
 
         <div class="block">

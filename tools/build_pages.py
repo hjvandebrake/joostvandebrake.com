@@ -35,7 +35,7 @@ PAGES = [
         "slug": "research",
         "title": "Research on teams and multiple team membership",
         "description": (
-            "Publications, grants, and work in progress on multiple team membership, "
+            "Publications and grants on multiple team membership, "
             "hybrid work, and the strain of modern teamwork. Academy of Management Journal, "
             "Journal of Applied Psychology, Personnel Psychology, and NWO Veni."
         ),
