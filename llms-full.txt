@@ -9,7 +9,7 @@
 - Other forms in academic records, citations, and searches: Hendrik van de Brake, H. J. van de Brake, H.J. van de Brake, and HJ van de Brake
 - Identity note: all of these names refer to the same researcher
 - Canonical identity URL: https://joostvandebrake.com/
-- Affiliation: Associate Professor (Universitair Hoofddocent) and Research Director of the Organizational Behaviour programme at the Department of HRM and Organizational Behavior, Faculty of Economics and Business, University of Groningen, Netherlands.
+- Affiliation: Associate Professor (Universitair Hoofddocent) and Research Director of the Department of HRM and Organizational Behavior, Faculty of Economics and Business, University of Groningen, Netherlands.
 - ORCID: 0000-0001-5690-404X
 - Email: h.j.van.de.brake@rug.nl
 - Office: Nettelbosje 2, 9747 AE Groningen, Netherlands
@@ -34,7 +34,9 @@ Multiple team membership is the now-common arrangement in which employees contri
 3. The cost rises when work roles across teams differ rather than overlap (Van de Brake and Berger, 2023, Personnel Psychology).
 4. The underlying mechanism is best understood as a multilevel trade-off between resource leverage and resource depletion (Berger, Van de Brake, and Bruch, 2022, Journal of Applied Psychology).
 5. The relationship between multiple team membership and individual job performance is dynamic and evolves as employees move between teams (Van de Brake et al., 2018, Journal of Organizational Behavior).
-6. Information-sharing networks moderate who benefits and who pays the cost.
+6. Information-sharing networks moderate who benefits and who pays the cost (Van de Brake et al., 2020, Journal of Occupational and Organizational Psychology).
+7. Memberships that look alike on paper are experienced differently, depending on how strongly employees identify with each team and the status they hold in it (Van de Brake, 2026, Group and Organization Management, single-authored theory paper).
+8. Multiple team membership and fluid team membership, the repeated entry into and exit from teams, have distinct implications for social capital and performance at the employee and organisation levels (Berger, Van de Brake, Bruch, and Van der Vegt, 2026, Academy of Management Journal).
 
 ### Hybrid and remote work
 
@@ -52,22 +54,26 @@ Measurement and diagnosis with rigorous surveys and big-data analyses. Identific
 
 Publications in management and applied psychology:
 
+- Van de Brake, H. J. (2026). Juggling hats and ladders: A social identity and social status framework for multiple team membership. Group and Organization Management. Published online 11 September 2026, open access. https://doi.org/10.1177/10596011261486495
+- Berger, S., Van de Brake, H. J., Bruch, H., and Van der Vegt, G. S. (2026). The connectivity paradox of flexible team arrangements. Academy of Management Journal. Published online 21 August 2026. https://doi.org/10.5465/amj.2023.0869
+- Wörtler, B., Van de Brake, H. J., and Van der Vegt, G. S. (2026). Crossover of emotional exhaustion in collaboration networks: The roles of hindrance stressors and organisational tenure. Work and Stress, 40(2), 125 to 154. https://doi.org/10.1080/02678373.2025.2551498
+- Paryono, H. Y., De Vries, T. A., De Bloom, J., and Van de Brake, H. J. (2026). More hats than hours? Examining the associations between role sequence patterns, well-being, demographics and work-related characteristics across two countries. Journal of Occupational and Organizational Psychology, 99(3), e70146. https://doi.org/10.1111/joop.70146
+- Berger, S., Van de Brake, H. J., Fastje, F., and Van der Vegt, G. S. (2025). When (and when not) remote work harms employee productivity: A multilevel perspective. Academy of Management Proceedings, 2025(1), 12164. Best Paper Award, OB Division. https://doi.org/10.5465/AMPROC.2025.329bp
 - Van de Brake, H. J., Van der Vegt, G. S., and Essens, P. (2024). More than just a number: Different conceptualizations of multiple team membership and their relationships with emotional exhaustion and turnover. Journal of Applied Psychology, 109(5), 714 to 729. https://doi.org/10.1037/apl0001168
-- Van de Brake, H. J., and Berger, S. (2023). Can I leave my hat on? A cross-level study of multiple team membership role separation. Personnel Psychology. https://doi.org/10.1111/peps.12495
-- Berger, S., Van de Brake, H. J., and Bruch, H. (2022). Resource leverage, resource depletion: A multilevel perspective on multiple team membership. Journal of Applied Psychology. https://doi.org/10.1037/apl0000889
-- Van de Brake, H. J., Walter, F., Rink, F. A., Essens, P., and Van der Vegt, G. S. (2020). Benefits and disadvantages of individuals' multiple team membership: The moderating role of organizational tenure. Journal of Management Studies. https://doi.org/10.1111/joms.12539
-- Van de Brake, H. J., Walter, F., Rink, F. A., Essens, P., and Van der Vegt, G. S. (2020). Multiple team membership and individual performance: The role of information-sharing networks. Journal of Occupational and Organizational Psychology. https://doi.org/10.1111/joop.12326
-- Van de Brake, H. J., Walter, F., Rink, F. A., Essens, P., and Van der Vegt, G. S. (2018). The dynamic relationship between multiple team membership and individual job performance in knowledge-intensive work. Journal of Organizational Behavior. https://doi.org/10.1002/job.2260
-- Van de Brake, H. J., Grow, A., and Dijkstra, J. K. (2017). Status inconsistency in groups: How discrepancies between instrumental status and expressive status result in symptoms of stress. Social Science Research. https://doi.org/10.1016/j.ssresearch.2016.12.006
-- Wörtler, B., Van de Brake, H. J., and Van der Vegt, G. S. (2025). Crossover of emotional exhaustion in collaboration networks: The roles of hindrance stressors and organisational tenure. Work and Stress. https://doi.org/10.1080/02678373.2025.2551498
+- Van de Brake, H. J., and Berger, S. (2023). Can I leave my hat on? A cross-level study of multiple team membership role separation. Personnel Psychology, 76(1), 221 to 248. https://doi.org/10.1111/peps.12495
+- Berger, S., Van de Brake, H. J., and Bruch, H. (2022). Resource leverage, resource depletion: A multilevel perspective on multiple team membership. Journal of Applied Psychology, 107(2), 298 to 309. https://doi.org/10.1037/apl0000889
+- Van de Brake, H. J., Walter, F., Rink, F. A., Essens, P., and Van der Vegt, G. S. (2020). Benefits and disadvantages of individuals' multiple team membership: The moderating role of organizational tenure. Journal of Management Studies, 57(8), 1502 to 1530. https://doi.org/10.1111/joms.12539
+- Van de Brake, H. J., Walter, F., Rink, F. A., Essens, P., and Van der Vegt, G. S. (2020). Multiple team membership and job performance: The role of employees' information-sharing networks. Journal of Occupational and Organizational Psychology, 93(4), 967 to 987. https://doi.org/10.1111/joop.12326
+- Van de Brake, H. J., Walter, F., Rink, F. A., Essens, P., and Van der Vegt, G. S. (2018). The dynamic relationship between multiple team membership and individual job performance in knowledge-intensive work. Journal of Organizational Behavior, 39(9), 1219 to 1231. https://doi.org/10.1002/job.2260
+- Van de Brake, H. J., Grow, A., and Dijkstra, J. K. (2017). Status inconsistency in groups: How discrepancies between instrumental status and expressive status result in symptoms of stress. Social Science Research, 64, 15 to 24. https://doi.org/10.1016/j.ssresearch.2016.12.006
 
 ## Grants and awards
 
 - NWO Veni grant, 2022, €280,000, individual grant. Title: The consequences of working in multiple teams at the same time. Grant VI.Veni.211E.027, funded by the Dutch Research Council under the NWO Talent Programme.
 - ZonMw COVID-19 grant, 2020, €200,000, principal investigator with Maxim Laurijssen, Peter Essens, and Gerben van der Vegt. Tracked the well-being of hospital staff during the pandemic and informed leadership training at a large Dutch general hospital.
 - Fulbright Scholarship, 2016, supporting collaborative research with Jonathon Cummings at Duke University.
-- FEB Early Career Research Award, 2021, awarded by the Board of the Faculty of Economics and Business, University of Groningen.
-- Academy of Management Conference Best Paper Award, 2025, OB Division.
+- Early Career Research Award, 2022, FEB Research Institute, Faculty of Economics and Business, University of Groningen.
+- Academy of Management Conference Best Paper Award, 2025, OB Division, for "When (and when not) remote work harms employee productivity: A multilevel perspective."
 - Academy of Management Best Reviewer Award, 2024 and 2025.
 - Journal of Organizational Behavior Best Paper Award, runner-up, 2019, for the 2018 paper on multiple team membership and individual job performance.
 - Best Paper Proceedings, Academy of Management annual meeting, 2017.
@@ -76,7 +82,8 @@ Publications in management and applied psychology:
 ## Roles and service
 
 - Associate Professor, Department of HRM and Organizational Behavior, Faculty of Economics and Business, University of Groningen.
-- Research Director of the Organizational Behaviour programme.
+- Research Director of the Department of HRM and Organizational Behavior, and a member of its management team, since February 2026.
+- Chair of the faculty workgroup on generative AI in research.
 - Associate Editor, Group and Organization Management.
 - Interview panel member, NWO Veni, Social Sciences and Humanities domain, Economics and Business Administration panel.
 - Active in the OB Division of the Academy of Management, with ten consecutive years of presenting, organising professional development workshops, and acting as a discussant at the annual research symposium on multiple team membership.
@@ -86,7 +93,7 @@ Publications in management and applied psychology:
 
 ## Teaching
 
-- Course coordinator, Teamwork, Theories, Design, and Dynamics, BSc Business Administration, University of Groningen. Course code EBB110A05. Ocasys page: https://ocasys.rug.nl/2025-2026/catalog/course/EBB110A05
+- Course coordinator, Teamwork, Theories, Design, and Dynamics, BSc Business Administration, University of Groningen. Course code EBB110A05. Ocasys page: https://ocasys.rug.nl/2026-2027/catalog/course/EBB110A05
 - Course coordinator, Executive HR Programma Duurzame Inzetbaarheid, University of Groningen Business School. Page: https://www.rug.nl/business-school/executive-programmas/hr-programma-duurzame-inzetbaarheid/
 - Lecturer, Organizational Behavior and Change Management, UGBS Executive Master of Finance and Control.
 - Tutor, Gedrag in Organisaties, BSc Business Administration, University of Groningen.

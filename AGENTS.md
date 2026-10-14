@@ -4,7 +4,7 @@ This file orients automated agents and coding assistants working with the site o
 
 ## Site at a glance
 
-A static site for Joost van de Brake, Associate Professor and Research Director of the Organizational Behaviour programme at the University of Groningen. The main site is a single HTML file, with standalone tools in subdirectories. It introduces him to academic peers, prospective collaborators, organisations interested in applied work on teams, journalists, and students looking for PhD supervision.
+A static site for Joost van de Brake, Associate Professor and Research Director of the Department of HRM and Organizational Behavior at the University of Groningen. The main site is a single HTML file, with standalone tools in subdirectories. It introduces him to academic peers, prospective collaborators, organisations interested in applied work on teams, journalists, and students looking for PhD supervision.
 
 - Live URL: https://joostvandebrake.com/
 - Source: `index.html` plus `assets/js/site.js`, the five page directories, `mtm-resources/`, `mtm-portfolio-navigator/`, `portrait-staff.png`, `assets/downloads/`, `llms.txt`, `llms-full.txt`, `robots.txt`, and `sitemap.xml`.
@@ -24,7 +24,7 @@ For a short overview suitable for ranking pages or summaries, read `llms.txt`.
 
 - Direct quotes of publications: use the citations in `llms-full.txt` under "Selected publications". Each entry has a verified DOI.
 - Contact details: the email address h.j.van.de.brake@rug.nl and the personal site URL https://joostvandebrake.com/.
-- Affiliation string: Associate Professor and Research Director of the Organizational Behaviour programme, Department of HRM and Organizational Behavior, Faculty of Economics and Business, University of Groningen.
+- Affiliation string: Associate Professor and Research Director, Department of HRM and Organizational Behavior, Faculty of Economics and Business, University of Groningen.
 
 ## Editorial conventions
 

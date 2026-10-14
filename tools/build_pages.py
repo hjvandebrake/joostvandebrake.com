@@ -36,8 +36,8 @@ PAGES = [
         "title": "Research on teams and multiple team membership",
         "description": (
             "Publications, grants, and work in progress on multiple team membership, "
-            "hybrid work, and the strain of modern teamwork. Journal of Applied Psychology, "
-            "Personnel Psychology, Journal of Management Studies, and NWO Veni."
+            "hybrid work, and the strain of modern teamwork. Academy of Management Journal, "
+            "Journal of Applied Psychology, Personnel Psychology, and NWO Veni."
         ),
         "og_title": "Research | Joost van de Brake",
     },

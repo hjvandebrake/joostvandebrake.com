@@ -49,13 +49,19 @@ function setLang(l, updateUrl){
 /* DATA */
 
 /* Selected peer-reviewed record, newest first. Metadata verified against
-   Crossref on 2026-08-11. `feat` marks the three shown on the home page. */
+   Crossref on 2026-10-14. `feat` marks the three shown on the home page. */
 const PUBS = [
+  {feat:1,
+   title:'Juggling hats and ladders: A social identity and social status framework for multiple team membership',
+   auth:'Van de Brake, H. J.',
+   venue:'Group and Organization Management', year:'2026', doi:'10.1177/10596011261486495',
+   note:'Published online 11 September 2026, open access', nl:{note:'Online gepubliceerd op 11 september 2026, open access'}},
+
   {feat:1,
    title:'The connectivity paradox of flexible team arrangements',
    auth:'Berger, S., Van de Brake, H. J., Bruch, H., and Van der Vegt, G. S.',
-   venue:'Academy of Management Journal',
-   note:'Accepted for publication', nl:{note:'Geaccepteerd voor publicatie'}},
+   venue:'Academy of Management Journal', year:'2026', doi:'10.5465/amj.2023.0869',
+   note:'Published online 21 August 2026', nl:{note:'Online gepubliceerd op 21 augustus 2026'}},
 
   {title:'Crossover of emotional exhaustion in collaboration networks: The roles of hindrance stressors and organisational tenure',
    auth:'Wörtler, B., Van de Brake, H. J., and Van der Vegt, G. S.',
@@ -76,8 +82,7 @@ const PUBS = [
    auth:'Van de Brake, H. J., Van der Vegt, G. S., and Essens, P.',
    venue:'Journal of Applied Psychology, 109(5), 714 to 729', year:'2024', doi:'10.1037/apl0001168'},
 
-  {feat:1,
-   title:'Can I leave my hat on? A cross-level study of multiple team membership role separation',
+  {title:'Can I leave my hat on? A cross-level study of multiple team membership role separation',
    auth:'Van de Brake, H. J., and Berger, S.',
    venue:'Personnel Psychology, 76(1), 221 to 248', year:'2023', doi:'10.1111/peps.12495'},
 
@@ -115,10 +120,6 @@ const WIP = [
    summary:'The individual effects of hybrid work depend not only on a person’s own work-from-home intensity but also on the work-from-home intensity of others in their social context.',
    nl:{title:'Hybride werk en de sociale context van anderen',
        summary:'De individuele effecten van hybride werk hangen niet alleen af van iemands eigen thuiswerkintensiteit, maar ook van de thuiswerkintensiteit van anderen in zijn of haar sociale context.'}},
-  {title:'MTM through a social identity and status lens',
-   summary:'A conceptual review arguing that the conflicting outcomes of multiple team membership are best explained by the psychosocial reality of juggling distinct identities and status hierarchies.',
-   nl:{title:'MTM door een sociale-identiteits- en statusbril',
-       summary:'Een conceptueel overzicht waarin wordt betoogd dat de tegenstrijdige uitkomsten van multiple team membership het beste te verklaren zijn vanuit de psychosociale realiteit van het jongleren met verschillende identiteiten en statushiërarchieën.'}},
 ];
 
 const GRANTS = [
@@ -154,7 +155,7 @@ const TEACHING = [
   {role:'Course Coordinator', code:'EBB110A05', title:'Teamwork, Theories, Design, and Dynamics',
    programme:'BSc Business Administration, University of Groningen', since:'2022 to present',
    body:'An in-depth introduction to work teams for future management professionals. The course covers classic and contemporary theories of team composition, design, and process, alongside the challenges of modern team arrangements such as multiple team membership, virtual collaboration, and hybrid work.',
-   link:'https://ocasys.rug.nl/2025-2026/catalog/course/EBB110A05',
+   link:'https://ocasys.rug.nl/2026-2027/catalog/course/EBB110A05',
    nl:{role:'Coördinator',
        programme:'BSc Bedrijfskunde, Rijksuniversiteit Groningen', since:'2022 tot heden',
        body:'Een diepgaande inleiding in werkteams voor toekomstige managementprofessionals. Het vak behandelt klassieke en hedendaagse theorieën over teamsamenstelling, ontwerp en processen, naast de uitdagingen van moderne teamarrangementen zoals multiple team membership, virtuele samenwerking en hybride werk.'}},
@@ -227,8 +228,8 @@ const ORGS = [
 ];
 
 const HIGHLIGHTS = [
-  {label:'Research Director', value:'Organizational Behaviour programme', sub:'Faculty of Economics and Business, University of Groningen',
-   nl:{label:'Onderzoeksdirecteur', value:'Programma Organisatiegedrag', sub:'Faculteit Economie en Bedrijfskunde, Rijksuniversiteit Groningen'}},
+  {label:'Research Director', value:'Department of HRM and Organizational Behavior', sub:'Faculty of Economics and Business, University of Groningen',
+   nl:{label:'Onderzoeksdirecteur', value:'Afdeling HRM en Organisatiegedrag', sub:'Faculteit Economie en Bedrijfskunde, Rijksuniversiteit Groningen'}},
   {label:'Applied research', value:'10+ years', sub:'Research institutes, hospitals, infrastructure, ministries',
    nl:{label:'Toegepast onderzoek', value:'10+ jaar', sub:'Onderzoeksinstituten, ziekenhuizen, infrastructuur, ministeries'}},
   {label:'Editorial role', value:'Associate Editor', sub:'Group and Organization Management',
@@ -240,8 +241,8 @@ const HIGHLIGHTS = [
 const QUICK_FACTS = [
   {l:'Position', v:'Associate Professor', s:'FEB, University of Groningen',
    nl:{l:'Functie', v:'Universitair hoofddocent', s:'FEB, Rijksuniversiteit Groningen'}},
-  {l:'Research Director', v:'Organizational Behaviour programme', s:'FEB, University of Groningen',
-   nl:{l:'Onderzoeksdirecteur', v:'Programma Organisatiegedrag', s:'FEB, Rijksuniversiteit Groningen'}},
+  {l:'Research Director', v:'Department of HRM and Organizational Behavior', s:'FEB, University of Groningen',
+   nl:{l:'Onderzoeksdirecteur', v:'Afdeling HRM en Organisatiegedrag', s:'FEB, Rijksuniversiteit Groningen'}},
   {l:'PhD', v:'University of Groningen, 2019', s:'Organizational Behavior',
    nl:{l:'Promotie', v:'Rijksuniversiteit Groningen, 2019', s:'Organisatiegedrag'}},
   {l:'NWO Veni grant', v:'2022', s:'Multiple team membership',
@@ -380,8 +381,8 @@ const pages = {
           )}</p>
 
           <p>${T(
-            'The programme now reaches beyond the individual team portfolio. Work with Stefan Berger examines the design of flexible team arrangements at the level of the organisation, and a multilevel study of remote work shows that the benefits of working from home depend on how the schedules of surrounding colleagues are configured. Ongoing projects ask how unit-level remote-work configurations affect psychological safety and performance, and how strain such as emotional exhaustion travels through everyday collaboration networks.',
-            'De onderzoekslijn reikt inmiddels verder dan het teamportfolio van het individu. Werk met Stefan Berger onderzoekt het ontwerp van flexibele teamarrangementen op organisatieniveau, en een meerlaagse studie naar remote werk laat zien dat de voordelen van thuiswerken afhangen van de manier waarop de roosters van de collega’s daaromheen zijn ingericht. Lopende projecten onderzoeken hoe remote-werkconfiguraties op afdelingsniveau de psychologische veiligheid en prestaties beïnvloeden, en hoe spanning zoals emotionele uitputting zich verspreidt via dagelijkse samenwerkingsnetwerken.'
+            'The programme now reaches beyond the individual team portfolio. A 2026 paper in the <em>Academy of Management Journal</em> with Stefan Berger, Heike Bruch, and Gerben van der Vegt connects multiple team membership with fluid team membership, the repeated entry into and exit from teams, and <a href="https://doi.org/10.5465/amj.2023.0869" target="_blank" rel="noopener">tests their implications for social capital and performance</a> for employees and for organisations. My single-authored theory paper in <em>Group and Organization Management</em> explains <a href="https://doi.org/10.1177/10596011261486495" target="_blank" rel="noopener">why memberships that look alike on paper are experienced differently</a>, depending on how strongly employees identify with each team and the status they hold in it. A multilevel study of remote work shows that the benefits of working from home depend on how the schedules of surrounding colleagues are configured, and a study in <em>Work and Stress</em> traces <a href="https://doi.org/10.1080/02678373.2025.2551498" target="_blank" rel="noopener">how emotional exhaustion travels through collaboration networks</a>. Ongoing projects ask how unit-level remote-work configurations affect psychological safety and performance.',
+            'De onderzoekslijn reikt inmiddels verder dan het teamportfolio van het individu. Een artikel uit 2026 in het <em>Academy of Management Journal</em> met Stefan Berger, Heike Bruch en Gerben van der Vegt verbindt multiple team membership met fluid team membership, het herhaaldelijk in- en uitstromen van teams, en <a href="https://doi.org/10.5465/amj.2023.0869" target="_blank" rel="noopener">toetst de gevolgen daarvan voor sociaal kapitaal en prestaties</a> van medewerkers en organisaties. Mijn theoretische artikel in <em>Group and Organization Management</em> legt uit <a href="https://doi.org/10.1177/10596011261486495" target="_blank" rel="noopener">waarom teamlidmaatschappen die op papier gelijk lijken verschillend worden ervaren</a>, afhankelijk van hoe sterk medewerkers zich met elk team identificeren en welke status zij daarin hebben. Een meerlaagse studie naar remote werk laat zien dat de voordelen van thuiswerken afhangen van de manier waarop de roosters van de collega’s daaromheen zijn ingericht, en een studie in <em>Work and Stress</em> laat zien <a href="https://doi.org/10.1080/02678373.2025.2551498" target="_blank" rel="noopener">hoe emotionele uitputting zich via samenwerkingsnetwerken verspreidt</a>. Lopende projecten onderzoeken hoe remote-werkconfiguraties op afdelingsniveau de psychologische veiligheid en prestaties beïnvloeden.'
           )}</p>
 
           <p>${T(
@@ -420,7 +421,7 @@ const pages = {
         <div class="block">
           <h2 class="block-h">${T('Leadership and service', 'Leiderschap en bestuurlijke rollen')}</h2>
           <ul>
-            <li><p class="li-h">${T('Research Director, Organizational Behaviour programme', 'Onderzoeksdirecteur, programma Organisatiegedrag')}</p><p class="li-body">${T('Since February 2026 I direct the OB research programme at the Faculty of Economics and Business. I assess doctoral proposals and allocate research time and funding. In 2026 I also served on the faculty committee that selected eleven PhD candidates.', 'Sinds februari 2026 geef ik leiding aan het OB-onderzoeksprogramma van de Faculteit Economie en Bedrijfskunde. Ik beoordeel promotievoorstellen en verdeel onderzoekstijd en middelen. In 2026 zat ik daarnaast in de facultaire commissie die elf promovendi selecteerde.')}</p><p class="li-body">${T('I designed and built the department’s first research dashboard, bringing together publications, expertise, doctoral projects, collaboration networks, and funding opportunities in one place so that colleagues can find each other and build proposals.', 'Ik ontwierp en bouwde het eerste onderzoeksdashboard van de afdeling, waarin publicaties, expertise, promotieprojecten, samenwerkingsnetwerken en subsidiemogelijkheden samenkomen, zodat collega’s elkaar kunnen vinden en voorstellen kunnen opbouwen.')}</p><p class="li-body">${T('I initiated a faculty-wide effort on generative AI in research, wrote the opening note, and chair the workgroup turning it into shared guidance. The starting point is that these tools should improve the quality and transparency of research rather than simply increase output.', 'Ik startte een facultair traject over generatieve AI in onderzoek, schreef de agenderende notitie en zit de werkgroep voor die dit omzet in gedeelde richtlijnen. Uitgangspunt is dat deze hulpmiddelen de kwaliteit en transparantie van onderzoek moeten verbeteren, niet louter de productie verhogen.')}</p></li>
+            <li><p class="li-h">${T('Research Director, Department of HRM and Organizational Behavior', 'Onderzoeksdirecteur, afdeling HRM en Organisatiegedrag')}</p><p class="li-body">${T('Since February 2026 I have been Research Director of the Department of HRM and Organizational Behavior at the Faculty of Economics and Business, and a member of its management team. I assess doctoral proposals and allocate research time and funding. In 2026 I also served on the faculty committee that selected eleven PhD candidates.', 'Sinds februari 2026 ben ik onderzoeksdirecteur van de afdeling HRM en Organisatiegedrag van de Faculteit Economie en Bedrijfskunde en lid van het managementteam van de afdeling. Ik beoordeel promotievoorstellen en verdeel onderzoekstijd en middelen. In 2026 zat ik daarnaast in de facultaire commissie die elf promovendi selecteerde.')}</p><p class="li-body">${T('I designed and built the department’s first research dashboard, bringing together publications, expertise, doctoral projects, collaboration networks, and funding opportunities in one place so that colleagues can find each other and build proposals.', 'Ik ontwierp en bouwde het eerste onderzoeksdashboard van de afdeling, waarin publicaties, expertise, promotieprojecten, samenwerkingsnetwerken en subsidiemogelijkheden samenkomen, zodat collega’s elkaar kunnen vinden en voorstellen kunnen opbouwen.')}</p><p class="li-body">${T('I initiated a faculty-wide effort on generative AI in research, wrote the opening note, and chair the workgroup turning it into shared guidance. The starting point is that these tools should improve the quality and transparency of research rather than simply increase output.', 'Ik startte een facultair traject over generatieve AI in onderzoek, schreef de agenderende notitie en zit de werkgroep voor die dit omzet in gedeelde richtlijnen. Uitgangspunt is dat deze hulpmiddelen de kwaliteit en transparantie van onderzoek moeten verbeteren, niet louter de productie verhogen.')}</p></li>
             <li><p class="li-h">${T('Associate Editor, Group and Organization Management', 'Associate Editor, Group and Organization Management')}</p><p class="li-body">${T('I review and shepherd submissions on teams, multiple team membership, and modern work arrangements.', 'Ik beoordeel en begeleid manuscripten over teams, multiple team membership en moderne werkarrangementen.')}</p></li>
             <li><p class="li-h">${T('Interview panel member, NWO Veni', 'Lid commissie NWO Veni')}</p><p class="li-body">${T('Served on the Veni interview panel of the Dutch Research Council in the Social Sciences and Humanities domain, panel <em>Economics and Business Administration</em>, evaluating proposals from early-career researchers.', 'Lid van de interviewcommissie van NWO Veni in het domein Sociale en Geesteswetenschappen, panel <em>Economie en Bedrijfskunde</em>, voor het beoordelen van voorstellen van early-career onderzoekers.')}</p></li>
             <li><p class="li-h">${T('Academy of Management, OB Division', 'Academy of Management, OB Division')}</p><p class="li-body">${T('Co-founder and co-organiser of the annual professional development workshop <em>How to Manage Academic Collaborations</em>, held every year since 2020, and a member of the Making Connections Committee. Discussant at the Academy’s research symposium on multiple team membership in 2022 and 2025.', 'Medeoprichter van de professional development workshop <em>How to Manage Academic Collaborations</em>, sinds 2020 elk jaar medeorganisator, en lid van de Making Connections Committee. Discussant op het onderzoekssymposium over multiple team membership van de Academy in 2022 en 2025.')}</p></li>
@@ -486,8 +487,8 @@ const pages = {
         <div class="block">
           <h2 class="block-h">${T('PhD supervision', 'Begeleiding promovendi')}</h2>
           <p>${T(
-            'I supervise PhD candidates as daily supervisor on modern team arrangements. <strong>Tunahan Sari</strong> is in his third year, with three studies underway, among them a multilevel field study and an experiment using AI agents. <strong>Bishal Saha</strong>, who started in 2026, is developing a network theory of dynamic participation using longitudinal data from two mental-healthcare organisations. <strong>Franzisca Fastje</strong> works on remote and hybrid work in teams and has moved to a postdoctoral fellowship at the University of Queensland. <strong>Herman Paryono</strong> studies multiple roles across countries and is now a postdoctoral researcher in Groningen.',
-            'Ik begeleid promovendi als dagelijks begeleider op het terrein van moderne teamarrangementen. <strong>Tunahan Sari</strong> is derdejaars promovendus en heeft drie studies lopen, waaronder een meerlaagse veldstudie en een experiment met AI-agents. <strong>Bishal Saha</strong>, die in 2026 begon, ontwikkelt een netwerktheorie van dynamische deelname op basis van longitudinale gegevens uit twee ggz-organisaties. <strong>Franzisca Fastje</strong> doet onderzoek naar remote en hybride werk in teams en is inmiddels postdoc aan de University of Queensland. <strong>Herman Paryono</strong> onderzoekt meervoudige rollen in verschillende landen en is nu postdoc in Groningen.'
+            'I supervise PhD candidates as daily supervisor on modern team arrangements. <strong>Tunahan Sari</strong> is in his third year, with three studies underway, among them a multilevel field study and an experiment using AI agents. <strong>Bishal Saha</strong>, who started in 2026, is developing a network theory of dynamic participation using longitudinal data from two mental-healthcare organisations. <strong>Franzisca Fastje</strong> defended her PhD on remote and hybrid work in teams in September 2026 and now holds a postdoctoral fellowship at the University of Queensland. <strong>Herman Paryono</strong> studies multiple roles across countries and is now a postdoctoral researcher in Groningen.',
+            'Ik begeleid promovendi als dagelijks begeleider op het terrein van moderne teamarrangementen. <strong>Tunahan Sari</strong> is derdejaars promovendus en heeft drie studies lopen, waaronder een meerlaagse veldstudie en een experiment met AI-agents. <strong>Bishal Saha</strong>, die in 2026 begon, ontwikkelt een netwerktheorie van dynamische deelname op basis van longitudinale gegevens uit twee ggz-organisaties. <strong>Franzisca Fastje</strong> promoveerde in september 2026 op onderzoek naar remote en hybride werk in teams en is nu postdoc aan de University of Queensland. <strong>Herman Paryono</strong> onderzoekt meervoudige rollen in verschillende landen en is nu postdoc in Groningen.'
           )}</p>
           <p>${T(
             'Earlier, Gerben van der Vegt and I jointly supervised <strong>Burkhard Wörtler</strong>’s postdoctoral project, which produced a longitudinal study of how emotional exhaustion travels through collaboration networks. My approach is to give researchers ownership of their own project while working closely with them on concepts, methods, and writing, so that they leave with a profile of their own.',
