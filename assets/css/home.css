@@ -963,6 +963,50 @@
   white-space: nowrap;
 }
 
+/* Link from a publication to its video on the research page. */
+.pub-video,
+.fp .fp-video {
+  display: inline-block;
+  margin-top: 6px;
+  color: var(--red);
+  font-size: var(--t-xs);
+  font-weight: var(--w-medium);
+}
+
+.fp .fp-video {
+  align-self: start;
+  margin-top: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Video explainer
+   -------------------------------------------------------------------------- */
+
+.video-fig {
+  max-width: 880px;
+  margin: var(--sp-4) 0 0;
+}
+
+.video-fig video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  background: var(--ink-100);
+  border: 1px solid var(--ink-200);
+  border-radius: var(--radius-md);
+}
+
+.video-fig figcaption {
+  margin-top: var(--sp-2);
+  color: var(--ink-600);
+  font-size: var(--t-xs);
+}
+
+.video-fig figcaption a {
+  color: var(--red);
+}
+
 /* --------------------------------------------------------------------------
    Generic cards
    -------------------------------------------------------------------------- */

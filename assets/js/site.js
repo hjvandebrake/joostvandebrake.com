@@ -60,7 +60,7 @@ const PUBS = [
   {feat:1,
    title:'The connectivity paradox of flexible team arrangements',
    auth:'Berger, S., Van de Brake, H. J., Bruch, H., and Van der Vegt, G. S.',
-   venue:'Academy of Management Journal', year:'2026', doi:'10.5465/amj.2023.0869',
+   venue:'Academy of Management Journal', year:'2026', doi:'10.5465/amj.2023.0869', video:1,
    note:'Published online 21 August 2026', nl:{note:'Online gepubliceerd op 21 augustus 2026'}},
 
   {title:'Crossover of emotional exhaustion in collaboration networks: The roles of hindrance stressors and organisational tenure',
@@ -239,7 +239,7 @@ const QUICK_FACTS = [
 function publication(p){
   const ref = [p.venue, p.year].filter(Boolean).join(', ');
   const note = L(p, 'note');
-  return `<div class="pub-item"><div><p class="pub-title">${p.title}</p><p class="pub-auth">${p.auth}</p><p class="pub-venue">${ref}</p>${note?`<p class="pub-note">${note}</p>`:''}</div>${p.doi?`<a class="pub-doi" href="https://doi.org/${p.doi}" target="_blank" rel="noopener">doi:${p.doi}</a>`:''}</div>`;
+  return `<div class="pub-item"><div><p class="pub-title">${p.title}</p><p class="pub-auth">${p.auth}</p><p class="pub-venue">${ref}</p>${note?`<p class="pub-note">${note}</p>`:''}${p.video?`<a class="pub-video" href="#video">${T('Watch the video explainer', 'Bekijk de video-uitleg')}</a>`:''}</div>${p.doi?`<a class="pub-doi" href="https://doi.org/${p.doi}" target="_blank" rel="noopener">doi:${p.doi}</a>`:''}</div>`;
 }
 
 const pages = {
@@ -306,7 +306,7 @@ const pages = {
           <a class="btn btn-ghost btn-sm" href="${U('/research/')}">${T('All publications →', 'Alle publicaties →')}</a>
         </div>
         <div class="featured-pubs">
-          ${topPubs.map(p=>`<article class="fp"><p class="venue">${p.venue.split(',')[0]}</p><p class="title">${p.title}</p><p class="auth">${p.auth}</p>${p.doi?`<a class="doi-link" href="https://doi.org/${p.doi}" target="_blank" rel="noopener">doi:${p.doi} →</a>`:`<p class="fp-note">${L(p,'note')}</p>`}</article>`).join('')}
+          ${topPubs.map(p=>`<article class="fp"><p class="venue">${p.venue.split(',')[0]}</p><p class="title">${p.title}</p><p class="auth">${p.auth}</p>${p.doi?`<a class="doi-link" href="https://doi.org/${p.doi}" target="_blank" rel="noopener">doi:${p.doi} →</a>`:`<p class="fp-note">${L(p,'note')}</p>`}${p.video?`<a class="fp-video" href="${U('/research/')}#video">${T('Watch the video explainer →', 'Bekijk de video-uitleg →')}</a>`:''}</article>`).join('')}
         </div>
       </div>
     </section>
@@ -370,6 +370,23 @@ const pages = {
             'The common thread is that these are organisational design choices. Whether working across several teams costs or pays is settled by how the work is arranged, not by how hard the individual tries. That is what makes the evidence usable: it points at decisions someone can actually take.',
             'De rode draad is dat dit ontwerpkeuzes van de organisatie zijn. Of werken in meerdere teams iets kost of oplevert, wordt bepaald door de manier waarop het werk is ingericht, niet door de inzet van het individu. Dat maakt de bevindingen bruikbaar: ze wijzen op keuzes die iemand daadwerkelijk kan maken.'
           )}</p>
+        </div>
+
+        <div class="block" id="video">
+          <h2 class="block-h">${T('Video: the connectivity paradox', 'Video: de connectiviteitsparadox')}</h2>
+          <p>${T(
+            'A short animated explainer of the 2026 <em>Academy of Management Journal</em> paper with Stefan Berger, Heike Bruch, and Gerben van der Vegt. It shows what working in several teams, and moving in and out of them, does to the knowledge, help, and support people get from colleagues.',
+            'Een korte geanimeerde uitleg van het artikel uit 2026 in het <em>Academy of Management Journal</em> met Stefan Berger, Heike Bruch en Gerben van der Vegt. De video laat zien wat werken in meerdere teams, en het steeds in- en uitstromen van teams, betekent voor de kennis, hulp en steun die mensen van collega’s krijgen. De video is in het Engels.'
+          )}</p>
+          <figure class="video-fig">
+            <video controls preload="metadata" playsinline width="1920" height="1080"
+                   poster="/assets/video/connectivity-paradox-explainer.jpg"
+                   aria-label="${T('Video explainer: The connectivity paradox of flexible team arrangements', 'Video-uitleg: The connectivity paradox of flexible team arrangements')}">
+              <source src="/assets/video/connectivity-paradox-explainer.mp4" type="video/mp4">
+              <a href="/assets/video/connectivity-paradox-explainer.mp4">${T('Download the video (MP4, 46 MB)', 'Download de video (MP4, 46 MB)')}</a>
+            </video>
+            <figcaption><a href="https://doi.org/10.5465/amj.2023.0869" target="_blank" rel="noopener">${T('Read the paper', 'Lees het artikel')}</a></figcaption>
+          </figure>
         </div>
 
         <div class="block">
@@ -708,3 +725,11 @@ window.addEventListener('scroll', () => {
 
 /* INIT */
 setLang(langFromUrl(), false);
+
+/* The page body is rendered by this script, so a #fragment such as
+   /research/#video can name an element that did not exist yet when the
+   browser tried to scroll to it. */
+if (location.hash) {
+  const target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+  if (target) target.scrollIntoView({behavior: 'instant'});
+}
