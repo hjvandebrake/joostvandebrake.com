@@ -69,7 +69,7 @@ const PUBS = [
 
   {title:'More hats than hours? Examining the associations between role sequence patterns, well-being, demographics and work-related characteristics across two countries',
    auth:'Paryono, H. Y., De Vries, T. A., De Bloom, J., and Van de Brake, H. J.',
-   venue:'Journal of Occupational and Organizational Psychology, 99(3), e70146', year:'2026', doi:'10.1111/joop.70146'},
+   venue:'Journal of Occupational and Organizational Psychology, 99(3), e70146', year:'2026', doi:'10.1111/joop.70146', video:'/video/more-hats/'},
 
   {title:'When (and when not) remote work harms employee productivity: A multilevel perspective',
    auth:'Berger, S., Van de Brake, H. J., Fastje, F., and Van der Vegt, G. S.',
