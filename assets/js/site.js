@@ -595,6 +595,16 @@ const pages = {
               <p class="meta"><span>${T('INTERACTIVE TOOL', 'INTERACTIEVE TOOL')}</span><span>${T('TWO CASES', 'TWEE CASES')}</span><span>${T('INSTRUCTOR GUIDES', 'DOCENTENHANDLEIDINGEN')}</span><span>${T('SUPPORTED BY NWO', 'ONDERSTEUND DOOR NWO')}</span></p>
               <a class="btn btn-red" href="${U('/mtm-resources/')}">${T('Explore the MTM tools and cases', 'Bekijk de MTM-tool en cases')}</a>
             </div>
+            <div class="card resource-card" id="learn-with-ai">
+              <span class="card-tag teal">Video</span>
+              <h3>Learn with AI, learn without it</h3>
+              <p>${T(
+                'A six-minute animated video, made for a FEB workshop for PhD candidates and research master students, on using AI in research while still building the skills a PhD is meant to teach. It sorts research tasks by two questions: is the skill core to your development, and can you already judge the output?',
+                'Een geanimeerde video van zes minuten, gemaakt voor een FEB-workshop voor promovendi en researchmasterstudenten, over AI gebruiken in onderzoek en tegelijk de vaardigheden opbouwen die een promotietraject hoort te leren. De video deelt onderzoekstaken in met twee vragen: hoort de vaardigheid bij de kern van de eigen ontwikkeling, en is de uitkomst al goed te beoordelen?'
+              )}</p>
+              <p class="meta"><span>${T('ENGLISH', 'ENGELSTALIG')}</span><span>6 MIN</span><span>FULL HD</span></p>
+              <a class="btn btn-red" href="/video/learn-with-ai/" target="_blank" rel="noopener">${T('Watch the video', 'Bekijk de video')}</a>
+            </div>
             <div class="card resource-card" id="northgrid">
               <span class="card-tag teal">${T('Teaching case', 'Onderwijscasus')}</span>
               <h3>${T('NorthGrid: can AI prepare annual accounts?', 'NorthGrid: kan AI een jaarrekening maken?')}</h3>

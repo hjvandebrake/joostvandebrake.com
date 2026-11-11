@@ -1,0 +1,21 @@
+/* Video-only page: the player fills the window, letterboxed on the dark band. */
+
+body {
+  background: var(--ink-950);
+}
+
+main {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+video {
+  display: block;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  object-fit: contain;
+  background: var(--ink-950);
+}
