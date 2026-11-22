@@ -175,12 +175,12 @@ body[data-page="contact"]   li[data-pg="contact"]   .nav-link {
   align-items: center;
 }
 .hero-text { max-width: 40em; }
-.hero-photo {
-  width: 240px;
-  height: auto;
-  filter: grayscale(1) contrast(1.05);
-  border: 1px solid var(--ink);
-}
+.hero-photo { width: 240px; }
+.hero-photo img { filter: grayscale(1) contrast(1.05); }
+
+/* A photo inside a thin red brush frame, drawn by drawFrames() in site.js. */
+.ink-frame { position: relative; display: block; }
+.ink-frame img { display: block; width: 100%; height: auto; }
 
 .h1, .hero h1 {
   font-size: clamp(2.4rem, 4vw, 3.3rem);
@@ -211,9 +211,10 @@ body[data-page="contact"]   li[data-pg="contact"]   .nav-link {
 .about-text { max-width: 44em; }
 .about-grid:has(.about-photo-fig) { grid-template-columns: 1.05fr 1fr; }
 .about-photo-fig { margin: 0; }
-.about-photo-fig img { display: block; width: 100%; height: auto; border: 1px solid var(--ink); }
-.about-photo-fig figcaption { font-size: 0.82rem; line-height: 1.45; color: var(--ink-soft); margin-top: 0.6em; }
+.about-photo-fig figcaption { font-size: 0.82rem; line-height: 1.45; color: var(--ink-soft); margin-top: 1.1em; }
 .about-photo-fig figcaption a { color: var(--ink-soft); }
+#pg-home .photo-credit { font-size: 0.78rem; line-height: 1.45; color: var(--ink-soft); margin-top: 0; margin-bottom: -16px; }
+#pg-home .photo-credit a { color: var(--ink-soft); }
 .about-text p { margin: 0 0 0.8em; }
 .split.flip:has(.mtm-fig) { grid-template-columns: 0.8fr 1fr; }
 .mtm-fig { max-width: 440px; justify-self: center; width: 100%; }

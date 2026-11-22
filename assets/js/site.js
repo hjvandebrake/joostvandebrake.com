@@ -269,7 +269,7 @@ const pages = {
             'Mijn formele naam is Hendrik J. van de Brake, en in academische registers worden ook de vormen H. J. van de Brake en HJ van de Brake gebruikt.'
           )}</p>
         </div>
-        <img class="hero-photo" src="/portrait.jpg?v=20261122" width="500" height="749" loading="eager" fetchpriority="high" decoding="async" alt="${T('Portrait of Joost van de Brake', 'Portret van Joost van de Brake')}">
+        <span class="hero-photo ink-frame"><img src="/portrait.jpg?v=20261122" width="500" height="749" loading="eager" fetchpriority="high" decoding="async" alt="${T('Portrait of Joost van de Brake', 'Portret van Joost van de Brake')}"></span>
       </div>
     </section>
 
@@ -279,9 +279,9 @@ const pages = {
           ${ABOUT.map(s => `<p>${L(s,'t')}</p>`).join('')}
         </div>
         <figure class="about-photo-fig">
-          <img src="/assets/photo/duisenberg-bw.jpg?v=20261122" width="1920" height="1080" loading="lazy" decoding="async"
-               alt="${T('Black-and-white photograph of the Duisenberg building of the Faculty of Economics and Business, University of Groningen, seen across a pond.', 'Zwart-witfoto van het Duisenberggebouw van de Faculteit Economie en Bedrijfskunde, Rijksuniversiteit Groningen, gezien over een vijver.')}">
-          <figcaption>${T('The Duisenberg building of the Faculty of Economics and Business. Photo by', 'Het Duisenberggebouw van de Faculteit Economie en Bedrijfskunde. Foto van')} <a href="https://commons.wikimedia.org/wiki/File:Duisenberg_Building.jpg" target="_blank" rel="noopener">Choinowski</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>, ${T('converted to black and white.', 'omgezet naar zwart-wit.')}</figcaption>
+          <span class="ink-frame"><img src="/assets/photo/duisenberg-bw.jpg?v=20261122" width="1920" height="1080" loading="lazy" decoding="async"
+               alt="${T('Black-and-white photograph of the Duisenberg building of the Faculty of Economics and Business, University of Groningen, seen across a pond.', 'Zwart-witfoto van het Duisenberggebouw van de Faculteit Economie en Bedrijfskunde, Rijksuniversiteit Groningen, gezien over een vijver.')}"></span>
+          <figcaption>${T('The Duisenberg building of the Faculty of Economics and Business.', 'Het Duisenberggebouw van de Faculteit Economie en Bedrijfskunde.')}</figcaption>
         </figure>
       </div>
     </section>
@@ -332,6 +332,8 @@ const pages = {
         </div>
       </div>
     </section>
+
+    <p class="wrap photo-credit">${T('The photograph of the Duisenberg building is by', 'De foto van het Duisenberggebouw is gemaakt door')} <a href="https://commons.wikimedia.org/wiki/File:Duisenberg_Building.jpg" target="_blank" rel="noopener">Choinowski</a> (<a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>) ${T('and was converted to black and white.', 'en omgezet naar zwart-wit.')}</p>
 `;
   },
 
@@ -781,9 +783,91 @@ function drawBrushes(){
   });
 }
 
+/* INK BRUSH FRAMES
+   Each photograph gets a painted edge instead of a border. Its edge is cut
+   along four slightly wavering lines and softened with a blur, and a thin red
+   brush stroke runs along each line, a little past the corners, as a hand
+   would draw it. The lines are seeded by the photo, so each photo keeps its
+   own edge. */
+function brushCentre(sh, t, ht){
+  return ht / 2 + sh.tilt * (t - 0.5) + sh.bow * Math.sin(Math.PI * t)
+       + 0.55 * Math.sin(6.283 * sh.f[0] * t + sh.p[0]) + 0.2 * Math.sin(6.283 * sh.f[1] * t + sh.p[1]);
+}
+
+function drawFrames(){
+  document.querySelectorAll('.ink-frame').forEach(fr => {
+    fr.querySelectorAll('svg.brush').forEach(el => el.remove());
+    const img = fr.querySelector('img');
+    const W = fr.clientWidth, H = fr.clientHeight;
+    if (!img || W < 20 || H < 20) return;
+    const rnd = seeded(img.getAttribute('src') || 'frame');
+    const pad = 12, ht = 8, inset = 6, base = 1.6;
+    // Each side: where its line sits, and how a point (x along the stroke, y across it) maps onto the photo.
+    const sides = [
+      { len: W, tr: (o0) => 'translate(' + (pad - o0) + ' ' + (pad + inset - ht / 2) + ')',
+        at: (x, y) => [x, inset + y - ht / 2] },
+      { len: H, tr: (o0) => 'translate(' + (pad + W - inset + ht / 2) + ' ' + (pad - o0) + ') rotate(90)',
+        at: (x, y) => [W - inset + ht / 2 - y, x] },
+      { len: W, tr: (o0) => 'translate(' + (pad - o0) + ' ' + (pad + H - inset - ht / 2) + ')',
+        at: (x, y) => [x, H - inset + y - ht / 2] },
+      { len: H, tr: (o0) => 'translate(' + (pad + inset + ht / 2) + ' ' + (pad - o0) + ') rotate(90)',
+        at: (x, y) => [inset + ht / 2 - y, x] }
+    ];
+    let defs = '<filter id="fs' + (++brushId) + '" x="-5%" y="-5%" width="110%" height="110%"><feGaussianBlur stdDeviation="0.45"/></filter>';
+    const blurId = 'fs' + brushId;
+    const strokes = [], edge = [];
+    sides.forEach((sd, i) => {
+      const sh = brushShape(rnd);
+      sh.tilt *= 0.6; sh.bow *= 0.6;
+      const o0 = 1 + rnd() * 5, o1 = 1 + rnd() * 5;      // how far the stroke runs past each corner
+      const L = sd.len + o0 + o1;
+      // The photo's edge along this side, in photo coordinates.
+      const pts = [];
+      for (let k = 0; k <= 24; k++){
+        const x = inset + (sd.len - 2 * inset) * k / 24, t = (x + o0) / L;
+        pts.push(sd.at(x, brushCentre(sh, t, ht)));
+      }
+      edge.push(i < 2 ? pts : pts.reverse());
+      const id = 'fg' + (++brushId);
+      defs += '<linearGradient id="' + id + '" x1="0" x2="1" y1="0" y2="0">' +
+        '<stop offset="0" stop-color="#a84a53" stop-opacity="' + (0.6 + rnd() * 0.25).toFixed(2) + '"/>' +
+        '<stop offset="0.5" stop-color="#ad535b" stop-opacity="' + (0.45 + rnd() * 0.25).toFixed(2) + '"/>' +
+        '<stop offset="1" stop-color="#b15c63" stop-opacity="' + (0.4 + rnd() * 0.25).toFixed(2) + '"/>' +
+        '</linearGradient>';
+      let g = '<g transform="' + sd.tr(o0) + '"><path d="' + brushPath(L, ht, sh, base, 0, 1, 0) + '" fill="url(#' + id + ')"/>';
+      if (rnd() < 0.5){
+        const s0 = 0.1 + rnd() * 0.3;
+        g += '<path d="' + brushPath(L, ht, sh, base * 0.5, s0, Math.min(0.95, s0 + 0.3 + rnd() * 0.3), 0.4) + '" fill="#9e454b" fill-opacity="0.18"/>';
+      }
+      strokes.push(g + '</g>');
+    });
+    // The photo is cut along the four lines, with a soft edge.
+    const d = 'M' + edge.flat().map(q => q[0].toFixed(1) + ' ' + q[1].toFixed(1)).join('L') + 'Z';
+    const mask = '<svg xmlns="http://www.w3.org/2000/svg" width="' + W + '" height="' + H + '" viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="none">' +
+      '<filter id="m" x="-5%" y="-5%" width="110%" height="110%"><feGaussianBlur stdDeviation="2"/></filter>' +
+      '<path d="' + d + '" fill="#fff" filter="url(#m)"/></svg>';
+    const url = 'url("data:image/svg+xml,' + encodeURIComponent(mask) + '")';
+    img.style.webkitMaskImage = url; img.style.maskImage = url;
+    img.style.webkitMaskSize = '100% 100%'; img.style.maskSize = '100% 100%';
+    img.style.webkitMaskRepeat = 'no-repeat'; img.style.maskRepeat = 'no-repeat';
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('class', 'brush frame');
+    svg.setAttribute('aria-hidden', 'true');
+    svg.setAttribute('width', String(W + 2 * pad));
+    svg.setAttribute('height', String(H + 2 * pad));
+    svg.style.left = -pad + 'px';
+    svg.style.top = -pad + 'px';
+    svg.innerHTML = '<defs>' + defs + '</defs><g filter="url(#' + blurId + ')">' + strokes.join('') + '</g>';
+    fr.appendChild(svg);
+  });
+}
+
+function drawInk(){ drawBrushes(); drawFrames(); }
+
 let brushTimer;
-window.addEventListener('resize', () => { clearTimeout(brushTimer); brushTimer = setTimeout(drawBrushes, 120); });
-if (document.fonts && document.fonts.ready) document.fonts.ready.then(drawBrushes);
+window.addEventListener('resize', () => { clearTimeout(brushTimer); brushTimer = setTimeout(drawInk, 120); });
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(drawInk);
+window.addEventListener('load', drawFrames);
 
 /* RENDERING
    Every page is a real document now. Each one declares which page it is on
@@ -793,7 +877,7 @@ const curPage = document.body.dataset.page || 'home';
 
 function renderPage(id){
   if (pages[id] && document.getElementById('pg-' + id)) pages[id]();
-  drawBrushes();
+  drawInk();
 }
 
 function closeMenu(){
