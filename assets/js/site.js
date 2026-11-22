@@ -200,32 +200,6 @@ const OFFERINGS = [
        body:'Ik ontwikkel workshops voor teamleiders, afdelingshoofden en HR-professionals op basis van onderzoeksbevindingen. Ik stem elke workshop af op het werk van de deelnemers, zodat zij de bevindingen in de praktijk kunnen toepassen.'}},
 ];
 
-const ORGS = [
-  {org:'TNO', window:'2017 to present', kind:'Long-term research partnership',
-   body:'I have worked with the Netherlands Organisation for Applied Scientific Research (TNO) for eight years. The partnership includes an annual engagement survey of more than 4,000 knowledge workers and targeted studies on burnout, turnover, and team familiarity. Since 2022, approximately 60 team and department leaders have taken part in eight training sessions on translating the findings into changes in work design.',
-   nl:{window:'2017 tot heden', kind:'Langlopende onderzoekssamenwerking',
-       body:'Ik werk al acht jaar samen met TNO, en die samenwerking omvat een jaarlijks onderzoek naar de betrokkenheid van meer dan 4.000 kenniswerkers en gerichte studies naar burn-out, verloop en de vertrouwdheid tussen teamleden. Sinds 2022 namen ongeveer 60 team- en afdelingshoofden deel aan acht trainingssessies over het vertalen van de bevindingen naar aanpassingen in de inrichting van het werk.'}},
-  {org:'Amphia Ziekenhuis Breda', window:'2017, 2021', kind:'Engagement survey and Covid-19 leader training',
-   body:'My work with Amphia began with a staff engagement survey in 2017 and continued with leader training during the pandemic. Between May and July 2021, I trained 17 leaders on how to support their subordinates through the acute phase of Covid-19.',
-   meta:'ZonMw-funded follow-up',
-   nl:{kind:'Medewerkersonderzoek en leiderschapstraining tijdens corona',
-       body:'Mijn samenwerking met Amphia begon in 2017 met een medewerkersonderzoek en kreeg tijdens de pandemie een vervolg met leiderschapstraining. Tussen mei en juli 2021 trainde ik 17 leidinggevenden in het ondersteunen van hun medewerkers tijdens de acute fase van Covid-19.',
-       meta:'Vervolgproject met ZonMw-financiering'}},
-  {org:'Gemeente Assen', kind:'Engagement and team research',
-   body:'For the municipality of Assen, I carried out applied research on employee engagement. In follow-up meetings, we translated the findings into actions for HR and management.',
-   nl:{kind:'Onderzoek naar betrokkenheid en teamfunctioneren',
-       body:'Voor de gemeente Assen deed ik toegepast onderzoek naar de betrokkenheid van medewerkers. In vervolgsessies vertaalden we de bevindingen naar acties voor HR en management.'}},
-  {org:'GGZ Nederland', kind:'Research and translation into practice',
-   body:'GGZ Nederland is the umbrella organisation for Dutch mental health care. I worked with GGZ Nederland on applied questions about employee well-being and team functioning.',
-   nl:{kind:'Onderzoek en vertaling naar de praktijk',
-       body:'GGZ Nederland is de koepelorganisatie van de Nederlandse geestelijke gezondheidszorg. Met GGZ Nederland werkte ik aan toegepaste vragen over het welzijn van medewerkers en het functioneren van teams.'}},
-  {org:'Ministry of Social Affairs and Employment, and Ministry of Defence', kind:'Invited research talks',
-   body:'I have given invited presentations at Dutch ministries. At the Ministry of Social Affairs and Employment, I spoke at a Wetenschapsdag (science day) on multiple team membership, and at the Ministry of Defence I spoke at a network symposium on networks and social capital.',
-   nl:{org:'Ministerie van Sociale Zaken en Werkgelegenheid, en Ministerie van Defensie',
-       kind:'Lezingen op uitnodiging',
-       body:'Ik heb op uitnodiging presentaties gegeven bij Nederlandse ministeries. Bij het Ministerie van Sociale Zaken en Werkgelegenheid sprak ik op een Wetenschapsdag over multiple team membership, en bij het Ministerie van Defensie op een netwerksymposium over netwerken en sociaal kapitaal.'}},
-];
-
 const HIGHLIGHTS = [
   {label:'Research Director', value:'Department of HRM and Organizational Behavior', sub:'Faculty of Economics and Business, University of Groningen',
    nl:{label:'Onderzoeksdirecteur', value:'Afdeling HRM en Organisatiegedrag', sub:'Faculteit Economie en Bedrijfskunde, Rijksuniversiteit Groningen'}},
@@ -557,17 +531,11 @@ const pages = {
         </div>
 
         <div class="block">
-          <h2 class="block-h">${T('Selected partnerships and projects', 'Geselecteerde samenwerkingen en projecten')}</h2>
-          <div class="proj-grid">
-            ${ORGS.map(o=>{
-              const org = L(o,'org');
-              const window = L(o,'window');
-              const kind = L(o,'kind');
-              const body = L(o,'body');
-              const meta = L(o,'meta');
-              return `<div class="proj"><p class="proj-org">${org}</p>${window?`<p class="proj-window">${window} · ${kind}</p>`:`<p class="proj-window">${kind}</p>`}<p class="proj-body">${body}</p>${meta?`<p class="proj-meta">${meta}</p>`:''}</div>`;
-            }).join('')}
-          </div>
+          <h2 class="block-h">${T('Organisations I have worked with', 'Organisaties waarmee ik heb samengewerkt')}</h2>
+          <p>${T(
+            'I have worked with many different organisations, such as TNO, Amphia Ziekenhuis Breda, the municipality of Assen, and GGZ Nederland. Please <a href="mailto:h.j.van.de.brake@rug.nl">contact me</a> if you would like to know more about these collaborations.',
+            'Ik heb met veel verschillende organisaties samengewerkt, zoals TNO, Amphia Ziekenhuis Breda, de gemeente Assen en GGZ Nederland. <a href="mailto:h.j.van.de.brake@rug.nl">Neem gerust contact met me op</a> als u meer over deze samenwerkingen wilt weten.'
+          )}</p>
         </div>
 
         <div class="block">
