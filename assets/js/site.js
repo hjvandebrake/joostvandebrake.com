@@ -278,6 +278,11 @@ const pages = {
         <div class="about-text">
           ${ABOUT.map(s => `<p>${L(s,'t')}</p>`).join('')}
         </div>
+        <figure class="about-photo-fig">
+          <img src="/assets/photo/duisenberg-bw.jpg?v=20261122" width="1920" height="1080" loading="lazy" decoding="async"
+               alt="${T('Black-and-white photograph of the Duisenberg building of the Faculty of Economics and Business, University of Groningen, seen across a pond.', 'Zwart-witfoto van het Duisenberggebouw van de Faculteit Economie en Bedrijfskunde, Rijksuniversiteit Groningen, gezien over een vijver.')}">
+          <figcaption>${T('The Duisenberg building of the Faculty of Economics and Business. Photo by', 'Het Duisenberggebouw van de Faculteit Economie en Bedrijfskunde. Foto van')} <a href="https://commons.wikimedia.org/wiki/File:Duisenberg_Building.jpg" target="_blank" rel="noopener">Choinowski</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>, ${T('converted to black and white.', 'omgezet naar zwart-wit.')}</figcaption>
+        </figure>
       </div>
     </section>
 
