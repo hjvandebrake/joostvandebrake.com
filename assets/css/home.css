@@ -164,17 +164,21 @@ body[data-page="contact"]   li[data-pg="contact"]   .nav-link {
   mask-composite: intersect;
 }
 
-/* ---------- Home: hero --------------------------------------------------- */
+/* ---------- Home: hero with portrait ---------------------------------- */
 
-.hero { padding: 24px 0 8px; }
-.hero-grid { position: relative; }
-.hero-fig { width: 78%; margin-left: auto; }
-.hero-text {
-  position: absolute;
-  z-index: 1;
-  left: 32px;
-  top: 12%;
-  width: 41%;
+.hero { padding: 56px 0 56px; }
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 240px;
+  gap: 64px;
+  align-items: center;
+}
+.hero-text { max-width: 40em; }
+.hero-photo {
+  width: 240px;
+  height: auto;
+  filter: grayscale(1) contrast(1.05);
+  border: 1px solid var(--ink);
 }
 
 .h1, .hero h1 {
@@ -191,25 +195,20 @@ body[data-page="contact"]   li[data-pg="contact"]   .nav-link {
 .lead { margin: 0 0 1em; }
 .hero-identity { font-size: 0.95rem; color: var(--ink-soft); margin: 0; }
 
-/* ---------- Home: introduction ------------------------------------------ */
+/* ---------- Home: introduction with the drawing ------------------------ */
 
 .about-grid {
   display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 44px;
-  align-items: start;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
   border-top: 1px solid var(--ink-rule);
-  padding-top: 56px;
-  padding-bottom: 64px;
+  padding-top: 48px;
+  padding-bottom: 56px;
 }
 .wrap.about-grid { padding-left: 32px; padding-right: 32px; }
-.about-photo {
-  width: 200px;
-  height: auto;
-  filter: grayscale(1) contrast(1.05);
-  border: 1px solid var(--ink);
-}
-.about-text p { margin: 0 0 0.7em; }
+.about-text p { margin: 0 0 0.8em; }
+.about-fig { max-width: 520px; justify-self: end; width: 100%; }
 
 /* ---------- Sections ----------------------------------------------------- */
 
@@ -443,11 +442,11 @@ footer { margin-top: 40px; border-top: 1px solid var(--ink-rule); }
   .nav-ul li { border-top: 1px solid var(--ink-rule); }
   .nav-link { display: block; padding: 10px 0; border-bottom: 0; }
 
-  .hero { padding-top: 8px; }
-  .hero-text { position: static; width: auto; padding: 32px 0 8px; }
-  .hero-fig { width: calc(100% + 32px); margin: 0 -16px; }
-  .about-grid { grid-template-columns: 1fr; gap: 24px; padding-top: 40px; padding-bottom: 48px; }
-  .about-photo { width: 160px; }
+  .hero { padding: 32px 0 40px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 24px; }
+  .hero-photo { order: -1; width: 140px; }
+  .about-grid { grid-template-columns: 1fr; gap: 16px; padding-top: 36px; padding-bottom: 40px; }
+  .about-fig { justify-self: center; }
   #pg-home .sec > .wrap { padding-top: 48px; }
   .sec { padding-bottom: 48px; }
   .split, .split.flip { grid-template-columns: 1fr; gap: 28px; }

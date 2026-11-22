@@ -219,6 +219,8 @@ const ABOUT = [
    nl:{t:'Al meer dan tien jaar doe ik toegepast onderzoek met onderzoeksinstituten, ziekenhuizen, energie- en infrastructuurbedrijven en ministeries.'}},
   {t:'I am also an associate editor of <em>Group and Organization Management</em>. In 2022 I received an NWO Veni grant for my research on multiple team membership.',
    nl:{t:'Daarnaast ben ik associate editor van <em>Group and Organization Management</em>. In 2022 ontving ik een NWO Veni-subsidie voor mijn onderzoek naar multiple team membership.'}},
+  {t:'I supervise PhD candidates and Master’s theses, and in November 2026 I completed the PhD Supervision Excellence programme of the University of Groningen.',
+   nl:{t:'Ik begeleid promovendi en masterscripties, en in november 2026 rondde ik het programma PhD Supervision Excellence van de Rijksuniversiteit Groningen af.'}},
 ];
 
 const QUICK_FACTS = [
@@ -265,19 +267,19 @@ const pages = {
             'Mijn formele naam is Hendrik J. van de Brake, en in academische registers worden ook de vormen H. J. van de Brake en HJ van de Brake gebruikt.'
           )}</p>
         </div>
-        <figure class="ink-fig hero-fig">
-          <img src="/assets/ink/hero-teams.webp?v=20261122" width="2000" height="1333" loading="eager" fetchpriority="high" decoding="async"
-               alt="${T('Ink drawing of an employee in red who walks from one team’s table to the next, past colleagues at a laptop, a whiteboard, and a pile of documents.', 'Inkttekening van een medewerker in het rood die van de tafel van het ene team naar het volgende loopt, langs collega’s bij een laptop, een whiteboard en een stapel documenten.')}">
-        </figure>
+        <img class="hero-photo" src="/portrait.jpg?v=20261122" width="500" height="749" loading="eager" fetchpriority="high" decoding="async" alt="${T('Portrait of Joost van de Brake', 'Portret van Joost van de Brake')}">
       </div>
     </section>
 
     <section class="about" aria-label="${T('About', 'Over mij')}">
       <div class="wrap about-grid">
-        <img class="about-photo" src="/portrait.jpg?v=20261122" width="500" height="749" loading="lazy" decoding="async" alt="${T('Portrait of Joost van de Brake', 'Portret van Joost van de Brake')}">
         <div class="about-text">
           ${ABOUT.map(s => `<p>${L(s,'t')}</p>`).join('')}
         </div>
+        <figure class="ink-fig about-fig">
+          <img src="/assets/ink/hero-teams.webp?v=20261122b" width="1400" height="1129" loading="lazy" decoding="async"
+               alt="${T('Ink drawing of an employee in red who walks from one team’s table to the next, past colleagues at a laptop, a whiteboard, and a pile of documents.', 'Inkttekening van een medewerker in het rood die van de tafel van het ene team naar het volgende loopt, langs collega’s bij een laptop, een whiteboard en een stapel documenten.')}">
+        </figure>
       </div>
     </section>
 
@@ -436,8 +438,8 @@ const pages = {
             'Studenten leren het meest wanneer ze theorie toepassen op echte vraagstukken en wanneer hun docenten zelf onderzoek doen. In mijn onderwijs op BSc-, MSc- en executive niveau gebruik ik casussen van organisaties waarmee ik samenwerk, waaronder toegepaste onderzoeksinstituten, ziekenhuizen, energie- en infrastructuurbedrijven, gemeenten, publieke instanties en banken.'
           )}</p>
           <p>${T(
-            'In 2020 I completed the University Teaching Qualification (UTQ / BKO).',
-            'In 2020 heb ik de Basiskwalificatie Onderwijs (BKO) behaald.'
+            'In 2020 I completed the University Teaching Qualification (UTQ / BKO). In November 2026 I completed the PhD Supervision Excellence programme of the University of Groningen, which consists of an online course, three workshops, and an assessment.',
+            'In 2020 heb ik de Basiskwalificatie Onderwijs (BKO) behaald. In november 2026 rondde ik het programma PhD Supervision Excellence van de Rijksuniversiteit Groningen af, dat bestaat uit een online cursus, drie workshops en een beoordeling.'
           )}</p>
         </div>
 
@@ -457,18 +459,18 @@ const pages = {
         </div>
 
         <div class="block">
-          <h2 class="block-h">${T('PhD supervision', 'Begeleiding promovendi')}</h2>
+          <h2 class="block-h">${T('PhD and thesis supervision', 'Begeleiding van promovendi en scripties')}</h2>
           <p>${T(
-            'I supervise PhD candidates who study modern team arrangements, and I am their daily supervisor. <strong>Tunahan Sari</strong> is in his third year and has three studies underway, including a multilevel field study and an experiment with AI agents. <strong>Bishal Saha</strong> started in 2026 and is developing a network theory of dynamic participation, for which he uses longitudinal data from two mental-healthcare organisations. <strong>Franzisca Fastje</strong> defended her PhD on remote and hybrid work in teams in September 2026 and now holds a postdoctoral fellowship at the University of Queensland. <strong>Herman Paryono</strong> studies multiple roles across countries and is now a postdoctoral researcher in Groningen.',
-            'Ik ben dagelijks begeleider van promovendi die moderne teamvormen onderzoeken. <strong>Tunahan Sari</strong> is derdejaars promovendus en heeft drie studies lopen, waaronder een meerlaagse veldstudie en een experiment met AI-agenten. <strong>Bishal Saha</strong>, die in 2026 begon, ontwikkelt een netwerktheorie van dynamische deelname op basis van longitudinale gegevens uit twee ggz-organisaties. <strong>Franzisca Fastje</strong> promoveerde in september 2026 op onderzoek naar remote en hybride werk in teams en is nu postdoc aan de University of Queensland. <strong>Herman Paryono</strong> onderzoekt meervoudige rollen in verschillende landen en is nu postdoc in Groningen.'
+            'I supervise PhD candidates who study modern team arrangements. <strong>Tunahan Sari</strong> is in his third year and has three studies underway, including a multilevel field study and an experiment with AI agents. <strong>Bishal Saha</strong> started in 2026 and is developing a network theory of dynamic participation, for which he uses longitudinal data from two mental-healthcare organisations. I was co-promotor of <strong>Franzisca Fastje</strong>, who defended her PhD on remote and hybrid work in teams in September 2026 and now holds a postdoctoral fellowship at the University of Queensland. I am also co-promotor of <strong>Herman Paryono</strong>, who studies multiple roles across countries and is now a postdoctoral researcher in Groningen.',
+            'Ik begeleid promovendi die moderne teamvormen onderzoeken. <strong>Tunahan Sari</strong> is derdejaars promovendus en heeft drie studies lopen, waaronder een meerlaagse veldstudie en een experiment met AI-agenten. <strong>Bishal Saha</strong>, die in 2026 begon, ontwikkelt een netwerktheorie van dynamische deelname op basis van longitudinale gegevens uit twee ggz-organisaties. Ik was copromotor van <strong>Franzisca Fastje</strong>, die in september 2026 promoveerde op onderzoek naar remote en hybride werk in teams en nu postdoc is aan de University of Queensland. Ook ben ik copromotor van <strong>Herman Paryono</strong>, die meervoudige rollen in verschillende landen onderzoekt en nu postdoc is in Groningen.'
           )}</p>
           <p>${T(
             'Earlier, Gerben van der Vegt and I jointly supervised <strong>Burkhard Wörtler</strong>’s postdoctoral project, which produced a longitudinal study of how emotional exhaustion spreads through collaboration networks. I give the researchers I supervise ownership of their own project, and I work closely with them on its concepts and methods and on their writing, so that they leave with a profile of their own.',
             'Eerder begeleidden Gerben van der Vegt en ik samen het postdocproject van <strong>Burkhard Wörtler</strong>, dat een longitudinale studie opleverde naar de manier waarop emotionele uitputting zich door samenwerkingsnetwerken verspreidt. Ik laat de onderzoekers die ik begeleid eigenaar zijn van hun eigen project en werk nauw met hen samen aan de concepten en methoden en aan het schrijven, zodat zij met een eigen profiel vertrekken.'
           )}</p>
           <p>${T(
-            'I also supervise BSc and MSc theses, and almost all of these theses address practical questions brought in by organisations such as applied research institutes, energy and infrastructure companies, municipalities, public-sector agencies, and banks.',
-            'Daarnaast begeleid ik BSc- en MSc-scripties, en vrijwel al deze scripties gaan over praktische vraagstukken die organisaties aandragen, zoals toegepaste onderzoeksinstituten, energie- en infrastructuurbedrijven, gemeenten, publieke instanties en banken.'
+            'Since 2015 I have supervised approximately 150 Bachelor’s and Master’s students with their theses, in the MSc Human Resource Management and earlier also in the BSc Business Administration. Almost all of these theses address practical questions brought in by organisations such as applied research institutes, energy and infrastructure companies, municipalities, public-sector agencies, and banks.',
+            'Sinds 2015 heb ik ongeveer 150 bachelor- en masterstudenten bij hun scriptie begeleid, in de MSc Human Resource Management en eerder ook in de BSc Bedrijfskunde. Vrijwel al deze scripties gaan over praktische vraagstukken die organisaties aandragen, zoals toegepaste onderzoeksinstituten, energie- en infrastructuurbedrijven, gemeenten, publieke instanties en banken.'
           )}</p>
           <p>${T(
             'I am open to supervising new PhD candidates who work on related topics, and interested candidates can <a href="mailto:h.j.van.de.brake@rug.nl">contact me by email</a>.',
