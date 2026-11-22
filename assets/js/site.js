@@ -278,10 +278,6 @@ const pages = {
         <div class="about-text">
           ${ABOUT.map(s => `<p>${L(s,'t')}</p>`).join('')}
         </div>
-        <figure class="ink-fig about-fig">
-          <img src="/assets/ink/hero-teams.webp?v=20261122b" width="1400" height="1129" loading="lazy" decoding="async"
-               alt="${T('Ink drawing of an employee in red who walks from one team’s table to the next, past colleagues at a laptop, a whiteboard, and a pile of documents.', 'Inkttekening van een medewerker in het rood die van de tafel van het ene team naar het volgende loopt, langs collega’s bij een laptop, een whiteboard en een stapel documenten.')}">
-        </figure>
       </div>
     </section>
 
@@ -317,9 +313,9 @@ const pages = {
 
     <section class="sec">
       <div class="wrap split flip">
-        <figure class="ink-fig">
-          <img src="/assets/ink/mtm-week.webp?v=20261122" width="1500" height="1435" loading="lazy" decoding="async"
-               alt="${T('Ink drawing of a person in red at a table who plans one working week on a large sheet with a column for each day.', 'Inkttekening van een persoon in het rood aan een tafel die één werkweek plant op een groot vel met een kolom voor elke dag.')}">
+        <figure class="ink-fig mtm-fig">
+          <img src="/assets/ink/hero-teams.webp?v=20261122b" width="1400" height="1129" loading="lazy" decoding="async"
+               alt="${T('Ink drawing of an employee in red who walks from one team’s table to the next, past colleagues at a laptop, a whiteboard, and a pile of documents.', 'Inkttekening van een medewerker in het rood die van de tafel van het ene team naar het volgende loopt, langs collega’s bij een laptop, een whiteboard en een stapel documenten.')}">
         </figure>
         <div class="split-text">
           <h2 class="h2">${T('Working in several teams', 'Werken in meerdere teams')}</h2>
@@ -686,6 +682,104 @@ const pages = {
   },
 };
 
+/* INK BRUSH UNDERLINES
+   Every heading gets its own thin brush stroke in the red wash of the
+   drawings, drawn just below the heading and across the full width of its
+   text. The shape is seeded by the heading's words, so a heading always gets
+   the same stroke and no two headings get the same one. */
+const BRUSH_SEL = '.hero .h1, .pg-hd h1, .h2, .block-h, .cta-strip h2';
+
+function seeded(str){
+  let h = 1779033703 ^ str.length;
+  for (let i = 0; i < str.length; i++){
+    h = Math.imul(h ^ str.charCodeAt(i), 3432918353);
+    h = (h << 13) | (h >>> 19);
+  }
+  return function(){
+    h = Math.imul(h ^ (h >>> 16), 2246822507);
+    h = Math.imul(h ^ (h >>> 13), 3266489909);
+    h ^= h >>> 16;
+    return (h >>> 0) / 4294967296;
+  };
+}
+
+function brushShape(rnd){
+  return {
+    tilt: (rnd() - 0.5) * 3.0,                 // a slight slope
+    bow: (rnd() - 0.5) * 3.0,                  // a slight curve
+    p: [rnd() * 6.283, rnd() * 6.283, rnd() * 6.283, rnd() * 6.283],
+    f: [0.7 + rnd() * 1.3, 2.2 + rnd() * 2.5, 3.5 + rnd() * 4, 8 + rnd() * 6],
+    press: 0.03 + rnd() * 0.08,                // how fast the brush reaches full width
+    lift: 0.25 + rnd() * 0.35                  // how much width is left when the brush lifts
+  };
+}
+
+function brushPath(w, ht, sh, base, t0, t1, dy){
+  const n = Math.max(20, Math.round(w * (t1 - t0) / 4));
+  const top = [], bot = [];
+  for (let i = 0; i <= n; i++){
+    const t = t0 + (t1 - t0) * i / n, x = t * w;
+    const yc = ht / 2 + dy + sh.tilt * (t - 0.5) + sh.bow * Math.sin(Math.PI * t)
+             + 0.55 * Math.sin(6.283 * sh.f[0] * t + sh.p[0]) + 0.2 * Math.sin(6.283 * sh.f[1] * t + sh.p[1]);
+    const u = (t - t0) / (t1 - t0);
+    const rise = Math.pow(Math.min(1, u / sh.press), 0.6);
+    const fall = 1 - (1 - sh.lift) * Math.pow(u, 3);
+    const grain = 1 + 0.26 * Math.sin(6.283 * sh.f[2] * t + sh.p[2]) + 0.12 * Math.sin(6.283 * sh.f[3] * t + sh.p[3]);
+    const th = 0.25 + base * rise * fall * grain;
+    top.push([x, yc - th * 0.42]);
+    bot.push([x, yc + th * 0.58]);
+  }
+  const pts = top.concat(bot.reverse());
+  return 'M' + pts.map(q => q[0].toFixed(1) + ' ' + q[1].toFixed(2)).join('L') + 'Z';
+}
+
+let brushId = 0;
+function drawBrushes(){
+  document.querySelectorAll(BRUSH_SEL).forEach(hd => {
+    hd.querySelectorAll('svg.brush').forEach(el => el.remove());
+    const range = document.createRange();
+    range.selectNodeContents(hd);
+    const rects = Array.from(range.getClientRects()).filter(r => r.width > 1 && r.height > 1);
+    if (!rects.length) return;
+    const box = hd.getBoundingClientRect();
+    const left = Math.min(...rects.map(r => r.left)) - box.left;
+    const right = Math.max(...rects.map(r => r.right)) - box.left;
+    const bottom = Math.max(...rects.map(r => r.bottom)) - box.top;
+    const big = hd.tagName === 'H1';
+    const ht = big ? 12 : 10, base = big ? 2.9 : 2.1;
+    const w = right - left + 8;
+    const rnd = seeded(hd.textContent.trim());
+    const sh = brushShape(rnd);
+    // Watercolour pooling: the red is a little denser in some places than in others.
+    const o = [0.92, 0.72 + rnd() * 0.2, 0.8 + rnd() * 0.15, 0.62 + rnd() * 0.2];
+    const id = 'bg' + (++brushId);
+    // A second, fainter pass of the brush over part of the stroke.
+    const s0 = 0.04 + rnd() * 0.25, s1 = s0 + 0.35 + rnd() * 0.35;
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('class', 'brush');
+    svg.setAttribute('aria-hidden', 'true');
+    svg.setAttribute('width', w.toFixed(0));
+    svg.setAttribute('height', String(ht));
+    svg.setAttribute('viewBox', '0 0 ' + w.toFixed(1) + ' ' + ht);
+    svg.style.left = (left - 4).toFixed(1) + 'px';
+    svg.style.top = (bottom - ht * 0.5).toFixed(1) + 'px';
+    svg.innerHTML =
+      '<defs><linearGradient id="' + id + '" x1="0" x2="1" y1="0" y2="0">' +
+      '<stop offset="0" stop-color="#a84a53" stop-opacity="' + o[0] + '"/>' +
+      '<stop offset="0.35" stop-color="#ad535b" stop-opacity="' + o[1].toFixed(2) + '"/>' +
+      '<stop offset="0.7" stop-color="#ad535b" stop-opacity="' + o[2].toFixed(2) + '"/>' +
+      '<stop offset="1" stop-color="#b15c63" stop-opacity="' + o[3].toFixed(2) + '"/>' +
+      '</linearGradient></defs>' +
+      '<path d="' + brushPath(w, ht, sh, base, 0, 1, 0) + '" fill="url(#' + id + ')"/>' +
+      '<path d="' + brushPath(w, ht, sh, base * 0.45, s0, Math.min(0.97, s1), 0.5) + '" fill="#9e454b" fill-opacity="0.22"/>';
+    hd.appendChild(svg);
+  });
+}
+
+let brushTimer;
+window.addEventListener('resize', () => { clearTimeout(brushTimer); brushTimer = setTimeout(drawBrushes, 120); });
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(drawBrushes);
+
 /* RENDERING
    Every page is a real document now. Each one declares which page it is on
    <body data-page="..."> and carries the matching #pg-... container. The hash
@@ -694,6 +788,7 @@ const curPage = document.body.dataset.page || 'home';
 
 function renderPage(id){
   if (pages[id] && document.getElementById('pg-' + id)) pages[id]();
+  drawBrushes();
 }
 
 function closeMenu(){
