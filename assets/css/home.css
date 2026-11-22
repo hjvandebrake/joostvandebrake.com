@@ -176,7 +176,7 @@ body[data-page="contact"]   li[data-pg="contact"]   .nav-link {
 }
 .hero-text { max-width: 40em; }
 .hero-photo { width: 240px; }
-.hero-photo img { filter: grayscale(1) contrast(1.15); }
+.hero-photo img { filter: grayscale(1) contrast(1.15) brightness(0.92); }
 .about-photo-fig img { filter: contrast(1.12); }
 
 /* A photo inside a thin red brush frame, drawn by drawFrames() in site.js. */
