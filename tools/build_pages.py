@@ -35,9 +35,10 @@ PAGES = [
         "slug": "research",
         "title": "Research on teams and multiple team membership",
         "description": (
-            "Publications and grants on multiple team membership, "
-            "hybrid work, and the strain of modern teamwork. Academy of Management Journal, "
-            "Journal of Applied Psychology, Personnel Psychology, and NWO Veni."
+            "Joost van de Brake studies multiple team membership, hybrid work, and the strain "
+            "of modern teamwork. This page lists his grants, including an NWO Veni grant, and "
+            "his publications in journals such as the Academy of Management Journal, the "
+            "Journal of Applied Psychology, and Personnel Psychology."
         ),
         "og_title": "Research | Joost van de Brake",
     },
@@ -45,9 +46,10 @@ PAGES = [
         "slug": "teaching",
         "title": "Teaching on teams, leadership, and modern work",
         "description": (
-            "BSc, MSc, and executive courses on teams and organisational behaviour at the "
-            "University of Groningen, PhD supervision on modern team arrangements, and "
-            "invited talks at universities and ministries."
+            "Joost van de Brake teaches BSc, MSc, and executive courses on teams and "
+            "organisational behaviour at the University of Groningen. He supervises PhD "
+            "candidates who study modern team arrangements and gives invited talks at "
+            "universities and ministries."
         ),
         "og_title": "Teaching | Joost van de Brake",
     },
@@ -55,9 +57,10 @@ PAGES = [
         "slug": "practice",
         "title": "Working with organisations on teams and collaboration",
         "description": (
-            "Evidence-based help with team design, hybrid work, engagement, and burnout. "
-            "Employee surveys and big-data diagnosis, intervention design and evaluation, "
-            "and training for team leaders and HR professionals."
+            "Joost van de Brake works with organisations on team design, hybrid work, "
+            "engagement, and burnout. He conducts employee surveys and analyses large "
+            "datasets, designs and evaluates interventions, and trains team leaders and "
+            "HR professionals."
         ),
         "og_title": "Working with organisations | Joost van de Brake",
     },
@@ -65,7 +68,7 @@ PAGES = [
         "slug": "resources",
         "title": "Tools and teaching materials on teams and AI",
         "description": (
-            "Resources from Joost van de Brake: a first analysis of AI and research "
+            "On this page, Joost van de Brake shares a first analysis of AI and research "
             "at FEB, the NorthGrid AI accounting case, the MTM Portfolio Navigator, classroom cases, "
             "a teamwork practice exam, and slides."
         ),
@@ -75,9 +78,9 @@ PAGES = [
         "slug": "contact",
         "title": "Contact",
         "description": (
-            "Contact details for Joost van de Brake, formally Hendrik J. van de Brake and also "
-            "indexed as H. J. van de Brake or HJ van de Brake. Email, ORCID, Pure, and "
-            "Google Scholar."
+            "This page gives the email address and the ORCID, Pure, and Google Scholar profiles "
+            "of Joost van de Brake. His formal name is Hendrik J. van de Brake, and he is also "
+            "indexed as H. J. van de Brake or HJ van de Brake."
         ),
         "og_title": "Contact | Joost van de Brake",
     },
@@ -125,7 +128,7 @@ TEMPLATE = """<!DOCTYPE html>
 <link rel="me" href="https://www.linkedin.com/in/joost-van-de-brake-85620245/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:opsz,wght@9..40,300;9..40,400;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,700;1,8..60,400;1,8..60,700&display=swap" rel="stylesheet">
 
 <script type="application/ld+json">
 {{

@@ -127,6 +127,19 @@
   --shadow-sm: 0 8px 24px rgba(28, 27, 25, 0.08);
   --shadow-md: 0 22px 60px rgba(28, 27, 25, 0.13);
 
+  /* ---------- Ink on paper (main site, November 2026) ------------------ */
+  /* The six main pages (home, research, teaching, practice, resources,
+     contact) use the ink-on-paper look of the ink drawings: one serif
+     family, black ink on warm paper, and the drawings' red wash used
+     sparingly. The MTM tools and the video pages keep the palette above. */
+  --ink-font:   "Source Serif 4", Georgia, "Times New Roman", serif;
+  --paper:      #fbfaf6;   /* sampled from the drawings' paper            */
+  --ink:        #1d1d1b;   /* text and lines, 16.5:1 on paper             */
+  --ink-soft:   #55554f;   /* secondary text, 7.3:1 on paper              */
+  --ink-rule:   rgba(29, 29, 27, 0.18);   /* hairlines, decorative only   */
+  --ink-red:    #9e454b;   /* the drawings' red wash, darkened, 5.9:1     */
+  --ink-wrap:   1180px;
+
   /* ---------- Motion ---------------------------------------------------- */
   --ease:      cubic-bezier(0.2, 0, 0.2, 1);
   --dur-fast:  120ms;

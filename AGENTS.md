@@ -14,6 +14,17 @@ A static site for Joost van de Brake, Associate Professor and Research Director 
 - Styling is shared. `assets/css/tokens.css` holds the whole palette, type scale, spacing, and geometry, and every page loads it first. `assets/css/base.css` follows with the accessibility floor (focus rings, skip link, reduced motion, print). Page stylesheets load last: `assets/css/home.css` for the main site, `styles.css` inside each tool directory. Change a colour or a type size in `tokens.css`, never in a page stylesheet, and never reintroduce a per-page `:root` palette.
 - Every page has its own URL and its own document. A pre-rendered home page sits in the initial HTML for crawlers that do not execute JavaScript; the other pages are rendered client-side from `assets/js/site.js`. Standalone tools use normal directory routes.
 
+## Design: ink on paper (since 22 November 2026)
+
+Joost replaced the earlier look, which he found “so ai sloppy and ai generated”, with the ink-on-paper look of his explainer videos (“i love this”, 22 November 2026). The six main pages (home, research, teaching, practice, resources, contact) follow these rules:
+
+- One type family, Source Serif 4 (Google Fonts), in regular and bold, with italics only for journal names and titles. No second family.
+- Black ink on warm paper. The colours are the `--paper`, `--ink`, `--ink-soft`, `--ink-rule`, and `--ink-red` tokens in `tokens.css`. Red appears in the drawings and as a thin link underline, never as a fill, a button, or a badge.
+- Thin rules instead of boxes: no cards with borders or shadows, no stat tiles, no rounded pills, no rows of uppercase eyebrows. Small-caps labels only where they name a section or a type of item.
+- Drawings are ink drawings in `assets/ink/`, with their edges faded into the page by a CSS mask. They are made with the Look C kit of the Video generator project; the prompts, references, and scripts live in `../design/joost-ink-mockup/` (`images.json`, `tools/imagegen.py`, `tools/upscale_v10.py`, `tools/export_site.py`). Every drawing shows faceless people in black ink line with one person in deep red, no text, and nothing on walls. Before use, every drawing passes the person check of the Video generator `STYLE-GUIDE.md`, section 3.2: every head is followed to its own complete body at double size, no person is partly hidden behind another, and red is used for the one person only.
+- The portrait on the home page is the photograph `portrait.jpg`, shown in greyscale. Joost’s likeness is never drawn or generated.
+- The MTM tools, the video pages, and the slide decks under `resources/` keep their own styles; their URLs and anchors must not change.
+
 ## Source of truth for content
 
 For factual content about Joost (publications, grants, awards, roles, partnerships, contact), read `llms-full.txt`. It is kept current alongside the visible site.

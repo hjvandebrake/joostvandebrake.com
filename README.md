@@ -25,7 +25,8 @@ Then open <http://127.0.0.1:8000/> in a browser.
 - `mtm-resources/`, the bilingual Navigator landing page, research overview, and public teaching-case hub.
 - `mtm-portfolio-navigator/`, the bilingual More Than a Number practitioner tool, with separate HTML, CSS, content, and application files.
 - `assets/downloads/`, downloadable slide decks and public materials linked from the resources page.
-- `portrait-staff.png`, hero portrait. `portrait.jpg` and `portrait-alt.jpg` are alternates kept for future use.
+- `assets/ink/`, the ink drawings of the main pages (since 22 November 2026). Their prompts, references, and export script live in `../design/joost-ink-mockup/`; `AGENTS.md` gives the design rules.
+- `portrait.jpg`, the photograph on the home page, shown in greyscale. `portrait-staff.png` stays the social-media preview image, and `portrait-alt.jpg` is kept for future use. `assets/illustrations/` holds the earlier page illustrations, no longer shown.
 - `favicon.svg`, `favicon-32.png`, `apple-touch-icon.png`, `android-chrome-192.png`, `android-chrome-512.png`, `site.webmanifest`, the favicon set.
 - `tools/build_mtm_resource_pdfs.py`, the source for the two learner cases and their separate instructor guides.
 - `robots.txt`, `sitemap.xml`, `llms.txt`, `llms-full.txt`, `AGENTS.md`, the discovery and agent-orientation files.

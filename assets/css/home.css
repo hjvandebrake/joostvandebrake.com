@@ -1,1293 +1,470 @@
 /* ==========================================================================
-   joostvandebrake.com — homepage
-   Replaces the inline <style> block in index.html.
-   Requires tokens.css and base.css to be loaded first.
+   joostvandebrake.com — main site (home, research, teaching, practice,
+   resources, contact). Load after tokens.css and base.css.
 
-   Every selector from the previous stylesheet is preserved, so no HTML has to
-   change for the styling alone. The separate patch file adds the mobile
-   navigation, the skip-link target, and the real hrefs.
+   The ink-on-paper look, November 2026. Black ink on warm paper, one serif
+   family (Source Serif 4, regular and bold), thin rules instead of boxes,
+   and ink drawings whose edges fade into the page. Red appears only in the
+   drawings and as a thin link underline. Colours come from tokens.css
+   (--paper, --ink, --ink-soft, --ink-rule, --ink-red).
    ========================================================================== */
 
-/* --------------------------------------------------------------------------
-   Layout primitives
-   -------------------------------------------------------------------------- */
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--ink-font);
+  font-optical-sizing: auto;
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+  color: var(--ink);
+  font-family: var(--ink-font);
+  font-weight: 700;
+  letter-spacing: -0.005em;
+}
+
+p { max-width: 44em; }
+
+a {
+  color: inherit;
+  text-decoration-line: underline;
+  text-decoration-color: rgba(158, 69, 75, 0.55);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+a:hover { color: var(--ink-red); text-decoration-color: var(--ink-red); }
+
+strong, b { font-weight: 700; }
+em, i { font-style: italic; }
 
 .wrap {
-  width: min(var(--content), calc(100% - (2 * var(--page-pad))));
-  margin-inline: auto;
+  width: 100%;
+  max-width: var(--ink-wrap);
+  margin: 0 auto;
+  padding: 0 32px;
 }
 
-.sec {
-  padding: var(--sp-section) var(--page-pad);
-  background: var(--white);
-}
-
-.sec.alt {
-  background: var(--warm-50);
-}
-
-.sec-head {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: var(--sp-5);
-  margin-bottom: var(--sp-6);
-}
-
-/* --------------------------------------------------------------------------
-   Type roles
-   -------------------------------------------------------------------------- */
-
-.eye {
-  margin-bottom: var(--sp-2);
-  color: var(--red);
-  font-size: var(--t-2xs);
-  font-weight: var(--w-medium);
-  letter-spacing: var(--track-label);
-  text-transform: uppercase;
-}
-
-.h1 {
-  font-family: var(--serif);
-  font-size: var(--t-display);
-  font-weight: var(--w-bold);
-  line-height: var(--lh-tight);
-  letter-spacing: var(--track-display);
-}
-
-.h2 {
-  font-family: var(--serif);
-  font-size: var(--t-xl);
-  font-weight: var(--w-bold);
-  line-height: var(--lh-snug);
-  letter-spacing: -0.02em;
-}
-
-.h3 {
-  font-family: var(--serif);
-  font-size: var(--t-lg);
-  font-weight: var(--w-bold);
-  line-height: var(--lh-snug);
-}
-
-/* Was font-weight 300 in mid-grey. Light weight at this size was the main
-   source of the "hard to read" feeling on the homepage. */
-.lead {
-  max-width: var(--measure);
-  color: var(--ink-600);
-  font-size: var(--t-md);
-  font-weight: var(--w-regular);
-  line-height: var(--lh-loose);
-}
-
-.tag {
-  display: inline-flex;
-  padding: 2px 9px;
-  background: var(--ink-100);
-  border-radius: var(--radius-sm);
-  color: var(--ink-600);
-  font-size: var(--t-2xs);
-  font-weight: var(--w-medium);
-}
-
-/* --------------------------------------------------------------------------
-   Buttons
-   -------------------------------------------------------------------------- */
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-  min-height: 44px;
-  padding: 11px 22px;
-  background: none;
-  border: 1.5px solid transparent;
-  border-radius: var(--radius-sm);
-  color: inherit;
-  font-family: var(--sans);
-  font-size: var(--t-sm);
-  font-weight: var(--w-medium);
-  text-decoration: none;
-  cursor: pointer;
-  transition: background var(--dur-fast) var(--ease),
-              border-color var(--dur-fast) var(--ease),
-              color var(--dur-fast) var(--ease);
-}
-
-.btn-red {
-  background: var(--red);
-  border-color: var(--red);
-  color: var(--white);
-}
-
-.btn-red:hover {
-  background: var(--red-dark);
-  border-color: var(--red-dark);
-  color: var(--white);
-}
-
-.btn-ghost {
-  border-color: var(--ink-500);
-  color: var(--ink-800);
-}
-
-.btn-ghost:hover {
-  border-color: var(--ink-600);
-  color: var(--ink-900);
-}
-
-.btn-sm {
-  min-height: 38px;
-  padding: 6px 14px;
-  font-size: var(--t-xs);
-}
-
-/* --------------------------------------------------------------------------
-   Header
-   -------------------------------------------------------------------------- */
+/* ---------- Navigation --------------------------------------------------- */
 
 .nav {
   position: sticky;
   top: 0;
-  z-index: 200;
-  background: var(--white);
-  border-bottom: 1px solid var(--ink-200);
-  transition: box-shadow var(--dur-base) var(--ease);
-}
-
-.nav.scrolled {
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  z-index: 50;
+  background: var(--paper);
+  border-bottom: 1px solid var(--ink-rule);
 }
 
 .nav-in {
+  max-width: var(--ink-wrap);
+  margin: 0 auto;
+  padding: 16px 32px 14px;
   display: flex;
   align-items: center;
-  gap: 10px;
-  height: var(--header-h);
-  width: min(var(--content), calc(100% - (2 * var(--page-pad))));
-  margin-inline: auto;
+  gap: 28px;
 }
 
 .logo {
-  display: block;
-  flex-shrink: 0;
-  color: inherit;
+  display: flex;
+  flex-direction: column;
   text-decoration: none;
+  color: var(--ink);
+  margin-right: auto;
+  line-height: 1.25;
 }
+.logo:hover { color: var(--ink); }
+.logo-name { font-weight: 700; font-size: 1.2rem; }
+.logo-sub { font-size: 0.84rem; color: var(--ink-soft); white-space: nowrap; }
+@media (max-width: 1240px) { .logo-sub { display: none; } }
 
-.logo-name {
-  display: block;
-  font-family: var(--serif);
-  font-size: 1.05rem;
-  font-weight: var(--w-bold);
-  line-height: 1.05;
-}
-
-/* Was --ink-400 at 0.75 opacity: 2.49:1 on white, a clear AA failure. The size
-   stays small because this line sets the width of the whole header bar. */
-.logo-sub {
-  display: block;
-  margin-top: 2px;
-  color: var(--ink-600);
-  font-size: 0.66rem;
-  letter-spacing: 0.02em;
-}
-
-.nav-sep {
-  flex-shrink: 0;
-  width: 1px;
-  height: 24px;
-  background: var(--ink-200);
-}
+.nav-sep { display: none; }
 
 .nav-ul {
-  display: flex;
-  margin-left: auto;
-  padding: 0;
   list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 24px;
 }
+.nav-ul li { margin: 0; }
 
 .nav-link {
-  display: inline-flex;
-  align-items: center;
-  height: var(--header-h);
-  padding: 0 9px;
-  background: none;
-  border: none;
-  color: var(--ink-600);
-  font-family: var(--sans);
-  /* pinned rather than --t-sm: five labels plus the name and the language
-     switch have to fit the bar, and the Dutch labels are the long ones */
-  font-size: var(--t-xs);
-  font-weight: var(--w-regular);
   white-space: nowrap;
+  color: var(--ink);
+  font-size: 1rem;
   text-decoration: none;
-  cursor: pointer;
-  transition: color var(--dur-fast) var(--ease);
+  padding: 4px 0;
+  border-bottom: 1.5px solid transparent;
+}
+.nav-link:hover { color: var(--ink); border-bottom-color: var(--ink-red); }
+
+body[data-page="research"]  li[data-pg="research"]  .nav-link,
+body[data-page="teaching"]  li[data-pg="teaching"]  .nav-link,
+body[data-page="practice"]  li[data-pg="practice"]  .nav-link,
+body[data-page="resources"] li[data-pg="resources"] .nav-link,
+body[data-page="contact"]   li[data-pg="contact"]   .nav-link {
+  border-bottom-color: var(--ink);
 }
 
-.nav-link:hover,
-.nav-ul li.act .nav-link {
-  color: var(--red);
-}
-
-.nav-ul li.act .nav-link {
-  font-weight: var(--w-medium);
-  box-shadow: inset 0 -3px 0 var(--red);
-}
-
-.nav-ul li.cta .nav-link {
-  margin-left: var(--sp-1);
-  padding-left: 14px;
-  border-left: 1px solid var(--ink-200);
-  color: var(--red);
-  font-weight: var(--w-medium);
-}
-
-/* Language switch */
-.lang-row {
-  display: flex;
-  flex-shrink: 0;
-  gap: 3px;
-  margin-left: var(--sp-1);
-}
-
+.lang-row { display: flex; gap: 2px; }
 .lb {
-  min-width: 42px;
-  min-height: 32px;
-  padding: 4px 9px;
   background: none;
-  border: 1.5px solid var(--ink-500);
-  border-radius: var(--radius-sm);
-  color: var(--ink-600);
-  font-family: var(--sans);
-  font-size: var(--t-2xs);
-  /* Was 700, which Source Sans 3 is not loaded at on this page, so the
-     browser was synthesising a fake bold. 600 is a real weight. */
-  font-weight: var(--w-medium);
-  letter-spacing: 0.04em;
+  border: 0;
+  padding: 4px 6px;
+  font: inherit;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
   cursor: pointer;
-  transition: background var(--dur-fast) var(--ease),
-              color var(--dur-fast) var(--ease);
 }
-
-.lb.on,
-.lb[aria-pressed="true"] {
-  background: var(--ink-900);
-  border-color: var(--ink-900);
-  color: var(--white);
-}
-
-/* --------------------------------------------------------------------------
-   Mobile navigation
-   Previously the menu was simply hidden below 900px with no replacement,
-   which left Contact unreachable on a phone.
-   -------------------------------------------------------------------------- */
+.lb.on { color: var(--ink); font-weight: 700; }
+.lb:hover { color: var(--ink); }
 
 .nav-toggle {
   display: none;
   align-items: center;
-  justify-content: center;
-  gap: 7px;
-  min-height: 44px;
-  margin-left: auto;
-  padding: 8px 12px;
+  gap: 8px;
   background: none;
-  border: 1.5px solid var(--ink-500);
-  border-radius: var(--radius-sm);
-  color: var(--ink-800);
-  font-family: var(--sans);
-  font-size: var(--t-2xs);
-  font-weight: var(--w-medium);
-  letter-spacing: var(--track-label);
-  text-transform: uppercase;
+  border: 1px solid var(--ink);
+  padding: 6px 12px;
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--ink);
   cursor: pointer;
 }
-
-.nav-toggle-bars {
-  position: relative;
-  display: block;
-  width: 16px;
-  height: 2px;
-  background: currentColor;
-}
-
+.nav-toggle-bars,
 .nav-toggle-bars::before,
 .nav-toggle-bars::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 16px;
-  height: 2px;
-  background: currentColor;
-  transition: transform var(--dur-fast) var(--ease);
-}
-
-.nav-toggle-bars::before { top: -5px; }
-.nav-toggle-bars::after  { top:  5px; }
-
-.nav-toggle[aria-expanded="true"] .nav-toggle-bars {
-  background: transparent;
-}
-
-.nav-toggle[aria-expanded="true"] .nav-toggle-bars::before {
-  transform: translateY(5px) rotate(45deg);
-}
-
-.nav-toggle[aria-expanded="true"] .nav-toggle-bars::after {
-  transform: translateY(-5px) rotate(-45deg);
-}
-
-/* The bar collapses at 1180px rather than 900px because the five labels plus
-   the name and the language switch genuinely need that much room, and more so
-   in Dutch, where "Samenwerking met de praktijk" is the longest item. Below
-   this width the same five links live in the menu instead of overflowing. */
-@media (max-width: 1180px) {
-  .nav-sep {
-    display: none;
-  }
-
-  .nav-toggle {
-    display: inline-flex;
-  }
-
-  .nav-ul {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: var(--header-h);
-    display: none;
-    flex-direction: column;
-    margin: 0;
-    padding: var(--sp-2) var(--page-pad) var(--sp-5);
-    background: var(--white);
-    border-bottom: 1px solid var(--ink-200);
-    box-shadow: var(--shadow-sm);
-  }
-
-  .nav-ul.open {
-    display: flex;
-  }
-
-  .nav-ul li {
-    border-bottom: 1px solid var(--ink-150);
-  }
-
-  .nav-ul li:last-child {
-    border-bottom: none;
-  }
-
-  .nav-link {
-    width: 100%;
-    height: auto;
-    padding: 14px 0;
-    font-size: var(--t-base);
-  }
-
-  .nav-ul li.act .nav-link {
-    box-shadow: none;
-  }
-
-  .nav-ul li.cta .nav-link {
-    margin-left: 0;
-    padding-left: 0;
-    border-left: none;
-  }
-}
-
-/* --------------------------------------------------------------------------
-   Hero
-   -------------------------------------------------------------------------- */
-
-.hero {
-  padding: clamp(48px, 7vw, 88px) var(--page-pad);
-  background: var(--white);
-  border-top: 4px solid var(--red);
-}
-
-.hero-wrap {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 300px;
-  align-items: center;
-  gap: var(--sp-7);
-  width: min(var(--content), 100%);
-  margin-inline: auto;
-}
-
-.hero-content .h1 {
-  margin-bottom: var(--sp-3);
-}
-
-.hero-tagline {
-  max-width: 620px;
-  margin: var(--sp-2) 0 var(--sp-4);
-  color: var(--red);
-  font-family: var(--serif);
-  font-size: var(--t-lg);
-  font-style: italic;
-  font-weight: var(--w-regular);
-  line-height: var(--lh-snug);
-}
-
-.hero-identity {
-  max-width: 620px;
-  margin: calc(-1 * var(--sp-1)) 0 var(--sp-3);
-  color: var(--ink-600);
-  font-size: var(--t-xs);
-  line-height: var(--lh-body);
-}
-
-.hero-content .lead {
-  max-width: 620px;
-  margin-bottom: var(--sp-6);
-}
-
-.hero-btns {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-/* The source file is 420 x 560. Displaying it near that size left it soft on
-   any high-density screen, so the box is capped well below it: at 300px the
-   image still has 1.4x the pixels the box needs. */
-.portrait {
-  aspect-ratio: 4 / 5;
-  max-width: 300px;
-  overflow: hidden;
-  border: 1px solid var(--ink-200);
-  border-radius: var(--radius-sm);
-}
-
-/* The <picture> wrapper must not become the img's containing block, or the
-   height: 100% below stops resolving. */
-.portrait picture {
-  display: contents;
-}
-
-.portrait img {
   display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 16px;
+  height: 1.5px;
+  background: var(--ink);
+  position: relative;
 }
+.nav-toggle-bars::before,
+.nav-toggle-bars::after { content: ""; position: absolute; left: 0; }
+.nav-toggle-bars::before { top: -5px; }
+.nav-toggle-bars::after { top: 5px; }
 
-/* --------------------------------------------------------------------------
-   Highlights strip
-   -------------------------------------------------------------------------- */
+/* ---------- Ink drawings ------------------------------------------------- */
 
-.highlights {
-  padding: var(--sp-6) var(--page-pad);
-  background: var(--white);
-  border-top: 1px solid var(--ink-200);
-  border-bottom: 1px solid var(--ink-200);
-}
-
-.highlights-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: var(--sp-5);
-  width: min(var(--content), 100%);
-  margin-inline: auto;
-}
-
-.hl-item {
-  display: flex;
-  flex-direction: column;
-  gap: var(--sp-1);
-  padding-left: 14px;
-  border-left: 3px solid var(--red);
-}
-
-.hl-item .label {
-  color: var(--ink-600);
-  font-size: var(--t-2xs);
-  font-weight: var(--w-medium);
-  letter-spacing: var(--track-label);
-  text-transform: uppercase;
-}
-
-.hl-item .value {
-  color: var(--ink-900);
-  font-family: var(--serif);
-  font-size: 1.05rem;
-  font-weight: var(--w-bold);
-  line-height: var(--lh-snug);
-}
-
-.hl-item .sub {
-  color: var(--ink-600);
-  font-size: var(--t-xs);
-  line-height: 1.5;
-}
-
-/* --------------------------------------------------------------------------
-   Card grids
-   -------------------------------------------------------------------------- */
-
-.home-offers,
-.featured-pubs,
-.card-grid,
-.proj-grid,
-.off-grid {
-  display: grid;
-  gap: 14px;
-}
-
-/* The home page runs its grids three across; it is a landing page and the
-   cards there are short. The sub-page grids carry a paragraph each, so their
-   tracks are wide enough to land on two across in the same frame. */
-.home-offers  { grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr)); }
-.featured-pubs{ grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); }
-.card-grid    { grid-template-columns: repeat(auto-fill, minmax(min(380px, 100%), 1fr)); }
-.proj-grid    { grid-template-columns: repeat(auto-fill, minmax(min(380px, 100%), 1fr)); }
-.off-grid     { grid-template-columns: repeat(auto-fill, minmax(min(380px, 100%), 1fr)); }
-
-/* Featured publications */
-.fp {
-  display: flex;
-  flex-direction: column;
-  gap: var(--sp-2);
-  padding: 22px;
-  background: var(--white);
-  border: 1px solid var(--ink-200);
-  border-radius: var(--radius-md);
-}
-
-.fp .venue {
-  max-width: none;
-  color: var(--red);
-  font-size: var(--t-2xs);
-  font-weight: var(--w-medium);
-  letter-spacing: var(--track-label);
-  text-transform: uppercase;
-}
-
-.fp .title {
-  flex: 1;
-  max-width: none;
-  font-family: var(--serif);
-  font-size: 1.05rem;
-  font-weight: var(--w-bold);
-  line-height: var(--lh-snug);
-}
-
-.fp .auth {
-  max-width: none;
-  color: var(--ink-600);
-  font-size: var(--t-sm);
-}
-
-/* Sits where the DOI would be, for work that does not have one yet. */
-.fp .fp-note {
-  max-width: none;
-  align-self: start;
-  margin-top: auto;
-  color: var(--teal-dark);
-  font-size: var(--t-xs);
-  font-weight: var(--w-medium);
-}
-
-/* Was 'Courier New', a third typeface used only for DOIs. */
-.fp .doi-link,
-.pub-doi {
-  align-self: start;
-  margin-top: auto;
-  color: var(--red);
-  font-size: var(--t-xs);
-  font-variant-numeric: tabular-nums;
-  letter-spacing: 0.01em;
-  word-break: break-all;
-}
-
-/* --------------------------------------------------------------------------
-   Dark call-to-action strips
-   -------------------------------------------------------------------------- */
-
-.home-cta,
-.cta-strip {
-  padding: clamp(40px, 6vw, 64px) var(--page-pad);
-  background: var(--ink-950);
-  color: var(--on-dark);
-}
-
-.home-cta .wrap,
-.cta-strip .wrap {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
-  gap: var(--sp-6);
-}
-
-.home-cta h2,
-.cta-strip h2 {
-  margin-bottom: var(--sp-2);
-  color: var(--on-dark-strong);
-  font-family: var(--serif);
-  font-size: var(--t-xl);
-  font-weight: var(--w-bold);
-  line-height: var(--lh-snug);
-}
-
-.home-cta p,
-.cta-strip p {
-  max-width: var(--measure);
-  color: var(--on-dark);
-  font-size: var(--t-base);
-  line-height: var(--lh-body);
-}
-
-.home-cta .btn-red,
-.cta-strip .btn-red {
-  background: var(--white);
-  border-color: var(--white);
-  color: var(--ink-950);
-}
-
-.home-cta .btn-red:hover,
-.cta-strip .btn-red:hover {
-  background: var(--red);
-  border-color: var(--red);
-  color: var(--white);
-}
-
-/* Was rgba(255,255,255,.35): 3.2:1, below the 3:1 floor once antialiasing
-   is taken into account. */
-.home-cta .btn-ghost,
-.cta-strip .btn-ghost {
-  border-color: rgba(255, 255, 255, 0.55);
-  color: var(--on-dark-strong);
-}
-
-.home-cta .btn-ghost:hover,
-.cta-strip .btn-ghost:hover {
-  border-color: var(--white);
-  background: rgba(255, 255, 255, 0.08);
-}
-
-/* --------------------------------------------------------------------------
-   Audience cards
-   -------------------------------------------------------------------------- */
-
-.aud-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
-  gap: 14px;
-  margin-top: var(--sp-7);
-}
-
-.aud-card {
-  display: flex;
-  flex-direction: column;
-  gap: var(--sp-2);
-  padding: 22px 22px 20px;
-  background: var(--white);
-  border: 1px solid var(--ink-200);
-  border-radius: var(--radius-md);
-  color: inherit;
-  text-decoration: none;
-  transition: border-color var(--dur-fast) var(--ease),
-              transform var(--dur-fast) var(--ease);
-}
-
-.aud-card:hover {
-  border-color: var(--red);
-  color: inherit;
-  transform: translateY(-2px);
-}
-
-.aud-card.featured {
-  border-top: 3px solid var(--teal);
-}
-
-.aud-card.featured .aud-card-cue {
-  color: var(--teal);
-}
-
-.aud-card h3 {
-  margin-bottom: 0;
-  font-family: var(--serif);
-  font-size: var(--t-md);
-  font-weight: var(--w-bold);
-}
-
-.aud-card p {
-  flex: 1;
-  max-width: none;
-  margin-bottom: 0;
-  color: var(--ink-600);
-  font-size: var(--t-sm);
-  line-height: var(--lh-body);
-}
-
-.aud-card .aud-card-cue,
-.aud-card span {
-  margin-top: var(--sp-1);
-  color: var(--red);
-  font-size: var(--t-xs);
-  font-weight: var(--w-medium);
-}
-
-/* --------------------------------------------------------------------------
-   Quick facts
-   -------------------------------------------------------------------------- */
-
-.facts-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
-  gap: 14px;
-}
-
-.fact {
-  padding: 18px 20px;
-  background: var(--white);
-  border: 1px solid var(--ink-200);
-  border-radius: var(--radius-md);
-}
-
-/* Was --ink-400 on the page background: 2.97:1, an AA failure. */
-.fact-l {
-  margin-bottom: var(--sp-1);
-  color: var(--ink-600);
-  font-size: var(--t-2xs);
-  font-weight: var(--w-medium);
-  letter-spacing: var(--track-label);
-  text-transform: uppercase;
-}
-
-.fact-v {
-  font-family: var(--serif);
-  font-size: 1.05rem;
-  font-weight: var(--w-bold);
-  line-height: var(--lh-snug);
-}
-
-.fact-s {
-  margin-top: 3px;
-  color: var(--ink-600);
-  font-size: var(--t-xs);
-}
-
-/* --------------------------------------------------------------------------
-   Sub-page header
-   -------------------------------------------------------------------------- */
-
-.pg-hd {
-  padding: clamp(40px, 6vw, 64px) var(--page-pad) clamp(28px, 4vw, 44px);
-  background: var(--white);
-  border-top: 4px solid var(--red);
-}
-
-.pg-hd .wrap h1 {
-  margin-bottom: var(--sp-2);
-  font-family: var(--serif);
-  font-size: var(--t-2xl);
-  font-weight: var(--w-bold);
-  line-height: var(--lh-tight);
-}
-
-/* :not(.eye) matters. This rule is two classes deep, so without it the
-   eyebrow above the page title lost its size, weight, and red to the
-   standfirst styling and rendered as plain grey body copy. */
-.pg-hd .wrap p:not(.eye) {
-  max-width: var(--measure);
-  color: var(--ink-600);
-  font-size: var(--t-md);
-  font-weight: var(--w-regular);
-  line-height: var(--lh-loose);
-}
-
-.pg-hd .wrap .eye {
-  margin-bottom: var(--sp-2);
-}
-
-/* Research, Teaching, and Working with organisations each open with an
-   illustration beside the title. It is deliberately the smaller half of the
-   header: the page is still a heading and a standfirst, with a picture. */
-.pg-hd.has-figure .wrap {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 440px);
-  align-items: center;
-  gap: var(--sp-7);
-}
-
-.pg-hd-figure {
-  margin: 0;
-}
-
-/* The title has roughly half the width it would have on its own, so it takes
-   a step down the scale. At full size it dominated the illustration beside it,
-   most visibly on Research, whose standfirst is a single sentence. */
-.pg-hd.has-figure .wrap h1 {
-  font-size: clamp(1.7rem, 2.6vw, 2.1rem);
-}
-
-.pg-hd-figure img {
+.ink-fig { margin: 0; }
+.ink-fig img {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: var(--radius-md);
+  /* Fade every edge into the page so that no rectangle shows. */
+  -webkit-mask-image:
+    linear-gradient(to bottom, transparent 0, #000 7%, #000 88%, transparent 100%),
+    linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to bottom, transparent 0, #000 7%, #000 88%, transparent 100%),
+    linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%);
+  mask-composite: intersect;
 }
 
-@media (max-width: 900px) {
-  .pg-hd.has-figure .wrap {
-    grid-template-columns: 1fr;
-    gap: var(--sp-5);
-  }
+/* ---------- Home: hero --------------------------------------------------- */
 
-  .pg-hd-figure {
-    max-width: 420px;
-  }
+.hero { padding: 24px 0 8px; }
+.hero-grid { position: relative; }
+.hero-fig { width: 78%; margin-left: auto; }
+.hero-text {
+  position: absolute;
+  z-index: 1;
+  left: 32px;
+  top: 12%;
+  width: 41%;
 }
 
-/* --------------------------------------------------------------------------
-   Rich content blocks
-   -------------------------------------------------------------------------- */
+.h1, .hero h1 {
+  font-size: clamp(2.4rem, 4vw, 3.3rem);
+  line-height: 1.05;
+  margin: 0 0 0.35em;
+  letter-spacing: -0.01em;
+}
+.hero-tagline {
+  font-size: clamp(1.35rem, 2.1vw, 1.7rem);
+  line-height: 1.3;
+  margin: 0 0 0.9em;
+}
+.lead { margin: 0 0 1em; }
+.hero-identity { font-size: 0.95rem; color: var(--ink-soft); margin: 0; }
 
-.block {
-  margin-bottom: var(--sp-6);
+/* ---------- Home: introduction ------------------------------------------ */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 44px;
+  align-items: start;
+  border-top: 1px solid var(--ink-rule);
+  padding-top: 56px;
+  padding-bottom: 64px;
+}
+.wrap.about-grid { padding-left: 32px; padding-right: 32px; }
+.about-photo {
+  width: 200px;
+  height: auto;
+  filter: grayscale(1) contrast(1.05);
+  border: 1px solid var(--ink);
+}
+.about-text p { margin: 0 0 0.7em; }
+
+/* ---------- Sections ----------------------------------------------------- */
+
+.sec { padding: 0 0 64px; }
+#pg-home .sec > .wrap { border-top: 1px solid var(--ink-rule); padding-top: 64px; }
+
+.h2, .sec h2 {
+  font-size: clamp(1.8rem, 3vw, 2.35rem);
+  line-height: 1.15;
+  margin: 0 0 0.5em;
 }
 
-.block-h {
-  margin-bottom: 14px;
-  padding-bottom: 6px;
-  border-bottom: 1px solid var(--ink-200);
-  font-family: var(--serif);
-  font-size: var(--t-lg);
-  font-weight: var(--w-bold);
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 56px;
+  align-items: center;
+}
+.split.flip { grid-template-columns: 1.1fr 1fr; }
+.offers p { margin: 0 0 1.3em; }
+.more { margin: 1.4em 0 0; }
+
+.pubs { list-style: none; margin: 0; padding: 0; max-width: 52em; }
+.pubs li { padding: 18px 0; border-bottom: 1px solid var(--ink-rule); margin: 0; }
+.pubs li:first-child { padding-top: 0; }
+.pubs-t { font-weight: 700; display: block; line-height: 1.35; margin-bottom: 0.25em; text-decoration: none; }
+.pubs-t:hover { text-decoration: underline; text-decoration-color: var(--ink-red); color: var(--ink); }
+.pubs-m { color: var(--ink-soft); font-size: 1rem; margin: 0; }
+.pubs-m em { color: var(--ink); }
+
+.btn {
+  display: inline-block;
+  margin-top: 0.4em;
+  padding: 0.55em 1.1em;
+  border: 1.5px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--ink-font);
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.3;
+  text-decoration: none;
+  border-radius: 0;
+}
+.btn:hover { background: var(--ink); color: var(--paper); }
+.btn-red, .btn-ghost { /* older names, same quiet button */ }
+.btn-sm { font-size: 0.95rem; padding: 0.45em 0.9em; }
+
+/* ---------- Page headers (research, teaching, practice, ...) ------------ */
+
+.pg-hd { padding: 56px 0 24px; }
+.pg-hd .wrap { display: block; }
+.pg-hd.has-figure .wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.pg-hd h1 {
+  font-size: clamp(2rem, 3.6vw, 2.9rem);
+  line-height: 1.12;
+  margin: 0 0 0.5em;
+}
+.pg-hd p { margin: 0 0 0.8em; }
+
+.eye {
+  font-size: 0.82rem;
+  font-variant: small-caps;
+  text-transform: lowercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  margin: 0 0 0.6em;
 }
 
-/* Direct children only. As `.block p` this rule reached down into the
-   publication list, the award list, and the cards, and overrode every
-   .pub-auth, .pub-venue, .li-meta, and .li-body underneath it. */
-.block > p {
-  max-width: var(--measure);
-  margin-bottom: var(--sp-3);
-  color: var(--ink-700);
-  font-size: var(--t-base);
-  line-height: var(--lh-body);
+/* ---------- Content blocks ---------------------------------------------- */
+
+.block { padding: 40px 0 8px; border-top: 1px solid var(--ink-rule); }
+.block:first-child { border-top: 1px solid var(--ink-rule); }
+.block-h, .block h2 {
+  font-size: clamp(1.5rem, 2.4vw, 1.9rem);
+  line-height: 1.2;
+  margin: 0 0 0.8em;
 }
+.block > p { margin: 0 0 1em; }
 
-.block > p:last-child {
-  margin-bottom: 0;
-}
+.block ul { list-style: none; margin: 0; padding: 0; }
+.block ul > li { margin: 0 0 1.6em; }
+.li-h { font-weight: 700; margin: 0 0 0.2em; }
+.li-meta { font-size: 0.95rem; color: var(--ink-soft); margin: 0 0 0.4em; }
+.li-body { margin: 0 0 0.5em; }
 
-.block ul {
-  padding: 0;
-  list-style: none;
-}
-
-.block li {
-  padding: 14px 0;
-  border-bottom: 1px solid var(--ink-200);
-}
-
-.block li:last-child {
-  border-bottom: none;
-}
-
-.li-h {
-  margin-bottom: 3px;
-  color: var(--ink-900);
-  font-weight: var(--w-medium);
-}
-
-.li-meta {
-  margin-bottom: 5px;
-  color: var(--ink-600);
-  font-size: var(--t-xs);
-}
-
-.li-body {
-  max-width: var(--measure);
-  color: var(--ink-700);
-  font-size: var(--t-sm);
-  line-height: var(--lh-body);
-}
-
-/* --------------------------------------------------------------------------
-   Publications list
-   -------------------------------------------------------------------------- */
-
-.pub-list {
-  border-top: 1px solid var(--ink-200);
-}
-
+/* Publications */
+.pub-list { max-width: 56em; }
 .pub-item {
   display: grid;
   grid-template-columns: 1fr auto;
-  align-items: start;
-  gap: 18px;
-  padding: 18px 0;
-  border-bottom: 1px solid var(--ink-200);
+  gap: 8px 32px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--ink-rule);
 }
+.pub-item:first-child { padding-top: 0; }
+.pub-title { font-weight: 700; line-height: 1.35; margin: 0 0 0.2em; }
+.pub-auth, .pub-venue { font-size: 1rem; color: var(--ink-soft); margin: 0; }
+.pub-note { font-size: 0.95rem; font-style: italic; color: var(--ink-soft); margin: 0.2em 0 0; }
+.pub-video { display: inline-block; font-size: 0.95rem; margin-top: 0.3em; }
+.pub-doi { font-size: 0.9rem; white-space: nowrap; align-self: start; color: var(--ink-soft); }
 
-.pub-title {
-  max-width: var(--measure);
-  margin-bottom: var(--sp-1);
-  font-family: var(--serif);
-  font-size: 1.05rem;
-  font-weight: var(--w-bold);
-  line-height: var(--lh-snug);
+/* Cards are quiet entries: no boxes, a thin rule above each. */
+.card-grid, .off-grid, .proj-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 8px 48px;
 }
-
-.pub-auth {
-  max-width: none;
-  margin-bottom: 3px;
-  color: var(--ink-600);
-  font-size: var(--t-sm);
+.card, .off, .proj {
+  background: none;
+  border: 0;
+  border-top: 1px solid var(--ink-rule);
+  border-radius: 0;
+  box-shadow: none;
+  padding: 18px 0 20px;
 }
-
-/* Was --ink-400 italic: 3.65:1, an AA failure at this size. */
-.pub-venue {
-  max-width: none;
-  color: var(--ink-600);
-  font-size: var(--t-sm);
-  font-style: italic;
+.card h3, .off h3 {
+  font-size: 1.15rem;
+  line-height: 1.3;
+  margin: 0 0 0.4em;
 }
-
-/* Status or a paper-specific distinction, under the reference line. */
-.pub-note {
-  max-width: none;
-  margin-top: 4px;
-  color: var(--teal-dark);
-  font-size: var(--t-xs);
-  font-weight: var(--w-medium);
-}
-
-.pub-doi {
-  align-self: center;
-  margin-top: 0;
-  white-space: nowrap;
-}
-
-/* Link from a publication to its video page. */
-.pub-video,
-.fp .fp-video {
-  display: inline-block;
-  margin-top: 6px;
-  color: var(--red);
-  font-size: var(--t-xs);
-  font-weight: var(--w-medium);
-}
-
-.fp .fp-video {
-  align-self: start;
-  margin-top: 0;
-}
-
-/* --------------------------------------------------------------------------
-   Generic cards
-   -------------------------------------------------------------------------- */
-
-.card {
-  display: flex;
-  flex-direction: column;
-  gap: var(--sp-2);
-  padding: 22px;
-  background: var(--white);
-  border: 1px solid var(--ink-200);
-  border-radius: var(--radius-md);
-}
-
-.card.alt {
-  background: var(--warm-50);
-}
-
+.card p, .off p { font-size: 1.02rem; margin: 0 0 0.6em; }
 .card-tag {
-  align-self: start;
-  padding: 3px 9px;
-  background: var(--red-soft);
-  border-radius: var(--radius-sm);
-  color: var(--red-dark);
-  font-size: var(--t-2xs);
-  font-weight: var(--w-medium);
-  letter-spacing: var(--track-label);
-  text-transform: uppercase;
+  display: block;
+  font-size: 0.82rem;
+  font-variant: small-caps;
+  text-transform: lowercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  margin: 0 0 0.4em;
+  background: none;
+  padding: 0;
 }
-
-.card-tag.teal {
-  background: var(--teal-soft);
-  color: var(--teal-dark);
-}
-
-.card h3 {
-  margin-bottom: 0;
-  font-family: var(--serif);
-  font-size: var(--t-md);
-  font-weight: var(--w-bold);
-  line-height: var(--lh-snug);
-}
-
-.card p {
-  flex: 1;
-  max-width: var(--measure);
-  margin-bottom: 0;
-  color: var(--ink-600);
-  font-size: var(--t-sm);
-  line-height: var(--lh-body);
-}
-
-.card .meta {
+.meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
-  margin-top: var(--sp-1);
-  padding-top: 10px;
-  border-top: 1px solid var(--ink-200);
-  color: var(--ink-600);
-  font-size: var(--t-xs);
+  gap: 4px 16px;
+  font-size: 0.82rem;
+  font-variant: small-caps;
+  text-transform: lowercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+  margin: 0.2em 0 0.8em;
 }
+.meta a { color: var(--ink); }
 
-/* Cards rather than banners: a single column of these across the full frame
-   left each short one looking like a strip. The MTM entry keeps the full
-   width because it carries the most copy. */
-.resource-list {
+.proj-org { font-weight: 700; font-size: 1.15rem; margin: 0 0 0.2em; }
+.proj-window { font-size: 0.95rem; color: var(--ink-soft); margin: 0 0 0.5em; }
+.proj-body { font-size: 1.02rem; margin: 0 0 0.4em; }
+.proj-meta { font-size: 0.95rem; font-style: italic; color: var(--ink-soft); margin: 0; }
+
+/* Resources */
+.resource-list { display: grid; gap: 0; max-width: 52em; }
+.resource-card { padding: 24px 0 28px; }
+.resource-card.featured h3 { font-size: 1.35rem; }
+
+/* Closing strip on the practice page */
+.cta-strip { padding: 0 0 64px; }
+.cta-strip .wrap {
+  border-top: 1px solid var(--ink-rule);
+  padding-top: 40px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(380px, 100%), 1fr));
-  gap: 14px;
+  grid-template-columns: 1fr auto;
+  gap: 24px 48px;
+  align-items: end;
 }
+.cta-strip h2 { font-size: clamp(1.5rem, 2.4vw, 1.9rem); margin: 0 0 0.5em; }
+.cta-strip p { margin: 0; }
 
-.resource-card.featured {
-  grid-column: 1 / -1;
-}
-
-.resource-card.featured {
-  padding-top: 19px;
-  border-top: 4px solid var(--teal);
-}
-
-.resource-card p {
-  flex: 0;
-}
-
-.resource-card .btn {
-  align-self: start;
-  margin-top: 6px;
-}
-
-/* --------------------------------------------------------------------------
-   Project cards
-   -------------------------------------------------------------------------- */
-
-.proj {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 24px;
-  background: var(--white);
-  border: 1px solid var(--ink-200);
-  border-radius: var(--radius-md);
-}
-
-.proj p {
-  max-width: var(--measure);
-  margin-bottom: 0;
-  color: var(--ink-600);
-  font-size: var(--t-sm);
-  line-height: var(--lh-body);
-}
-
-.proj p.proj-org {
-  color: var(--ink-900);
-  font-family: var(--serif);
-  font-size: var(--t-md);
-  font-weight: var(--w-bold);
-}
-
-.proj p.proj-window {
-  color: var(--ink-600);
-  font-size: var(--t-xs);
-  letter-spacing: 0.04em;
-}
-
-.proj p.proj-body {
-  flex: 1;
-}
-
-.proj p.proj-meta {
-  margin-top: auto;
-  padding-top: 10px;
-  border-top: 1px solid var(--ink-200);
-  color: var(--ink-700);
-  font-size: var(--t-xs);
-  font-weight: var(--w-medium);
-}
-
-/* --------------------------------------------------------------------------
-   Offerings
-   -------------------------------------------------------------------------- */
-
-.off {
-  padding: 20px 22px;
-  background: var(--warm-50);
-  border-left: 3px solid var(--red);
-  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-}
-
-.off h3 {
-  margin-bottom: 7px;
-  font-family: var(--serif);
-  font-size: var(--t-md);
-  font-weight: var(--w-bold);
-}
-
-.off p {
-  max-width: var(--measure);
-  margin-bottom: 0;
-  color: var(--ink-700);
-  font-size: var(--t-sm);
-  line-height: var(--lh-body);
-}
-
-/* --------------------------------------------------------------------------
-   Contact
-   -------------------------------------------------------------------------- */
-
+/* Contact */
 .ct-cols {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--sp-7);
+  grid-template-columns: 1fr 1.2fr;
+  gap: 48px;
+  align-items: start;
+  border-top: 1px solid var(--ink-rule);
+  padding-top: 40px;
 }
-
-
-.ct-desc {
-  max-width: var(--measure);
-  margin-bottom: 22px;
-  color: var(--ink-700);
-  font-size: var(--t-base);
-  font-weight: var(--w-regular);
-  line-height: var(--lh-loose);
-}
-
-.ci-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px 28px;
-}
-
+.ct-desc { margin: 0 0 1.2em; }
+.ci-grid { display: grid; gap: 0; }
 .ci {
-  display: flex;
-  flex-direction: column;
-  gap: var(--sp-1);
+  display: grid;
+  grid-template-columns: 9.5em 1fr;
+  gap: 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--ink-rule);
 }
+.ci:first-child { padding-top: 0; }
+.ci-l { font-size: 0.95rem; color: var(--ink-soft); margin: 0; }
+.ci-v { margin: 0; }
 
-.ci-l {
-  color: var(--ink-600);
-  font-size: var(--t-2xs);
-  font-weight: var(--w-medium);
-  letter-spacing: var(--track-label);
-  text-transform: uppercase;
-}
+/* ---------- Footer ------------------------------------------------------- */
 
-.ci-v {
-  max-width: none;
-  font-size: var(--t-sm);
-  word-break: break-word;
-}
-
-/* --------------------------------------------------------------------------
-   Footer
-   -------------------------------------------------------------------------- */
-
-footer {
-  padding: 22px var(--page-pad);
-  background: var(--ink-950);
-  color: var(--on-dark-quiet);
-  font-size: var(--t-xs);
-}
-
+footer { margin-top: 40px; border-top: 1px solid var(--ink-rule); }
 .ft {
+  max-width: var(--ink-wrap);
+  margin: 0 auto;
+  padding: 28px 32px 48px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
-  gap: var(--sp-3);
-  width: min(var(--content), 100%);
-  margin-inline: auto;
+  gap: 12px 32px;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
 }
+.ft-links { display: flex; flex-wrap: wrap; gap: 8px 22px; }
+.ft-links a { color: var(--ink); }
 
-.ft-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 22px;
-}
-
-/* Was rgba(255,255,255,.34): 3.11:1 at 14px, an AA failure. */
-.ft-links a {
-  color: var(--on-dark);
-}
-
-.ft-links a:hover {
-  color: var(--on-dark-strong);
-}
-
-/* --------------------------------------------------------------------------
-   Responsive
-   Two breakpoints, matching the rest of the site.
-   -------------------------------------------------------------------------- */
+/* ---------- Phones and tablets ------------------------------------------ */
 
 @media (max-width: 900px) {
-  .hero-wrap {
-    grid-template-columns: 1fr;
-    gap: var(--sp-6);
+  .wrap, .wrap.about-grid { padding-left: 16px; padding-right: 16px; }
+  .nav-in { padding: 12px 16px; gap: 6px; flex-wrap: wrap; }
+  .logo-sub { display: none; }
+  .nav-toggle { display: inline-flex; order: 2; padding: 5px 10px; }
+  .lang-row { order: 1; }
+  .nav-ul {
+    display: none;
+    order: 3;
+    width: 100%;
+    flex-direction: column;
+    gap: 0;
+    padding: 4px 0 8px;
   }
+  .nav-ul.open { display: flex; }
+  .nav-ul li { border-top: 1px solid var(--ink-rule); }
+  .nav-link { display: block; padding: 10px 0; border-bottom: 0; }
 
-  .highlights-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
-  }
-
-  .aud-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .home-cta .wrap,
-  .cta-strip .wrap {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
+  .hero { padding-top: 8px; }
+  .hero-text { position: static; width: auto; padding: 32px 0 8px; }
+  .hero-fig { width: calc(100% + 32px); margin: 0 -16px; }
+  .about-grid { grid-template-columns: 1fr; gap: 24px; padding-top: 40px; padding-bottom: 48px; }
+  .about-photo { width: 160px; }
+  #pg-home .sec > .wrap { padding-top: 48px; }
+  .sec { padding-bottom: 48px; }
+  .split, .split.flip { grid-template-columns: 1fr; gap: 28px; }
+  .split.flip .ink-fig { order: 2; }
+  .pg-hd { padding-top: 32px; }
+  .pg-hd.has-figure .wrap { grid-template-columns: 1fr; gap: 16px; }
+  .pub-item { grid-template-columns: 1fr; }
+  .cta-strip .wrap, .ct-cols { grid-template-columns: 1fr; }
+  .ci { grid-template-columns: 1fr; gap: 2px; }
+  .ft { padding: 24px 16px 40px; }
 }
 
 @media (max-width: 640px) {
-  .logo { min-width: 0; flex-shrink: 1; }
-  .logo-sub { display: none; }
-
-  .highlights-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .ct-cols,
-  .ci-grid {
-    grid-template-columns: 1fr;
-    gap: var(--sp-6);
-  }
-
-  .pub-item {
-    grid-template-columns: 1fr;
-    gap: var(--sp-2);
-  }
-
-  .pub-doi {
-    align-self: start;
-    white-space: normal;
-  }
+  body { font-size: 1.0625rem; }
 }
 
-/* NorthGrid teaching case, using the shared resource styles and tokens. */
-.resource-case {
-  display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
-  gap: var(--sp-6);
-  align-items: start;
+@media print {
+  .nav, footer, .ink-fig { display: none; }
+  body { background: #fff; }
 }
-.resource-case-copy { display: flex; flex-direction: column; gap: var(--sp-3); }
-.resource-case-preview { display: block; color: var(--red-dark); font-size: var(--t-xs); }
-.resource-case-preview img { display: block; width: 100%; height: auto; border: 1px solid var(--ink-200); border-radius: var(--radius-sm); margin-bottom: var(--sp-2); }
-.resource-case-actions { display: flex; flex-wrap: wrap; gap: var(--sp-3); margin-bottom: var(--sp-2); }
-#northgrid { scroll-margin-top: calc(var(--header-h) + var(--sp-5)); }
-@media (max-width: 720px) { .resource-case { grid-template-columns: 1fr; gap: var(--sp-5); } }
-
-.resource-case-actions .btn { max-width: 100%; text-align: center; }
