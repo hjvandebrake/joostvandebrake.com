@@ -10,6 +10,7 @@
 - Identity note: all of these names refer to the same researcher
 - Canonical identity URL: https://joostvandebrake.com/
 - Affiliation: Associate Professor (Universitair Hoofddocent) and Research Director of the Department of HRM and Organizational Behavior, Faculty of Economics and Business, University of Groningen, Netherlands.
+- Education: PhD in Economics and Business, University of Groningen, 2019; MSc in Sociology, University of Groningen, 2013
 - ORCID: 0000-0001-5690-404X
 - Email: h.j.van.de.brake@rug.nl
 - Office: Nettelbosje 2, 9747 AE Groningen, Netherlands

@@ -104,7 +104,8 @@ body[data-page="teaching"]  li[data-pg="teaching"]  .nav-link,
 body[data-page="practice"]  li[data-pg="practice"]  .nav-link,
 body[data-page="resources"] li[data-pg="resources"] .nav-link,
 body[data-page="contact"]   li[data-pg="contact"]   .nav-link {
-  border-bottom-color: var(--ink);
+  border-bottom-color: var(--ink-red);
+  border-bottom-width: 2px;
 }
 
 .lang-row { display: flex; gap: 2px; }
@@ -219,6 +220,19 @@ body[data-page="contact"]   li[data-pg="contact"]   .nav-link {
   font-size: clamp(1.8rem, 3vw, 2.35rem);
   line-height: 1.15;
   margin: 0 0 0.5em;
+}
+
+/* A short brush stroke in the red wash of the drawings, under each
+   section heading: the one red accent of the page itself. */
+.h2::after,
+.block-h::after,
+.cta-strip h2::after {
+  content: "";
+  display: block;
+  width: 78px;
+  height: 12px;
+  margin-top: 0.32em;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 18'%3E%3Cpath d='M1.5 11.8C14 7.4 38 5 64 5.4c21 .3 38 .9 53.5-1.2l1.5 5.4C105 13.6 84 13 60 14.1 38 15 19 16.6 3.5 16.2z' fill='%23ad535b' fill-opacity='.9'/%3E%3Cpath d='M6 12.6C26 9.4 52 8.6 78 9c14 .2 26-.2 37-1.6l.6 2.2C102 12.6 80 12.2 58 13 38 13.7 20 14.9 7 14.8z' fill='%239e454b' fill-opacity='.35'/%3E%3C/svg%3E") no-repeat left center / 100% 100%;
 }
 
 .split {
@@ -441,6 +455,15 @@ footer { margin-top: 40px; border-top: 1px solid var(--ink-rule); }
   .nav-ul.open { display: flex; }
   .nav-ul li { border-top: 1px solid var(--ink-rule); }
   .nav-link { display: block; padding: 10px 0; border-bottom: 0; }
+  body[data-page="research"] li[data-pg="research"] .nav-link,
+  body[data-page="teaching"] li[data-pg="teaching"] .nav-link,
+  body[data-page="practice"] li[data-pg="practice"] .nav-link,
+  body[data-page="resources"] li[data-pg="resources"] .nav-link,
+  body[data-page="contact"] li[data-pg="contact"] .nav-link {
+    border-bottom: 0;
+    box-shadow: inset 3px 0 0 var(--ink-red);
+    padding-left: 12px;
+  }
 
   .hero { padding: 32px 0 40px; }
   .hero-grid { grid-template-columns: 1fr; gap: 24px; }

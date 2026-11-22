@@ -215,6 +215,8 @@ const HIGHLIGHTS = [
 const ABOUT = [
   {t:'I work at the Faculty of Economics and Business of the University of Groningen, where I am Associate Professor and Research Director of the Department of HRM and Organizational Behavior.',
    nl:{t:'Ik werk aan de Faculteit Economie en Bedrijfskunde van de Rijksuniversiteit Groningen, waar ik universitair hoofddocent ben en onderzoeksdirecteur van de afdeling HRM en Organisatiegedrag.'}},
+  {t:'I received my PhD in Economics and Business from the University of Groningen in 2019, and I completed my MSc in Sociology there in 2013.',
+   nl:{t:'Ik promoveerde in 2019 aan de Rijksuniversiteit Groningen in de Economie en Bedrijfskunde, en in 2013 behaalde ik daar mijn MSc in de Sociologie.'}},
   {t:'For more than ten years I have carried out applied research with research institutes, hospitals, energy and infrastructure companies, and ministries.',
    nl:{t:'Al meer dan tien jaar doe ik toegepast onderzoek met onderzoeksinstituten, ziekenhuizen, energie- en infrastructuurbedrijven en ministeries.'}},
   {t:'I am also an associate editor of <em>Group and Organization Management</em>. In 2022 I received an NWO Veni grant for my research on multiple team membership.',
