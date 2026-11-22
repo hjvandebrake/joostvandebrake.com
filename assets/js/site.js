@@ -239,12 +239,12 @@ const HIGHLIGHTS = [
 
 /* Plain sentences for the short introduction under the home page hero. */
 const ABOUT = [
-  {t:'I am Associate Professor and Research Director of the Department of HRM and Organizational Behavior at the Faculty of Economics and Business of the University of Groningen.',
-   nl:{t:'Ik ben universitair hoofddocent en onderzoeksdirecteur van de afdeling HRM en Organisatiegedrag van de Faculteit Economie en Bedrijfskunde van de Rijksuniversiteit Groningen.'}},
+  {t:'I work at the Faculty of Economics and Business of the University of Groningen, where I am Associate Professor and Research Director of the Department of HRM and Organizational Behavior.',
+   nl:{t:'Ik werk aan de Faculteit Economie en Bedrijfskunde van de Rijksuniversiteit Groningen, waar ik universitair hoofddocent ben en onderzoeksdirecteur van de afdeling HRM en Organisatiegedrag.'}},
   {t:'For more than ten years I have carried out applied research with research institutes, hospitals, energy and infrastructure companies, and ministries.',
    nl:{t:'Al meer dan tien jaar doe ik toegepast onderzoek met onderzoeksinstituten, ziekenhuizen, energie- en infrastructuurbedrijven en ministeries.'}},
-  {t:'I am Associate Editor of <em>Group and Organization Management</em>. In 2022 I received an NWO Veni grant for my research on multiple team membership.',
-   nl:{t:'Ik ben associate editor van <em>Group and Organization Management</em>. In 2022 ontving ik een NWO Veni-subsidie voor mijn onderzoek naar multiple team membership.'}},
+  {t:'I am also an associate editor of <em>Group and Organization Management</em>. In 2022 I received an NWO Veni grant for my research on multiple team membership.',
+   nl:{t:'Daarnaast ben ik associate editor van <em>Group and Organization Management</em>. In 2022 ontving ik een NWO Veni-subsidie voor mijn onderzoek naar multiple team membership.'}},
 ];
 
 const QUICK_FACTS = [
